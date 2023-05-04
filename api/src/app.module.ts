@@ -7,6 +7,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { CategoriesModule } from './categories/categories.module';
 import { CollectPointsModule } from './collect-points/collect-points.module';
+import { ShopsModule } from './shops/shops.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { CollectPointsModule } from './collect-points/collect-points.module';
     AuthModule,
     CategoriesModule,
     CollectPointsModule,
+    ShopsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
