@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { CategoriesModule } from './categories/categories.module';
 import { CollectPointsModule } from './collect-points/collect-points.module';
 import { ShopsModule } from './shops/shops.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { ShopsModule } from './shops/shops.module';
     CategoriesModule,
     CollectPointsModule,
     ShopsModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
