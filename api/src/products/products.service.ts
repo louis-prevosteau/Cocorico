@@ -30,4 +30,8 @@ export class ProductsService {
   remove(filter) {
     return this.productModel.findOneAndDelete(filter);
   }
+
+  removeMany(filter) {
+    return this.productModel.deleteMany(filter);
+  }
 }

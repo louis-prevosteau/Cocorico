@@ -8,6 +8,8 @@ import {
   Delete,
   UseGuards,
   Query,
+  HttpException,
+  HttpStatus,
 } from '@nestjs/common';
 import { ShopsService } from './shops.service';
 import { CreateShopDto } from './dto/create-shop.dto';
@@ -16,10 +18,14 @@ import { User } from 'src/users/users.decorator';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { RolesGuard } from 'src/roles/roles.guard';
 import { Role, Roles } from 'src/roles/roles.decorator';
+import { ProductsService } from 'src/products/products.service';
 
 @Controller('shops')
 export class ShopsController {
-  constructor(private readonly shopsService: ShopsService) {}
+  constructor(
+    private readonly shopsService: ShopsService,
+    private readonly productsService: ProductsService,
+  ) {}
 
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Role.Seller)
@@ -41,14 +47,31 @@ export class ShopsController {
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Role.Seller)
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateShopDto: UpdateShopDto) {
+  async update(
+    @Param('id') id: string,
+    @Body() updateShopDto: UpdateShopDto,
+    @User() user,
+  ) {
+    const shop = await this.shopsService.findOne({ _id: id });
+    if (shop.owner != user._id)
+      throw new HttpException(
+        'You are not the owner of this shop',
+        HttpStatus.UNAUTHORIZED,
+      );
     return this.shopsService.update({ _id: id }, updateShopDto);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Role.Seller)
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  async remove(@Param('id') id: string, @User() user) {
+    const shop = await this.shopsService.findOne({ _id: id });
+    if (shop.owner != user._id)
+      throw new HttpException(
+        'You are not the owner of this shop',
+        HttpStatus.UNAUTHORIZED,
+      );
+    this.productsService.removeMany({ shop: id });
     return this.shopsService.remove({ _id: id });
   }
 }
