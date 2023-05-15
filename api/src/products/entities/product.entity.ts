@@ -21,6 +21,9 @@ export class Product {
   @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'Shop' })
   shop: Shop;
 
+  @Prop({ required: true })
+  madeIn: string;
+
   @Prop({ default: true })
   available: boolean;
 

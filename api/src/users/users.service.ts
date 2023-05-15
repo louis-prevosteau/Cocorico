@@ -15,19 +15,19 @@ export class UsersService {
     return this.userModel.create(createUserDto);
   }
 
-  findAll() {
-    return `This action returns all users`;
+  findAll(filter = {}) {
+    return this.userModel.find(filter);
   }
 
   findOne(filter) {
     return this.userModel.findOne(filter);
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  update(filter, updateUserDto: UpdateUserDto) {
+    return this.userModel.findOneAndUpdate(filter, updateUserDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  remove(filter) {
+    return this.userModel.findOneAndDelete(filter);
   }
 }

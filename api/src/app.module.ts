@@ -9,6 +9,9 @@ import { CategoriesModule } from './categories/categories.module';
 import { CollectPointsModule } from './collect-points/collect-points.module';
 import { ShopsModule } from './shops/shops.module';
 import { ProductsModule } from './products/products.module';
+import { CartItemsModule } from './cart-items/cart-items.module';
+import { CartsModule } from './carts/carts.module';
+import { OrdersModule } from './orders/orders.module';
 
 @Module({
   imports: [
@@ -28,6 +31,9 @@ import { ProductsModule } from './products/products.module';
     CollectPointsModule,
     ShopsModule,
     ProductsModule,
+    CartItemsModule,
+    CartsModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

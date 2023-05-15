@@ -4,6 +4,7 @@ export class CreateProductDto {
   readonly description: string;
   readonly price: number;
   readonly shop: string;
+  readonly madeIn: string;
   readonly available: boolean;
   readonly returnable: boolean;
 }
