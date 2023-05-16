@@ -41,13 +41,13 @@ export class CollectPointsController {
     @Param('id') id: string,
     @Body() updateCollectPointDto: UpdateCollectPointDto,
   ) {
-    return this.collectPointsService.update(+id, updateCollectPointDto);
+    return this.collectPointsService.update({ _id: id }, updateCollectPointDto);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Role.Admin)
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.collectPointsService.remove(+id);
+    return this.collectPointsService.remove({ _id: id });
   }
 }
