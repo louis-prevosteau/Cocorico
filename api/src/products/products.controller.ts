@@ -30,15 +30,7 @@ export class ProductsController {
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Role.Seller)
   @Post()
-  async create(@Body() createProductDto: CreateProductDto, @User() user) {
-    const shop = await this.shopsService.findOne({
-      _id: createProductDto.shop,
-    });
-    if (shop.owner !== user._id)
-      throw new HttpException(
-        'You are not the owner of this shop',
-        HttpStatus.UNAUTHORIZED,
-      );
+  async create(@Body() createProductDto: CreateProductDto) {
     return this.productsService.create(createProductDto);
   }
 
@@ -58,17 +50,7 @@ export class ProductsController {
   async update(
     @Param('id') id: string,
     @Body() updateProductDto: UpdateProductDto,
-    @User() user,
   ) {
-    const product = await this.productsService.findOne({ _id: id });
-    const shop = await this.shopsService.findOne({
-      _id: product.shop,
-    });
-    if (shop.owner !== user._id)
-      throw new HttpException(
-        'You are not the owner of this shop',
-        HttpStatus.UNAUTHORIZED,
-      );
     return this.productsService.update({ _id: id }, updateProductDto);
   }
 

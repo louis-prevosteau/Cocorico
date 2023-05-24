@@ -11,7 +11,9 @@ export class CartsService {
   ) {}
 
   findOne(filter) {
-    return this.cartModel.findOne(filter);
+    return this.cartModel
+      .findOne(filter)
+      .populate({ path: 'products', populate: { path: 'product' } });
   }
 
   create(createCartDto: CreateCartDto) {
@@ -20,9 +22,5 @@ export class CartsService {
 
   update(filter, data) {
     return this.cartModel.findOneAndUpdate(filter, data);
-  }
-
-  remove(filter) {
-    return this.cartModel.findOneAndDelete(filter);
   }
 }
