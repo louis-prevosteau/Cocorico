@@ -8,8 +8,6 @@ import {
   Delete,
   Query,
   UseGuards,
-  HttpException,
-  HttpStatus,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -17,7 +15,6 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { RolesGuard } from 'src/roles/roles.guard';
 import { Role, Roles } from 'src/roles/roles.decorator';
-import { User } from 'src/users/users.decorator';
 import { ShopsService } from 'src/shops/shops.service';
 
 @Controller('products')
@@ -57,14 +54,7 @@ export class ProductsController {
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Role.Seller)
   @Delete(':id')
-  async remove(@Param('id') id: string, @User() user) {
-    const product = await this.productsService.findOne({ _id: id });
-    const shop = await this.shopsService.findOne({ _id: product.shop });
-    if (shop.owner !== user._id)
-      throw new HttpException(
-        'You are not the owner of this shop',
-        HttpStatus.UNAUTHORIZED,
-      );
+  async remove(@Param('id') id: string) {
     return this.productsService.remove({ _id: id });
   }
 }

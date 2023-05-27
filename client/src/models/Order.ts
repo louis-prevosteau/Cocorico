@@ -1,10 +1,9 @@
-import { Cart } from "./Cart";
-import { User } from "./User";
+import { Cart, User } from ".";
 
 export interface Order {
     _id?: string;
     user?: User;
     cart?: Cart;
-    price?: number;
+    status?: string;
     createdAt?: string;
 }

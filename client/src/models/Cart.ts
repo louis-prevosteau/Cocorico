@@ -2,11 +2,11 @@ import { Product } from "./Product";
 
 export interface Cart {
     _id?: string;
-    products: CartItem[];
+    products?: CartItem[];
     price?: number;
 };
 
-interface CartItem {
+export interface CartItem {
     _id?: string;
     product?: Product;
     quantity?: number;

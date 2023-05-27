@@ -59,7 +59,7 @@ export class CartsController {
 
   @UseGuards(JwtAuthGuard)
   @Patch('del-product/:item')
-  async delProduct(@User() user, @Param('item') itemId) {
+  async deleteProduct(@User() user, @Param('item') itemId) {
     this.cartItemsService.remove({ _id: itemId });
     const cart = await this.cartsService.findOne({ user: user._id });
     const item = await this.cartItemsService.findOne({ _id: itemId });
@@ -76,6 +76,9 @@ export class CartsController {
   @UseGuards(JwtAuthGuard)
   @Patch('clear')
   clearCart(@User() user) {
-    return this.cartsService.update({ user: user._id }, { products: [], price: 0 });
+    return this.cartsService.update(
+      { user: user._id },
+      { products: [], price: 0 },
+    );
   }
 }

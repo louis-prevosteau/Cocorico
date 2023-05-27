@@ -6,7 +6,7 @@ export interface Product {
     image?: string;
     description?: string;
     price?: number;
-    shop?: Shop;
+    shop?: Shop | string;
     madeIn?: string;
     available?: boolean;
     returnable?: boolean;

@@ -9,3 +9,15 @@ export interface User {
     city?: string;
     country?: string;
 };
+
+export interface Register {
+    username?: string;
+    email?: string;
+    password?: string;
+    roles?: string[];
+};
+
+export interface Login {
+    email?: string;
+    password?: string;
+};
