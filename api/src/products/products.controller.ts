@@ -48,7 +48,7 @@ export class ProductsController {
     @Param('id') id: string,
     @Body() updateProductDto: UpdateProductDto,
   ) {
-    return this.productsService.update({ _id: id }, updateProductDto);
+    return await this.productsService.update({ _id: id }, updateProductDto);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)

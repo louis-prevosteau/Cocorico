@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CartItem, Category, CollectPoint, Login, Order, Product, Register, Shop, User } from "../models";
+import { CartItem, Category, CollectPoint, Login, Order, Product, Register, Shop, User } from "models";
 
 const api = axios.create(
     {
@@ -8,7 +8,7 @@ const api = axios.create(
 );
 
 api.interceptors.request.use((req) => {
-    if (localStorage.getItem('profile')) req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile') as string).token}`;
+    if (localStorage.getItem('token')) req.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
     return req;
 });
 
