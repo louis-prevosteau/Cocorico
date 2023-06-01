@@ -1,26 +1,50 @@
+import { Container } from '@mui/material';
+import { 
+  Authentication,
+  Cart,
+  Categories,
+  CollectPoints,
+  CollectPointsAdmin,
+  Homepage,
+  MyOrders,
+  MyShops,
+  NotFound,
+  Order,
+  Orders,
+  Product,
+  Profile,
+  Shop,
+  Shops, 
+  Users
+} from 'pages';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth='sm'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/shops' element={<Shops />} />
+          <Route path='/shops/:id' element={<Shop />} />
+          <Route path='/products/:id' element={<Product />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/collect-points' element={<CollectPoints />} />
+          <Route path='/auth' element={<Authentication />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/my-orders' element={<MyOrders />} />
+          <Route path='/orders/:id' element={<Order />} />
+          <Route path='/my-shops' element={<MyShops />} />
+          <Route path='/admin/collect-points' element={<CollectPointsAdmin />} />
+          <Route path='/admin/categories' element={<Categories />} />
+          <Route path='/admin/users' element={<Users />} />
+          <Route path='/admin/orders' element={<Orders />} />
+          <Route path='/*' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </Container>
   );
-}
+};
 
 export default App;
