@@ -11,14 +11,12 @@ export const handleSuccess = (message: string) => {
     });
 };
 
-export const handleError = (err: any) => {
-    if (err.response) {
-        toast.error(err.response.data.error, {
-            position: 'top-right',
-            autoClose: 5000,
-            hideProgressBar: false,
-            pauseOnHover: false,
-            closeOnClick: true
-        });
-    }
+export const handleError = (error: any) => {
+    toast.error(error.message, {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        pauseOnHover: false,
+        closeOnClick: true
+    });
 };

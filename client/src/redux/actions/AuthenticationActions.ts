@@ -2,8 +2,8 @@ import * as api from 'api';
 import { Dispatch } from "@reduxjs/toolkit";
 import { Login, Register } from "models";
 import { AUTH } from '../ActionTypes';
-import { handleError } from 'utils/toasts';
-import { toast } from 'react-toastify';
+import { handleError, handleSuccess } from 'utils/toasts';
+import i18next from 'i18next';
 
 export const register = (registerData: Register) => async (dispatch: Dispatch) => {
     try {
@@ -14,7 +14,7 @@ export const register = (registerData: Register) => async (dispatch: Dispatch) =
             }
         );
         localStorage.setItem('token', data.token);
-        toast.success('Authentification réussie');
+        handleSuccess(i18next.t('toasts.authentication.success'));
     } catch (error) {
         handleError(error);
     }
@@ -29,7 +29,7 @@ export const login = (loginData: Login) => async (dispatch: Dispatch) => {
             }
         );
         localStorage.setItem('token', data.token);
-        toast.success('Authentification réussie');
+        handleSuccess(i18next.t('toasts.authentication.success'));
     } catch (error) {
         handleError(error);
     }

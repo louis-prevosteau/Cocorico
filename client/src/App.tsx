@@ -17,8 +17,11 @@ import {
   Shops, 
   Users
 } from 'pages';
+import './i18n';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
@@ -43,6 +46,7 @@ const App = () => {
           <Route path='/*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <ToastContainer position='top-right' autoClose={5000} hideProgressBar={false} closeOnClick={true} pauseOnHover={false} rtl={false} />
     </Container>
   );
 };

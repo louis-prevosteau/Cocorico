@@ -15,7 +15,7 @@ export const ProductsReducer = (state: Product[] = [], action: AnyAction): Produ
     }
 };
 
-export const ProductReducer = (state: Product, action: AnyAction): Product => {
+export const ProductReducer = (state: Product = {}, action: AnyAction): Product => {
     switch (action.type) {
         case GET_PRODUCT:
             return action.payload;

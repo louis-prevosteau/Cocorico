@@ -1,1 +1,23 @@
-{}
+{
+    "pages": {
+        "authentication": {
+            "register": {
+                "title": "S'inscrire"
+            }
+        }
+    },
+    "forms": {
+        "authentication": {
+            "fields": {
+                "username": "Pseudo",
+                "email": "Email",
+                "password": "Mot de Passe"
+            }
+        }
+    },
+    "toasts": {
+        "authentication": {
+            "success": "Autentification réussie"
+        }
+    }
+}
