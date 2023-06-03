@@ -3,6 +3,9 @@
         "authentication": {
             "register": {
                 "title": "S'inscrire"
+            },
+            "login": {
+                "title": "Se connecter"
             }
         }
     },

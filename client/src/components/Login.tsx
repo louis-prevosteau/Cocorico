@@ -1,15 +1,14 @@
-import { Button, TextField } from '@mui/material';
+import { TextField, Button } from '@mui/material';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
-import { register } from 'redux/actions';
+import { login } from 'redux/actions';
 
-export const Register = () => {
+export const Login = () => {
 
     const [state, setState] = useState(
         {
-            username: '',
             email: '',
             password: '',
         }
@@ -19,20 +18,12 @@ export const Register = () => {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        dispatch(register(state));
+        dispatch(login(state));
     };
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <TextField
-                    type='text'
-                    variant='outlined'
-                    label={t('forms.authentication.fields.username')}
-                    onChange={(e) => setState({ ...state, username: e.target.value})}
-                    fullWidth
-                    sx={{ mb: 4 }}
-                />            
+            <form onSubmit={handleSubmit}>          
                 <TextField
                     type='email'
                     variant='outlined'
@@ -49,7 +40,7 @@ export const Register = () => {
                     fullWidth
                     sx={{ mb: 4 }}
                 />
-                <Button type='submit' variant='outlined' color='inherit'>{t('pages.authentication.register.title')}</Button>
+                <Button type='submit' variant='outlined' color='inherit'>{t('pages.authentication.login.title')}</Button>
             </form>
         </div>
     );
