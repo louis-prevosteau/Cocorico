@@ -2,7 +2,7 @@ import { Dispatch } from '@reduxjs/toolkit'
 import * as api from 'api'
 import { CollectPoint } from 'models';
 import { CREATE_COLLECT_POINT, DELETE_COLLECT_POINT, GET_COLLECT_POINTS, UPDATE_COLLECT_POINT } from 'redux/ActionTypes';
-import { handleError, handleSuccess } from 'utils/toasts';
+import { handleError, handleSuccess } from 'utils/Toasts';
 
 export const getCollectPoints = (zipcode = null) => async (dispatch: Dispatch) => {
     try {

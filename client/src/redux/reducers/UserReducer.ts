@@ -11,7 +11,7 @@ export const UsersReducer = (state: User[] = [], action: AnyAction): User[] => {
     }
 };
 
-export const ProfileReducer = (state: User[] = [], action: AnyAction): User[] => {
+export const ProfileReducer = (state: User = {}, action: AnyAction): User => {
     switch (action.type) {
         case GET_PROFILE:
         case UPDATE_PROFILE:

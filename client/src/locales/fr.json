@@ -1,4 +1,12 @@
 {
+    "menu": {
+        "shops": "Boutiques",
+        "collect-points": "Points de collecte",
+        "profile": "Tableau de bord",
+        "cart": "Mon panier",
+        "authentication": "S'inscrire / Se connecter",
+        "logout": "Se déconnecter"
+    },
     "pages": {
         "authentication": {
             "register": {
@@ -19,8 +27,7 @@
         }
     },
     "toasts": {
-        "authentication": {
-            "success": "Autentification réussie"
-        }
+        "authentication": "Autentification réussie",
+        "logout": "Utilisateur déconnecté"
     }
 }

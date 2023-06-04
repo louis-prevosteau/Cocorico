@@ -2,7 +2,7 @@ import { Dispatch } from '@reduxjs/toolkit';
 import * as api from 'api';
 import { CREATE_CATEGORY, DELETE_CATEGORY, GET_CATEGORIES, UPDATE_CATEGORY } from '../ActionTypes';
 import { Category } from 'models';
-import { handleError, handleSuccess } from 'utils/toasts';
+import { handleError, handleSuccess } from 'utils/Toasts';
 
 export const getCategories = () => async (dispatch: Dispatch) => {
     try {

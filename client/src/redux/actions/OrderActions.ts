@@ -2,7 +2,7 @@ import { Dispatch } from '@reduxjs/toolkit';
 import * as api from 'api';
 import { Order } from 'models';
 import { CREATE_ORDER, DELETE_ORDER, GET_ORDER, GET_ORDERS, UPDATE_STATUS } from 'redux/ActionTypes';
-import { handleError, handleSuccess } from 'utils/toasts';
+import { handleError, handleSuccess } from 'utils/Toasts';
 
 export const getOrders = (search = null) => async (dispatch: Dispatch) => {
     try {

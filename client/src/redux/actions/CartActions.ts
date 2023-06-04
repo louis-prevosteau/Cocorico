@@ -1,6 +1,6 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import * as api from 'api';
-import { handleError, handleSuccess } from 'utils/toasts';
+import { handleError, handleSuccess } from 'utils/Toasts';
 import { GET_CART } from '../ActionTypes';
 import { CartItem } from 'models';
 

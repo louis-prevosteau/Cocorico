@@ -2,7 +2,7 @@ import { Dispatch } from '@reduxjs/toolkit';
 import * as api from 'api';
 import { Shop } from 'models';
 import { CREATE_SHOP, DELETE_SHOP, GET_SHOP, GET_SHOPS, UPDATE_SHOP } from 'redux/ActionTypes';
-import { handleError, handleSuccess } from 'utils/toasts';
+import { handleError, handleSuccess } from 'utils/Toasts';
 
 export const getShops = (category = null) => async (dispatch: Dispatch) => {
     try {
