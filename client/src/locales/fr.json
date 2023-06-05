@@ -29,5 +29,8 @@
     "toasts": {
         "authentication": "Autentification réussie",
         "logout": "Utilisateur déconnecté"
+    },
+    "footer": {
+        "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/Cocorico"
     }
 }
