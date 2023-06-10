@@ -6,7 +6,6 @@ import {
   CollectPoints,
   CollectPointsAdmin,
   Homepage,
-  MyOrders,
   MyShops,
   NotFound,
   Order,
@@ -39,7 +38,6 @@ const App = () => {
             <Route path='/collect-points' element={<CollectPoints />} />
             <Route path='/auth' element={<Authentication />} />
             <Route path='/profile' element={<Profile />} />
-            <Route path='/my-orders' element={<MyOrders />} />
             <Route path='/orders/:id' element={<Order />} />
             <Route path='/my-shops' element={<MyShops />} />
             <Route path='/admin/collect-points' element={<CollectPointsAdmin />} />

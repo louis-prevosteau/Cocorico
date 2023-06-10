@@ -15,6 +15,22 @@
             "login": {
                 "title": "Se connecter"
             }
+        },
+        "profile": {
+            "infos": {
+                "title": "Mon profil",
+                "notSpecified": "Non renseigné",
+                "username": "Pseudo :",
+                "email": "Email :",
+                "address": "Adresse :",
+                "city": "Ville :",
+                "zipcode": "Code Postal :",
+                "country": "Pays :"
+            },
+            "myOrders": {
+                "title": "Mes commandes"
+            },
+            "actions": {}
         }
     },
     "forms": {

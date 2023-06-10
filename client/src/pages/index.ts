@@ -4,7 +4,6 @@ export * from './Categories';
 export * from './CollectPoints';
 export * from './CollectPointsAdmin';
 export * from './Homepage';
-export * from './MyOrders';
 export * from './MyShops';
 export * from './NotFound';
 export * from './Order';

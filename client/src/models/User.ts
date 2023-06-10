@@ -7,6 +7,7 @@ export interface User {
     roles?: string[];
     address?: string;
     city?: string;
+    zipcode?: string;
     country?: string;
 };
 
