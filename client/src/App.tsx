@@ -28,7 +28,7 @@ const App = () => {
     <div>
       <BrowserRouter>
         <HeaderBar />
-        <Container maxWidth='sm'>
+        <Container maxWidth='md'>
           <Routes>
             <Route path='/' element={<Homepage />} />
             <Route path='/shops' element={<Shops />} />

@@ -17,7 +17,7 @@ export const ProfileManager = () => {
 
     return (
         <Paper elevation={3}>
-            <Typography variant='h3' align='center'>{t('pages.profile.infos.title')}</Typography>
+            <Typography variant='h5' align='center'>{t('pages.profile.infos.title')}</Typography>
             <Avatar src={profile.avatar} alt={profile.username} sx={{ alignItems: 'center', m: 2 }} />
             <Box m={2}>
                 <Typography variant='h5'>{t('pages.profile.infos.username')} {profile.username}</Typography>

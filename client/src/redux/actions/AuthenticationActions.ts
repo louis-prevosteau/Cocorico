@@ -1,7 +1,7 @@
 import * as api from 'api';
 import { Dispatch } from "@reduxjs/toolkit";
 import { Login, Register } from "models";
-import { AUTH } from '../ActionTypes';
+import { AUTH, CLEAR_AUTH } from '../ActionTypes';
 import { handleError, handleSuccess } from 'utils/Toasts';
 import i18next from 'i18next';
 
@@ -39,10 +39,11 @@ export const logout = () => (dispatch: Dispatch) => {
     try {
         dispatch(
             {
-                type: AUTH
+                type: CLEAR_AUTH
             }
         );
         localStorage.removeItem('token');
+        handleSuccess(i18next.t('toasts.logout'));
     } catch (error) {
         handleError(error);
     }

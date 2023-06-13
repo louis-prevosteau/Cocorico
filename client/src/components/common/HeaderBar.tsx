@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { AppDispatch, RootState } from 'redux/Store';
 import { logout } from 'redux/actions';
-import { MENU_ITEMS, USER_MENU_ITEMS } from 'utils/MenuLinks';
+import { MENU_ITEMS, USER_MENU_ITEMS } from 'utils/Links';
 
 export const HeaderBar = () => {
 
@@ -19,7 +19,8 @@ export const HeaderBar = () => {
     const navigate = useNavigate();
     const { isAuth, profile } = useSelector((state: RootState) => state);
     const dispatch = useDispatch<AppDispatch>();
-    const { t } = useTranslation()
+    const { t } = useTranslation();
+    const token = localStorage.getItem('token');
 
     const handleLogout = () => {
         dispatch(logout());
@@ -80,7 +81,7 @@ export const HeaderBar = () => {
                         ))}
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
-                        {isAuth ? (
+                        {(isAuth || token) ? (
                             <div>
                                 <IconButton onClick={handleOpenUserMenu} aria-controls="user-menu"  color='inherit'>
                                     {profile.avatar ? (

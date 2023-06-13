@@ -1,0 +1,1 @@
+export const MY_ORDERS_COLUMNS = ['id', 'status', 'created_at'];

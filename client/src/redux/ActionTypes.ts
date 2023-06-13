@@ -1,4 +1,5 @@
 export const AUTH = 'AUTH';
+export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const GET_CART = 'GET_CART';
 export const GET_CATEGORIES = 'GET_CATEGORIES';
 export const CREATE_CATEGORY = 'CREATE_CATEGORY';

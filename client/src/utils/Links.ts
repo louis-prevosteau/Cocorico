@@ -19,3 +19,22 @@ export const USER_MENU_ITEMS = [
         name: 'menu.cart'
     },
 ];
+
+export const ADMIN_ACTIONS = [
+    {
+        path: '/admin/categories',
+        name: 'categories'
+    },
+    {
+        path: '/admin/collect-points',
+        name: 'collectPoints'
+    },
+    {
+        path: '/admin/orders',
+        name: 'orders'
+    },
+    {
+        path: '/admin/users',
+        name: 'users'
+    }
+];

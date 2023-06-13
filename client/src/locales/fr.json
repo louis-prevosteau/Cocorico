@@ -28,7 +28,8 @@
                 "country": "Pays :"
             },
             "myOrders": {
-                "title": "Mes commandes"
+                "title": "Mes commandes",
+                "noOrders": "Il n'y a pas de commandes"
             },
             "actions": {}
         }
@@ -40,6 +41,13 @@
                 "email": "Email",
                 "password": "Mot de Passe"
             }
+        }
+    },
+    "columns": {
+        "myOrders": {
+            "id": "n °",
+            "status": "Etat",
+            "created_at": "Date"
         }
     },
     "toasts": {
