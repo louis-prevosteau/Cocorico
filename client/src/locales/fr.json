@@ -31,7 +31,13 @@
                 "title": "Mes commandes",
                 "noOrders": "Il n'y a pas de commandes"
             },
-            "actions": {}
+            "actions": {
+                "categories": "Gérer les catégories",
+                "collectPoints": "Gérer les points de collectes",
+                "orders": "Gérer les commandes",
+                "users": "Tous les utilisateurs"
+
+            }
         }
     },
     "forms": {

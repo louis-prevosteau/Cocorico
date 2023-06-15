@@ -1,19 +1,10 @@
 import { Avatar, Box, Paper, Typography } from '@mui/material';
-import React, { useEffect } from 'react';
+import { User } from 'models';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from 'redux/Store';
-import { getProfile } from 'redux/actions';
 
-export const ProfileManager = () => {
+export const ProfileManager = ({ profile }: { profile: User }) => {
 
-    const { profile } = useSelector((state: RootState) => state);
-    const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
-
-    useEffect(() => {
-        dispatch(getProfile());
-    }, []);
 
     return (
         <Paper elevation={3}>

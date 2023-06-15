@@ -38,3 +38,10 @@ export const ADMIN_ACTIONS = [
         name: 'users'
     }
 ];
+
+export const SELLER_ACTIONS = [
+    {
+        path: '/my-shops',
+        name: 'myShops'
+    }
+];
