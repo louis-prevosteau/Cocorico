@@ -7,3 +7,4 @@ export * from './manager/MyOrders';
 export * from './manager/ProfileManager';
 export * from './manager/Register';
 export * from './manager/ShopCard';
+export * from './manager/UpdateProfileDialog';
