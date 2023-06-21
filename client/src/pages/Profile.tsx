@@ -23,7 +23,9 @@ export const Profile = () => {
                 <Grid item>
                     <ProfileManager profile={profile} />
                 </Grid>
-                <DashboardActions profile={profile} />
+                <Grid item>
+                    <DashboardActions profile={profile} />
+                </Grid>
             </Grid>
         </Box>
     );

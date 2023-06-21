@@ -1,6 +1,7 @@
 import { Avatar, Box, Paper, Typography } from '@mui/material';
 import { User } from 'models';
 import { useTranslation } from 'react-i18next';
+import { UpdateProfileDialog } from './UpdateProfileDialog';
 
 export const ProfileManager = ({ profile }: { profile: User }) => {
 
@@ -17,6 +18,7 @@ export const ProfileManager = ({ profile }: { profile: User }) => {
                 <Typography variant='h5'>{t('pages.profile.infos.city')} {profile.city ? profile.city : t('pages.profile.infos.notSpecified')}</Typography>
                 <Typography variant='h5'>{t('pages.profile.infos.zipcode')} {profile.zipcode ? profile.zipcode : t('pages.profile.infos.notSpecified')}</Typography>
                 <Typography variant='h5'>{t('pages.profile.infos.country')} {profile.country ? profile.country : t('pages.profile.infos.notSpecified')}</Typography>
+                <UpdateProfileDialog profile={profile} />
             </Box>
         </Paper>
     );

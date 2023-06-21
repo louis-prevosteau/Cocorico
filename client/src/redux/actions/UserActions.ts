@@ -1,5 +1,6 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import * as api from 'api';
+import i18next from 'i18next';
 import { User } from 'models';
 import { GET_PROFILE, GET_USERS, UPDATE_PROFILE } from 'redux/ActionTypes';
 import { handleError, handleSuccess } from 'utils/Toasts';
@@ -41,7 +42,7 @@ export const updateProfile = (profile: User) => async (dispatch: Dispatch) => {
                 payload: data
             }
         );
-        handleSuccess('hello world');
+        handleSuccess(i18next.t('toasts.update'));
     } catch (error) {
         handleError(error);     
     }

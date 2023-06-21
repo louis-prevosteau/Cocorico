@@ -1,4 +1,8 @@
 {
+    "common": {
+        "update": "Modifier",
+        "cancel": "Annuler"
+    },
     "menu": {
         "shops": "Boutiques",
         "collect-points": "Points de collecte",
@@ -47,6 +51,18 @@
                 "email": "Email",
                 "password": "Mot de Passe"
             }
+        },
+        "updateProfile": {
+            "title": "Modifier mon profil",
+            "fields": {
+                "username": "Pseudo",
+                "email": "Email",
+                "avatar": "Avatar",
+                "address": "Adresse",
+                "city": "Ville",
+                "zipcode": "Code Postal",
+                "country": "Pays"
+            }
         }
     },
     "columns": {
@@ -58,7 +74,8 @@
     },
     "toasts": {
         "authentication": "Autentification réussie",
-        "logout": "Utilisateur déconnecté"
+        "logout": "Utilisateur déconnecté",
+        "update": "Mise à jour réussie"
     },
     "footer": {
         "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/Cocorico"

@@ -14,7 +14,7 @@ export const MyOrders = () => {
 
     useEffect(() => {
         dispatch(getMyOrders());
-    });
+    }, []);
 
     return (
         <Paper elevation={3}>
