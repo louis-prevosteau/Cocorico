@@ -12,7 +12,7 @@ export default combineReducers(
     {
         isAuth: AuthenticationReducer,
         cart: CartReducer,
-        cartegories: CategoriesReducer,
+        categories: CategoriesReducer,
         collectPoints: CollectPointsReducer,
         orders : OrdersReducer,
         order: OrderReducer,

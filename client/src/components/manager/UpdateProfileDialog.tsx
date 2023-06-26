@@ -35,11 +35,11 @@ export const UpdateProfileDialog = ({ profile }: { profile: User }) => {
                 <Edit />
             </IconButton>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>{t('forms.updateProfile.title')}</DialogTitle>
+                <DialogTitle>{t('forms.profile.update')}</DialogTitle>
                 <DialogContent>
                     <TextField
                         type='text'
-                        label={t('forms.updateProfile.fields.username')}
+                        label={t('forms.profile.fields.username')}
                         value={state.profile.username}
                         fullWidth
                         onChange={(e) => setState({ ...state, profile: { ...state.profile, username: e.target.value }})}
@@ -47,14 +47,14 @@ export const UpdateProfileDialog = ({ profile }: { profile: User }) => {
                     />
                     <TextField
                         type='email'
-                        label={t('forms.updateProfile.fields.email')}
+                        label={t('forms.profile.fields.email')}
                         value={state.profile.email}
                         fullWidth
                         onChange={(e) => setState({ ...state, profile: { ...state.profile, email: e.target.value }})}
                         sx={{ mb: 4 }}
                     />
                     <FormControl fullWidth sx={{ mb: 4 }}>
-                        <InputLabel>{t('forms.updateProfile.fields.avatar')}</InputLabel>
+                        <InputLabel>{t('forms.profile.fields.avatar')}</InputLabel>
                         <FileBase
                             type='file'
                             multiple={false}
@@ -63,7 +63,7 @@ export const UpdateProfileDialog = ({ profile }: { profile: User }) => {
                     </FormControl>
                     <TextField
                         type='text'
-                        label={t('forms.updateProfile.fields.address')}
+                        label={t('forms.profile.fields.address')}
                         value={state.profile.address}
                         fullWidth
                         onChange={(e) => setState({ ...state, profile: { ...state.profile, address: e.target.value }})}
@@ -71,7 +71,7 @@ export const UpdateProfileDialog = ({ profile }: { profile: User }) => {
                     />
                     <TextField
                         type='text'
-                        label={t('forms.updateProfile.fields.city')}
+                        label={t('forms.profile.fields.city')}
                         value={state.profile.city}
                         fullWidth
                         onChange={(e) => setState({ ...state, profile: { ...state.profile, city: e.target.value }})}
@@ -79,7 +79,7 @@ export const UpdateProfileDialog = ({ profile }: { profile: User }) => {
                     />
                     <TextField
                         type='text'
-                        label={t('forms.updateProfile.fields.zipcode')}
+                        label={t('forms.profile.fields.zipcode')}
                         value={state.profile.zipcode}
                         fullWidth
                         onChange={(e) => setState({ ...state, profile: { ...state.profile, zipcode: e.target.value }})}
@@ -87,7 +87,7 @@ export const UpdateProfileDialog = ({ profile }: { profile: User }) => {
                     />
                     <TextField
                         type='text'
-                        label={t('forms.updateProfile.fields.country')}
+                        label={t('forms.profile.fields.country')}
                         value={state.profile.country}
                         fullWidth
                         onChange={(e) => setState({ ...state, profile: { ...state.profile, country: e.target.value }})}

@@ -12,13 +12,13 @@ export interface User {
 };
 
 export interface Register {
-    username?: string;
-    email?: string;
-    password?: string;
+    username: string;
+    email: string;
+    password: string;
     roles?: string[];
 };
 
 export interface Login {
-    email?: string;
-    password?: string;
+    email: string;
+    password: string;
 };

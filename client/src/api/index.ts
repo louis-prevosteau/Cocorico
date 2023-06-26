@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CartItem, Category, CollectPoint, Login, Order, Product, Register, Shop, User } from "models";
+import { CartItem, CollectPoint, CreateCategory, Login, Order, Product, Register, Shop, User } from "models";
 
 const api = axios.create(
     {
@@ -20,8 +20,8 @@ export const addProductToCart = (data: CartItem) => api.patch('add-product', dat
 export const deleteProductFromCart = (item: string) => api.patch(`del-product/${item}`);
 export const clearCart = () => api.patch('clear');
 export const getCategories = () => api.get('categories');
-export const createCategory = (data: Category) => api.post('categories', data);
-export const upadateCategory = (id: string, data: Category) => api.patch(`categories/${id}`, data);
+export const createCategory = (data: CreateCategory) => api.post('categories', data);
+export const upadateCategory = (id: string, data: CreateCategory) => api.patch(`categories/${id}`, data);
 export const deleteCategory = (id: string) => api.delete(`categories/${id}`);
 export const getCollectPoints = (zipcode = null) => api.get(zipcode ? `collect-points?zipcode=${zipcode}` : 'collect-points');
 export const createCollectPoint = (data: CollectPoint) => api.post('collect-points', data);

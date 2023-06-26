@@ -1,5 +1,7 @@
 {
     "common": {
+        "create": "Ajouter",
+        "delete":"Supprimer",
         "update": "Modifier",
         "cancel": "Annuler"
     },
@@ -19,6 +21,9 @@
             "login": {
                 "title": "Se connecter"
             }
+        },
+        "categories": {
+            "title": "Catégories"
         },
         "profile": {
             "infos": {
@@ -42,6 +47,9 @@
                 "users": "Tous les utilisateurs"
 
             }
+        },
+        "shops": {
+            "title": "Toutes les boutiques"
         }
     },
     "forms": {
@@ -52,8 +60,19 @@
                 "password": "Mot de Passe"
             }
         },
-        "updateProfile": {
-            "title": "Modifier mon profil",
+        "category": {
+            "create": "Ajouer une catégorie",
+            "update": "Modifier une catégorie",
+            "delete": {
+                "title": "Supprimer une catégorie",
+                "message": "Vous êtes sur le poit de supprimer une catégorie."
+            },
+            "fields": {
+                "name": "Nom"
+            }
+        },
+        "profile": {
+            "update": "Modifier mon profil",
             "fields": {
                 "username": "Pseudo",
                 "email": "Email",
@@ -74,6 +93,8 @@
     },
     "toasts": {
         "authentication": "Autentification réussie",
+        "create": "Ajout réussi",
+        "delete": "Suppression réussie",
         "logout": "Utilisateur déconnecté",
         "update": "Mise à jour réussie"
     },
