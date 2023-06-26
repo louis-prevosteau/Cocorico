@@ -1,5 +1,5 @@
 import { Edit } from '@mui/icons-material';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, IconButton, InputLabel, TextField } from '@mui/material';
+import { Dialog, DialogContent, DialogTitle, FormControl, IconButton, InputLabel, TextField } from '@mui/material';
 import { User } from 'models';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +8,7 @@ import { AppDispatch } from 'redux/Store';
 import { updateProfile } from 'redux/actions';
 // @ts-ignore
 import FileBase from 'react-file-base64';
+import { DialogGroupButton } from 'components';
 
 export const UpdateProfileDialog = ({ profile }: { profile: User }) => {
 
@@ -94,10 +95,12 @@ export const UpdateProfileDialog = ({ profile }: { profile: User }) => {
                         sx={{ mb: 4 }}
                     />                
                 </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleSubmit}>{t('common.update')}</Button>
-                    <Button onClick={handleOpen}>{t('common.cancel')}</Button>
-                </DialogActions>
+                <DialogGroupButton
+                    handleClick={handleSubmit}
+                    handleCancel={handleOpen}
+                    actionText={t('common.update')}
+                    cancelText={t('common.cancel')}
+                />
             </Dialog>
         </div>
     );

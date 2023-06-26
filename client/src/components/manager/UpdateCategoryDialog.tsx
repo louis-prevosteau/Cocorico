@@ -1,7 +1,8 @@
 import { Edit } from '@mui/icons-material';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, TextField } from '@mui/material';
+import { Dialog, DialogContent, DialogTitle, IconButton, TextField } from '@mui/material';
+import { DialogGroupButton } from 'components';
 import { Category } from 'models';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
@@ -44,10 +45,12 @@ export const UpdateCategoryDialog = ({ category }: { category: Category }) => {
                         sx={{ mb: 4 }}
                     />
                 </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleSubmit}>{t('common.update')}</Button>
-                    <Button onClick={handleOpen}>{t('common.cancel')}</Button>
-                </DialogActions>
+                <DialogGroupButton
+                    handleClick={handleSubmit}
+                    handleCancel={handleOpen}
+                    actionText={t('common.update')}
+                    cancelText={t('common.cancel')}
+                />
             </Dialog>
         </div>
     );

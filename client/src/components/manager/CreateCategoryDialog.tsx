@@ -1,6 +1,7 @@
 import { Add } from '@mui/icons-material';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, TextField } from '@mui/material';
-import React, { useState } from 'react';
+import { Dialog, DialogContent, DialogTitle, IconButton, TextField } from '@mui/material';
+import { DialogGroupButton } from 'components';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
@@ -44,10 +45,12 @@ export const CreateCategoryDialog = () => {
                         sx={{ mb: 4 }}
                     />
                 </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleSubmit}>{t('common.create')}</Button>
-                    <Button onClick={handleOpen}>{t('common.cancel')}</Button>
-                </DialogActions>
+                <DialogGroupButton
+                    handleClick={handleSubmit}
+                    handleCancel={handleOpen}
+                    actionText={t('common.create')}
+                    cancelText={t('common.cancel')}
+                />
             </Dialog>
         </div>
     );
