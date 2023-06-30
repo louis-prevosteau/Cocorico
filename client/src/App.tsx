@@ -4,7 +4,6 @@ import {
   Cart,
   Categories,
   CollectPoints,
-  CollectPointsAdmin,
   Homepage,
   MyShops,
   NotFound,
@@ -17,13 +16,23 @@ import {
   Users
 } from 'pages';
 import './i18n';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { Footer, HeaderBar } from 'components';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from 'redux/Store';
+import { getProfile } from 'redux/actions';
 
 const App = () => {
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(getProfile());
+  }, []);
+  
   return (
     <div>
       <BrowserRouter>
@@ -40,7 +49,6 @@ const App = () => {
             <Route path='/profile' element={<Profile />} />
             <Route path='/orders/:id' element={<Order />} />
             <Route path='/my-shops' element={<MyShops />} />
-            <Route path='/admin/collect-points' element={<CollectPointsAdmin />} />
             <Route path='/admin/categories' element={<Categories />} />
             <Route path='/admin/users' element={<Users />} />
             <Route path='/admin/orders' element={<Orders />} />

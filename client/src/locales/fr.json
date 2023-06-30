@@ -7,7 +7,7 @@
     },
     "menu": {
         "shops": "Boutiques",
-        "collect-points": "Points de collecte",
+        "collectPoints": "Points de collecte",
         "profile": "Tableau de bord",
         "cart": "Mon panier",
         "authentication": "S'inscrire / Se connecter",
@@ -71,6 +71,19 @@
                 "name": "Nom"
             }
         },
+        "collectPoint": {
+            "create": "Ajouer un point de collecte",
+            "update": "Modifier un point de collecte",
+            "delete": {
+                "title": "Supprimer un point de collecte",
+                "message": "Vous êtes sur le poit de supprimer un point de collecte."
+            },
+            "fields": {
+                "address": "Adresse",
+                "city": "Ville",
+                "zipcode": "Code postal"
+            }
+        },
         "profile": {
             "update": "Modifier mon profil",
             "fields": {
@@ -85,6 +98,12 @@
         }
     },
     "columns": {
+        "collectPoints": {
+            "address": "Adresse",
+            "city": "Ville",
+            "zipcode": "Code postal",
+            "actions": "Actions"
+        },
         "myOrders": {
             "id": "n °",
             "status": "Etat",

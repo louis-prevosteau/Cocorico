@@ -1,6 +1,5 @@
 import { ButtonGroup, Grid, List, ListItem, ListItemText, Typography } from '@mui/material';
-import { DeleteCategoryDialog, UpdateCategoryDialog } from 'components';
-import { CreateCategoryDialog } from 'components/manager/CreateCategoryDialog';
+import { CreateCategoryDialog, DeleteCategoryDialog, UpdateCategoryDialog } from 'components';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';

@@ -5,7 +5,7 @@ export const MENU_ITEMS = [
     },
     {
         path: '/collect-points',
-        name: 'menu.collect-points'
+        name: 'menu.collectPoints'
     },
 ];
 
@@ -26,7 +26,7 @@ export const ADMIN_ACTIONS = [
         name: 'categories'
     },
     {
-        path: '/admin/collect-points',
+        path: '/collect-points',
         name: 'collectPoints'
     },
     {

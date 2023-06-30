@@ -2,7 +2,6 @@ export * from './Authentication';
 export * from './Cart';
 export * from './Categories';
 export * from './CollectPoints';
-export * from './CollectPointsAdmin';
 export * from './Homepage';
 export * from './MyShops';
 export * from './NotFound';

@@ -28,6 +28,6 @@ export class CollectPointsService {
   }
 
   remove(filter) {
-    this.collectPointModel.findOneAndDelete(filter);
+    return this.collectPointModel.findOneAndDelete(filter);
   }
 }
