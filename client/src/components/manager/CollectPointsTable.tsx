@@ -1,7 +1,7 @@
 import { ButtonGroup, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-import { DeleteCollectPointDialog, UpdateCollectPointDialog } from 'components';
+import { DeleteCollectPointDialog, SearchInput, UpdateCollectPointDialog } from 'components';
 import { User } from 'models';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/Store';
@@ -18,8 +18,13 @@ export const CollectPointsTable = ({ user }: { user: User }) => {
         dispatch(getCollectPoints());
     }, []);
 
+    const handleChange = (e: any) => {
+        dispatch(getCollectPoints(e.target.value));
+    };
+
     return (
         <TableContainer component={Paper}>
+            <SearchInput label={t('pages.collectPoints.searchByZipcode')} handleChange={handleChange} />
             <Table sx={{ minWidth: 700 }}>
                 <TableHead>
                     <TableRow>

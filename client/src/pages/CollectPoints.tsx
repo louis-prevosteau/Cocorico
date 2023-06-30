@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { CollectPointsTable, CreateCollectPointDialog } from 'components';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -11,6 +11,7 @@ export const CollectPoints = () => {
 
     return (
         <div>
+            <Typography variant='h4' align='center'>{t('pages.collectPoints.title')}</Typography>
             <CollectPointsTable user={profile} />
             <Grid display={'flex'} justifyContent={'right'}>
                 <CreateCollectPointDialog />

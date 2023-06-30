@@ -25,6 +25,10 @@
         "categories": {
             "title": "Catégories"
         },
+        "collectPoints": {
+            "title": "Points de collectes",
+            "searchByZipcode": "Rechercher par code postal"
+        },
         "profile": {
             "infos": {
                 "title": "Mon profil",
