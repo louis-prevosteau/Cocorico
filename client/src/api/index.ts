@@ -47,3 +47,12 @@ export const deleteShop = (id: string) => api.delete(`shops/${id}`);
 export const getUsers = () => api.get('users');
 export const getProfile = () => api.get('users/profile');
 export const updateProfile = (data: User) => api.patch('users/profile', data);
+
+const apiGeo = axios.create(
+    {
+        baseURL: process.env.REACT_APP_API_GEO_URL
+    }
+);
+
+export const getDepartments = () => apiGeo.get('departements');
+export const getCities = (department: string) => apiGeo.get(`departements/${department}/communes`);

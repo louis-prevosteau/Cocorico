@@ -84,6 +84,7 @@
             },
             "fields": {
                 "address": "Adresse",
+                "department": "Département",
                 "city": "Ville",
                 "zipcode": "Code postal"
             }

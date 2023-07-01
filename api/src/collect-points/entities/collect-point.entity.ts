@@ -13,6 +13,9 @@ export class CollectPoint {
 
   @Prop({ required: true })
   zipcode: string;
+
+  @Prop({ required: true })
+  department: string;
 }
 
 export const CollectPointSchema = SchemaFactory.createForClass(CollectPoint);

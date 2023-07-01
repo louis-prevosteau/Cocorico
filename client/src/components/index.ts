@@ -6,6 +6,7 @@ export * from './common/SearchInput';
 export * from './manager/CollectPointsTable';
 export * from './manager/CreateCategoryDialog';
 export * from './manager/CreateCollectPointDialog';
+export * from './manager/CreateShopDialog';
 export * from './manager/DashboardActions';
 export * from './manager/DeleteCategoryDialog';
 export * from './manager/DeleteCollectPointDialog';

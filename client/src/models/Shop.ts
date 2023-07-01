@@ -11,3 +11,12 @@ export interface Shop {
     department?: string;
     owner?: User;
 };
+
+export interface CreateShop {
+    name: string;
+    image?: string;
+    description: string;
+    category: string;
+    city: string;
+    department: string;
+}

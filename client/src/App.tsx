@@ -23,7 +23,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Footer, HeaderBar } from 'components';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
-import { getProfile } from 'redux/actions';
+import { getDepartments, getProfile } from 'redux/actions';
 
 const App = () => {
 
@@ -31,6 +31,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getProfile());
+    dispatch(getDepartments());
   }, []);
   
   return (

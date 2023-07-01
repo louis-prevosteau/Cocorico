@@ -27,3 +27,5 @@ export const DELETE_SHOP = 'DELETE_SHOP';
 export const GET_USERS = 'GET_USERS';
 export const GET_PROFILE = 'GET_PROFILE';
 export const UPDATE_PROFILE = 'UPDATE_PROFILE';
+export const GET_DEPARTMENTS = 'GET_DEPARTMENTS';
+export const GET_CITIES = 'GET_CITIES';
