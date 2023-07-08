@@ -16,7 +16,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/Store';
-import { getCitiesByDepartment, updateCollectPoint } from 'redux/actions';
+import { getCitiesByZipcode, updateCollectPoint } from 'redux/actions';
 
 export const UpdateCollectPointDialog = ({
     collectPoint,
@@ -33,14 +33,6 @@ export const UpdateCollectPointDialog = ({
 
     const handleOpen = () => {
         setState({ ...state, open: !state.open });
-    };
-
-    const handleChangeDepartment = (e: any) => {
-        setState({
-            ...state,
-            collectPoint: { ...state.collectPoint, department: e.target.value },
-        });
-        dispatch(getCitiesByDepartment(e.target.value));
     };
 
     const handleSubmit = (e: any) => {
@@ -77,16 +69,45 @@ export const UpdateCollectPointDialog = ({
                             {t('forms.collectPoint.fields.department')}
                         </InputLabel>
                         <Select
-                            onChange={handleChangeDepartment}
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    collectPoint: {
+                                        ...state.collectPoint,
+                                        department: e.target.value,
+                                    },
+                                })
+                            }
                             value={state.collectPoint.department}
                         >
                             {departments.map((dep) => (
-                                <MenuItem key={dep.code} value={dep.code}>
-                                    {dep.nom} {dep.code}
+                                <MenuItem key={dep.code} value={dep.nom}>
+                                    {dep.nom} - {dep.code}
                                 </MenuItem>
                             ))}
                         </Select>
                     </FormControl>
+                    <TextField
+                        type="text"
+                        value={state.collectPoint.zipcode}
+                        label={t('forms.collectPoint.fields.zipcode')}
+                        fullWidth
+                        onChange={(e) =>
+                            setState({
+                                ...state,
+                                collectPoint: {
+                                    ...state.collectPoint,
+                                    zipcode: e.target.value,
+                                },
+                            })
+                        }
+                        onBlur={() =>
+                            dispatch(
+                                getCitiesByZipcode(state.collectPoint.zipcode),
+                            )
+                        }
+                        sx={{ mb: 4 }}
+                    />
                     <FormControl sx={{ mb: 4, width: 300 }}>
                         <InputLabel>
                             {t('forms.collectPoint.fields.city')}
@@ -110,22 +131,6 @@ export const UpdateCollectPointDialog = ({
                             ))}
                         </Select>
                     </FormControl>
-                    <TextField
-                        type="text"
-                        value={state.collectPoint.zipcode}
-                        label={t('forms.collectPoint.fields.zipcode')}
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                collectPoint: {
-                                    ...state.collectPoint,
-                                    zipcode: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
                 </DialogContent>
                 <DialogGroupButton
                     handleClick={handleSubmit}

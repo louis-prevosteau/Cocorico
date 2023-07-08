@@ -9,7 +9,9 @@ export const Footer = () => {
         <AppBar position="static" style={{ top: 'auto', bottom: 0 }}>
             <BottomNavigation style={{ background: '#E6001F' }}>
                 <Typography align="center" variant="body2" color="inherit">
-                    {t('footer.credit', { year: new Date().getFullYear() })}
+                    {t('footer.credit', {
+                        year: new Date().getFullYear(),
+                    })}
                 </Typography>
             </BottomNavigation>
         </AppBar>

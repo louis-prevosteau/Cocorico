@@ -75,7 +75,9 @@ export const CollectPointsTable = ({ user }: { user: User }) => {
                             {user.roles?.includes('admin') && (
                                 <TableCell>
                                     <ButtonGroup
-                                        sx={{ backgroundColor: '#001D6E' }}
+                                        sx={{
+                                            backgroundColor: '#001D6E',
+                                        }}
                                     >
                                         <UpdateCollectPointDialog
                                             collectPoint={collectPoint}

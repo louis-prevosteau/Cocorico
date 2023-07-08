@@ -30,7 +30,10 @@ export const Register = () => {
                     variant="outlined"
                     label={t('forms.authentication.fields.username')}
                     onChange={(e) =>
-                        setState({ ...state, username: e.target.value })
+                        setState({
+                            ...state,
+                            username: e.target.value,
+                        })
                     }
                     fullWidth
                     sx={{ mb: 4 }}
@@ -40,7 +43,10 @@ export const Register = () => {
                     variant="outlined"
                     label={t('forms.authentication.fields.email')}
                     onChange={(e) =>
-                        setState({ ...state, email: e.target.value })
+                        setState({
+                            ...state,
+                            email: e.target.value,
+                        })
                     }
                     fullWidth
                     sx={{ mb: 4 }}
@@ -50,7 +56,10 @@ export const Register = () => {
                     variant="outlined"
                     label={t('forms.authentication.fields.password')}
                     onChange={(e) =>
-                        setState({ ...state, password: e.target.value })
+                        setState({
+                            ...state,
+                            password: e.target.value,
+                        })
                     }
                     fullWidth
                     sx={{ mb: 4 }}

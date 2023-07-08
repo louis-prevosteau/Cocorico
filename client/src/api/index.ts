@@ -75,7 +75,5 @@ const apiGeo = axios.create({
 });
 
 export const getDepartments = () => apiGeo.get('departements');
-export const getDepartmentByName = (name: string) =>
-    apiGeo.get(`departements?nom=${name}`);
-export const getCitiesByDepartment = (department: string) =>
-    apiGeo.get(`departements/${department}/communes`);
+export const getCitiesByZipcode = (zipcode: string) =>
+    apiGeo.get(`communes?codePostal=${zipcode}`);

@@ -3,10 +3,10 @@ import * as api from 'api';
 import { GET_CITIES } from 'redux/ActionTypes';
 import { handleError } from 'utils/Toasts';
 
-export const getCitiesByDepartment =
-    (department: string) => async (dispatch: Dispatch) => {
+export const getCitiesByZipcode =
+    (zipcode: string) => async (dispatch: Dispatch) => {
         try {
-            const { data } = await api.getCitiesByDepartment(department);
+            const { data } = await api.getCitiesByZipcode(zipcode);
             dispatch({
                 type: GET_CITIES,
                 payload: data,

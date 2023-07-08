@@ -17,7 +17,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/Store';
-import { createShop, getCitiesByDepartment } from 'redux/actions';
+import { createShop } from 'redux/actions';
 
 export const CreateShopDialog = () => {
     const [state, setState] = useState({
@@ -40,14 +40,6 @@ export const CreateShopDialog = () => {
         setState({ ...state, open: !state.open });
     };
 
-    const handleChangeDepartment = (e: any) => {
-        setState({
-            ...state,
-            shop: { ...state.shop, department: e.target.value },
-        });
-        dispatch(getCitiesByDepartment(e.target.value));
-    };
-
     const handleSubmit = (e: any) => {
         e.preventDefault();
         dispatch(createShop(state.shop));
@@ -57,7 +49,10 @@ export const CreateShopDialog = () => {
         <div>
             <IconButton
                 onClick={handleOpen}
-                sx={{ backgroundColor: '#001D6E', color: 'white' }}
+                sx={{
+                    backgroundColor: '#001D6E',
+                    color: 'white',
+                }}
             >
                 <Add />
             </IconButton>
@@ -71,7 +66,10 @@ export const CreateShopDialog = () => {
                         onChange={(e) =>
                             setState({
                                 ...state,
-                                shop: { ...state.shop, name: e.target.value },
+                                shop: {
+                                    ...state.shop,
+                                    name: e.target.value,
+                                },
                             })
                         }
                         sx={{ mb: 4 }}
@@ -121,7 +119,7 @@ export const CreateShopDialog = () => {
                         <InputLabel>
                             {t('forms.shop.fields.department')}
                         </InputLabel>
-                        <Select onChange={handleChangeDepartment}>
+                        <Select>
                             {departments.map((department) => (
                                 <MenuItem
                                     key={department.code}

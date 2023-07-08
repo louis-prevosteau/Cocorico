@@ -10,7 +10,13 @@ export const SearchInput = ({
     handleChange: React.ChangeEventHandler;
 }) => {
     return (
-        <Box sx={{ display: 'flex', alignItems: 'flex-end', margin: 1 }}>
+        <Box
+            sx={{
+                display: 'flex',
+                alignItems: 'flex-end',
+                margin: 1,
+            }}
+        >
             <Search sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
             <TextField type="text" label={label} onChange={handleChange} />
         </Box>

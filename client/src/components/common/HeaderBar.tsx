@@ -57,7 +57,10 @@ export const HeaderBar = () => {
                     <Box
                         sx={{
                             flexGrow: 1,
-                            display: { xs: 'flex', md: 'none' },
+                            display: {
+                                xs: 'flex',
+                                md: 'none',
+                            },
                         }}
                     >
                         <IconButton
@@ -82,7 +85,10 @@ export const HeaderBar = () => {
                             open={Boolean(state.anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display: { xs: 'block', md: 'none' },
+                                display: {
+                                    xs: 'block',
+                                    md: 'none',
+                                },
                             }}
                         >
                             {MENU_ITEMS.map((item) => (
@@ -95,13 +101,20 @@ export const HeaderBar = () => {
                     <Box
                         sx={{
                             flexGrow: 1,
-                            display: { xs: 'none', md: 'flex' },
+                            display: {
+                                xs: 'none',
+                                md: 'flex',
+                            },
                         }}
                     >
                         {MENU_ITEMS.map((item) => (
                             <Button
                                 onClick={() => navigate(item.path)}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{
+                                    my: 2,
+                                    color: 'white',
+                                    display: 'block',
+                                }}
                             >
                                 {t(item.name)}
                             </Button>
@@ -146,7 +159,11 @@ export const HeaderBar = () => {
                         ) : (
                             <Button
                                 onClick={() => navigate('/auth')}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{
+                                    my: 2,
+                                    color: 'white',
+                                    display: 'block',
+                                }}
                             >
                                 {t('menu.authentication')}
                             </Button>

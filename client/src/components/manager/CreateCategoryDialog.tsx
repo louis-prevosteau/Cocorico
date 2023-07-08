@@ -36,7 +36,10 @@ export const CreateCategoryDialog = () => {
         <div>
             <IconButton
                 onClick={handleOpen}
-                sx={{ backgroundColor: '#001D6E', color: 'white' }}
+                sx={{
+                    backgroundColor: '#001D6E',
+                    color: 'white',
+                }}
             >
                 <Add />
             </IconButton>

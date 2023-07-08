@@ -8,7 +8,7 @@ import { ProductsReducer, ProductReducer } from './ProductReducer';
 import { ShopsReducer, ShopReducer } from './ShopReducer';
 import { UsersReducer, ProfileReducer } from './UserReducer';
 import { CitiesReducer } from './CityReducer';
-import { DepartmentReducer, DepartmentsReducer } from './DepartmentReducer';
+import { DepartmentsReducer } from './DepartmentReducer';
 
 export default combineReducers({
     isAuth: AuthenticationReducer,
@@ -17,7 +17,6 @@ export default combineReducers({
     cities: CitiesReducer,
     collectPoints: CollectPointsReducer,
     departments: DepartmentsReducer,
-    department: DepartmentReducer,
     orders: OrdersReducer,
     order: OrderReducer,
     products: ProductsReducer,

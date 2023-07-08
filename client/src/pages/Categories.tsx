@@ -36,7 +36,11 @@ export const Categories = () => {
                     <ListItem
                         key={category._id}
                         secondaryAction={
-                            <ButtonGroup sx={{ backgroundColor: '#001D6E' }}>
+                            <ButtonGroup
+                                sx={{
+                                    backgroundColor: '#001D6E',
+                                }}
+                            >
                                 <UpdateCategoryDialog category={category} />
                                 <DeleteCategoryDialog category={category} />
                             </ButtonGroup>

@@ -17,7 +17,12 @@ export const Authentication = () => {
     return (
         <Box sx={{ width: '100%', typography: 'body1' }}>
             <TabContext value={state.value}>
-                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                <Box
+                    sx={{
+                        borderBottom: 1,
+                        borderColor: 'divider',
+                    }}
+                >
                     <TabList onChange={handleChange}>
                         <Tab
                             label={t('pages.authentication.register.title')}
