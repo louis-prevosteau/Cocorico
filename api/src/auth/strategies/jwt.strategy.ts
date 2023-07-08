@@ -6,15 +6,15 @@ import { JwtConstants } from '../constants';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(private usersService: UsersService) {
-    super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      ignoreExpiration: false,
-      secretOrKey: JwtConstants.token,
-    });
-  }
+    constructor(private usersService: UsersService) {
+        super({
+            jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+            ignoreExpiration: false,
+            secretOrKey: JwtConstants.token,
+        });
+    }
 
-  async validate(payload: any) {
-    return await this.usersService.findOne({ _id: payload.sub });
-  }
+    async validate(payload: any) {
+        return await this.usersService.findOne({ _id: payload.sub });
+    }
 }

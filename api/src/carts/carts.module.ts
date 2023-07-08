@@ -7,12 +7,12 @@ import { CartItemsModule } from 'src/cart-items/cart-items.module';
 import { ProductsModule } from 'src/products/products.module';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([{ name: 'Cart', schema: CartSchema }]),
-    CartItemsModule,
-    ProductsModule,
-  ],
-  controllers: [CartsController],
-  providers: [CartsService],
+    imports: [
+        MongooseModule.forFeature([{ name: 'Cart', schema: CartSchema }]),
+        CartItemsModule,
+        ProductsModule,
+    ],
+    controllers: [CartsController],
+    providers: [CartsService],
 })
 export class CartsModule {}

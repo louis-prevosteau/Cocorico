@@ -6,20 +6,20 @@ import { CartItemDocument } from './entities/cart-item.entity';
 
 @Injectable()
 export class CartItemsService {
-  constructor(
-    @InjectModel('CartItem')
-    private readonly cartItemModel: Model<CartItemDocument>,
-  ) {}
+    constructor(
+        @InjectModel('CartItem')
+        private readonly cartItemModel: Model<CartItemDocument>,
+    ) {}
 
-  findOne(filter) {
-    return this.cartItemModel.findOne(filter);
-  }
+    findOne(filter) {
+        return this.cartItemModel.findOne(filter);
+    }
 
-  create(createCartItemDto: CreateCartItemDto) {
-    return this.cartItemModel.create(createCartItemDto);
-  }
+    create(createCartItemDto: CreateCartItemDto) {
+        return this.cartItemModel.create(createCartItemDto);
+    }
 
-  remove(filter) {
-    return this.cartItemModel.findOneAndDelete(filter);
-  }
+    remove(filter) {
+        return this.cartItemModel.findOneAndDelete(filter);
+    }
 }

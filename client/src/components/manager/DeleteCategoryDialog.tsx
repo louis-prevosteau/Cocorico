@@ -1,5 +1,11 @@
 import { Delete } from '@mui/icons-material';
-import { Dialog, DialogContent, DialogContentText, DialogTitle, IconButton } from '@mui/material';
+import {
+    Dialog,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+    IconButton,
+} from '@mui/material';
 import { DialogGroupButton } from 'components';
 import { Category } from 'models';
 import { useState } from 'react';
@@ -9,12 +15,9 @@ import { AppDispatch } from 'redux/Store';
 import { deleteCategory } from 'redux/actions';
 
 export const DeleteCategoryDialog = ({ category }: { category: Category }) => {
-
-    const [state, setState] = useState(
-        {
-            open: false
-        }
-    );
+    const [state, setState] = useState({
+        open: false,
+    });
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
 
@@ -35,7 +38,9 @@ export const DeleteCategoryDialog = ({ category }: { category: Category }) => {
             <Dialog open={state.open} onClose={handleOpen}>
                 <DialogTitle>{t('forms.category.delete.title')}</DialogTitle>
                 <DialogContent>
-                    <DialogContentText>{t('forms.category.delete.message')}</DialogContentText>
+                    <DialogContentText>
+                        {t('forms.category.delete.message')}
+                    </DialogContentText>
                 </DialogContent>
                 <DialogGroupButton
                     handleClick={handleDelete}

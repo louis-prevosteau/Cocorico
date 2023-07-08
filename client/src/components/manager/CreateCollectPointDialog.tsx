@@ -1,27 +1,40 @@
 import { Add } from '@mui/icons-material';
-import { IconButton, Dialog, DialogTitle, DialogContent, TextField, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import {
+    IconButton,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    TextField,
+    Select,
+    MenuItem,
+    FormControl,
+    InputLabel,
+} from '@mui/material';
 import { DialogGroupButton } from 'components/common/DialogGroupButton';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/Store';
-import { createCollectPoint, getCities } from 'redux/actions';
+import {
+    createCollectPoint,
+    getCitiesByDepartment,
+    getDepartmentByName,
+} from 'redux/actions';
 
 export const CreateCollectPointDialog = () => {
-
-    const[state, setState] = useState(
-        {
-            open : false,
-            collectPoint: {
-                address: '',
-                city: '',
-                zipcode: '',
-                department: ''
-            }
-        }
-    );
+    const [state, setState] = useState({
+        open: false,
+        collectPoint: {
+            address: '',
+            city: '',
+            zipcode: '',
+            department: '',
+        },
+    });
     const dispatch = useDispatch<AppDispatch>();
-    const { cities, departments } = useSelector((state: RootState) => state);
+    const { cities, department, departments } = useSelector(
+        (state: RootState) => state,
+    );
     const { t } = useTranslation();
 
     const handleOpen = () => {
@@ -29,8 +42,12 @@ export const CreateCollectPointDialog = () => {
     };
 
     const handleChangeDepartment = (e: any) => {
-        setState({ ...state, collectPoint: { ...state.collectPoint, department: e.target.value }});
-        dispatch(getCities(e.target.value));
+        dispatch(getDepartmentByName(e.target.value));
+        setState({
+            ...state,
+            collectPoint: { ...state.collectPoint, department: department.nom },
+        });
+        dispatch(getCitiesByDepartment(department.code));
     };
 
     const handleSubmit = (e: any) => {
@@ -40,40 +57,77 @@ export const CreateCollectPointDialog = () => {
 
     return (
         <div>
-            <IconButton onClick={handleOpen} sx={{ backgroundColor: '#001D6E', color: 'white' }}>
+            <IconButton
+                onClick={handleOpen}
+                sx={{ backgroundColor: '#001D6E', color: 'white' }}
+            >
                 <Add />
             </IconButton>
             <Dialog open={state.open} onClose={handleOpen}>
                 <DialogTitle>{t('forms.collectPoint.create')}</DialogTitle>
                 <DialogContent>
                     <TextField
-                        type='text'
+                        type="text"
                         label={t('forms.collectPoint.fields.address')}
                         fullWidth
-                        onChange={(e) => setState({ ...state, collectPoint: { ...state.collectPoint, address: e.target.value }})}
+                        onChange={(e) =>
+                            setState({
+                                ...state,
+                                collectPoint: {
+                                    ...state.collectPoint,
+                                    address: e.target.value,
+                                },
+                            })
+                        }
                         sx={{ mb: 4 }}
                     />
                     <FormControl sx={{ mb: 4, width: 300 }}>
-                        <InputLabel>{t('forms.collectPoint.fields.department')}</InputLabel>
+                        <InputLabel>
+                            {t('forms.collectPoint.fields.department')}
+                        </InputLabel>
                         <Select onChange={handleChangeDepartment}>
                             {departments.map((dep) => (
-                                <MenuItem key={dep.code} value={dep.code}>{dep.nom} {dep.code}</MenuItem>
+                                <MenuItem key={dep.code} value={dep.nom}>
+                                    {dep.nom} {dep.code}
+                                </MenuItem>
                             ))}
                         </Select>
                     </FormControl>
                     <FormControl sx={{ mb: 4, width: 300 }}>
-                        <InputLabel>{t('forms.collectPoint.fields.city')}</InputLabel>
-                        <Select onChange={(e) => setState({ ...state, collectPoint: { ...state.collectPoint, city: e.target.value as string }})}>
+                        <InputLabel>
+                            {t('forms.collectPoint.fields.city')}
+                        </InputLabel>
+                        <Select
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    collectPoint: {
+                                        ...state.collectPoint,
+                                        city: e.target.value as string,
+                                    },
+                                })
+                            }
+                        >
                             {cities.map((city) => (
-                                <MenuItem key={city.code} value={city.nom}>{city.nom}</MenuItem>
+                                <MenuItem key={city.code} value={city.nom}>
+                                    {city.nom}
+                                </MenuItem>
                             ))}
                         </Select>
                     </FormControl>
                     <TextField
-                        type='text'
+                        type="text"
                         label={t('forms.collectPoint.fields.zipcode')}
                         fullWidth
-                        onChange={(e) => setState({ ...state, collectPoint: { ...state.collectPoint, zipcode: e.target.value }})}
+                        onChange={(e) =>
+                            setState({
+                                ...state,
+                                collectPoint: {
+                                    ...state.collectPoint,
+                                    zipcode: e.target.value,
+                                },
+                            })
+                        }
                         sx={{ mb: 4 }}
                     />
                 </DialogContent>

@@ -6,12 +6,12 @@ import { ShopSchema } from './entities/shop.entity';
 import { ProductsModule } from 'src/products/products.module';
 
 @Module({
-  imports: [
-    forwardRef(() => ProductsModule),
-    MongooseModule.forFeature([{ name: 'Shop', schema: ShopSchema }]),
-  ],
-  controllers: [ShopsController],
-  providers: [ShopsService],
-  exports: [ShopsService],
+    imports: [
+        forwardRef(() => ProductsModule),
+        MongooseModule.forFeature([{ name: 'Shop', schema: ShopSchema }]),
+    ],
+    controllers: [ShopsController],
+    providers: [ShopsService],
+    exports: [ShopsService],
 })
 export class ShopsModule {}

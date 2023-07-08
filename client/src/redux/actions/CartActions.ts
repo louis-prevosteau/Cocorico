@@ -9,64 +9,56 @@ export const getCart = () => async (dispatch: Dispatch) => {
         const cart = (await api.getCart()).data;
         if (!cart) {
             const { data } = await api.createCart();
-            dispatch(
-                {
-                    type: GET_CART,
-                    payload: data
-                }
-            );
+            dispatch({
+                type: GET_CART,
+                payload: data,
+            });
         } else {
-            dispatch(
-                {
-                    type: GET_CART,
-                    payload: cart
-                }
-            );
+            dispatch({
+                type: GET_CART,
+                payload: cart,
+            });
         }
     } catch (error) {
-        handleError(error)
-    }
-};
-
-export const addProductToCart = (cartItem: CartItem) => async (dispatch: Dispatch) => {
-    try {
-        const { data } = await api.addProductToCart(cartItem);
-        dispatch(
-            {
-                type: GET_CART,
-                payload: data
-            }
-        );
-        handleSuccess('hello world');
-    } catch (error) {
         handleError(error);
     }
 };
 
-export const deleteProductFromCart = (item: string) => async (dispatch: Dispatch) => {
-    try {
-        const { data } = await api.deleteProductFromCart(item);
-        dispatch(
-            {
+export const addProductToCart =
+    (cartItem: CartItem) => async (dispatch: Dispatch) => {
+        try {
+            const { data } = await api.addProductToCart(cartItem);
+            dispatch({
                 type: GET_CART,
-                payload: data
-            }
-        );
-        handleSuccess('hello world');
-    } catch (error) {
-        handleError(error);
-    }
-};
+                payload: data,
+            });
+            handleSuccess('hello world');
+        } catch (error) {
+            handleError(error);
+        }
+    };
+
+export const deleteProductFromCart =
+    (item: string) => async (dispatch: Dispatch) => {
+        try {
+            const { data } = await api.deleteProductFromCart(item);
+            dispatch({
+                type: GET_CART,
+                payload: data,
+            });
+            handleSuccess('hello world');
+        } catch (error) {
+            handleError(error);
+        }
+    };
 
 export const clearCart = () => async (dispatch: Dispatch) => {
     try {
         const { data } = await api.clearCart();
-        dispatch(
-            {
-                type: GET_CART,
-                payload: data
-            }
-        );
+        dispatch({
+            type: GET_CART,
+            payload: data,
+        });
         handleSuccess('hello world');
     } catch (error) {
         handleError(error);

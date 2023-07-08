@@ -7,7 +7,6 @@ import { AppDispatch, RootState } from 'redux/Store';
 import { getShops } from 'redux/actions';
 
 export const Shops = () => {
-
     const { shops } = useSelector((state: RootState) => state);
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
@@ -18,7 +17,9 @@ export const Shops = () => {
 
     return (
         <div>
-            <Typography variant='h4' align='center'>{t('pages.shops.title')}</Typography>
+            <Typography variant="h4" align="center">
+                {t('pages.shops.title')}
+            </Typography>
             <GridList>
                 {shops.map((shop) => (
                     <Grid item key={shop._id}>

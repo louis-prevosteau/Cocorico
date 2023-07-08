@@ -5,17 +5,17 @@ export type CollectPointDocument = HydratedDocument<CollectPoint>;
 
 @Schema({ timestamps: true })
 export class CollectPoint {
-  @Prop({ required: true })
-  address: string;
+    @Prop({ required: true })
+    address: string;
 
-  @Prop({ required: true })
-  city: string;
+    @Prop({ required: true })
+    city: string;
 
-  @Prop({ required: true })
-  zipcode: string;
+    @Prop({ required: true })
+    zipcode: string;
 
-  @Prop({ required: true })
-  department: string;
+    @Prop({ required: true })
+    department: string;
 }
 
 export const CollectPointSchema = SchemaFactory.createForClass(CollectPoint);

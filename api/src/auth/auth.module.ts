@@ -8,14 +8,14 @@ import { JwtConstants } from './constants';
 import { JwtStrategy } from './strategies/jwt.strategy';
 
 @Module({
-  imports: [
-    UsersModule,
-    PassportModule,
-    JwtModule.register({
-      secret: JwtConstants.token,
-    }),
-  ],
-  controllers: [AuthController],
-  providers: [AuthService, JwtStrategy],
+    imports: [
+        UsersModule,
+        PassportModule,
+        JwtModule.register({
+            secret: JwtConstants.token,
+        }),
+    ],
+    controllers: [AuthController],
+    providers: [AuthService, JwtStrategy],
 })
 export class AuthModule {}

@@ -1,6 +1,6 @@
 export class CreateCollectPointDto {
-  readonly address: string;
-  readonly city: string;
-  readonly zipcode: string;
-  readonly department: string;
+    readonly address: string;
+    readonly city: string;
+    readonly zipcode: string;
+    readonly department: string;
 }

@@ -1,8 +1,17 @@
-import { AnyAction } from "@reduxjs/toolkit";
-import { Order } from "models";
-import { CREATE_ORDER, DELETE_ORDER, GET_ORDER, GET_ORDERS, UPDATE_STATUS } from "redux/ActionTypes";
+import { AnyAction } from '@reduxjs/toolkit';
+import { Order } from 'models';
+import {
+    CREATE_ORDER,
+    DELETE_ORDER,
+    GET_ORDER,
+    GET_ORDERS,
+    UPDATE_STATUS,
+} from 'redux/ActionTypes';
 
-export const OrdersReducer = (state: Order[] = [], action: AnyAction): Order[] => {
+export const OrdersReducer = (
+    state: Order[] = [],
+    action: AnyAction,
+): Order[] => {
     switch (action.type) {
         case GET_ORDERS:
             return action.payload;

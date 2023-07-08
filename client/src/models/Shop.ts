@@ -1,5 +1,5 @@
-import { Category } from "./Category";
-import { User } from "./User";
+import { Category } from './Category';
+import { User } from './User';
 
 export interface Shop {
     _id?: string;
@@ -10,7 +10,7 @@ export interface Shop {
     city?: string;
     department?: string;
     owner?: User;
-};
+}
 
 export interface CreateShop {
     name: string;

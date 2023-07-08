@@ -8,14 +8,14 @@ export type OrderDocument = HydratedDocument<Order>;
 
 @Schema({ timestamps: true })
 export class Order {
-  @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'User' })
-  user: User;
+    @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'User' })
+    user: User;
 
-  @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'Cart' })
-  cart: Cart;
+    @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'Cart' })
+    cart: Cart;
 
-  @Prop({ default: OrderStatuses.Waiting, enum: OrderStatuses })
-  status: string;
+    @Prop({ default: OrderStatuses.Waiting, enum: OrderStatuses })
+    status: string;
 }
 
 export const OrderSchema = SchemaFactory.createForClass(Order);

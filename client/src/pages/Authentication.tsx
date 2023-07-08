@@ -5,12 +5,9 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export const Authentication = () => {
-
-    const [state, setState] = useState(
-        {
-            value: 'register'
-        }
-    );
+    const [state, setState] = useState({
+        value: 'register',
+    });
     const { t } = useTranslation();
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -22,13 +19,19 @@ export const Authentication = () => {
             <TabContext value={state.value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleChange}>
-                        <Tab label={t('pages.authentication.register.title')} value='register' />
-                        <Tab label={t('pages.authentication.login.title')} value='login' />                
+                        <Tab
+                            label={t('pages.authentication.register.title')}
+                            value="register"
+                        />
+                        <Tab
+                            label={t('pages.authentication.login.title')}
+                            value="login"
+                        />
                     </TabList>
-                    <TabPanel value='register'>
+                    <TabPanel value="register">
                         <Register />
                     </TabPanel>
-                    <TabPanel value='login'>
+                    <TabPanel value="login">
                         <Login />
                     </TabPanel>
                 </Box>

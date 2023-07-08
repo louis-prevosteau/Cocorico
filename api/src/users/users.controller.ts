@@ -8,24 +8,24 @@ import { User } from './users.decorator';
 
 @Controller('users')
 export class UsersController {
-  constructor(private readonly usersService: UsersService) {}
+    constructor(private readonly usersService: UsersService) {}
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(Role.Admin)
-  @Get()
-  findAll() {
-    return this.usersService.findAll();
-  }
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @Roles(Role.Admin)
+    @Get()
+    findAll() {
+        return this.usersService.findAll();
+    }
 
-  @UseGuards(JwtAuthGuard)
-  @Get('profile')
-  findOne(@User() user) {
-    return this.usersService.findOne({ _id: user._id });
-  }
+    @UseGuards(JwtAuthGuard)
+    @Get('profile')
+    findOne(@User() user) {
+        return this.usersService.findOne({ _id: user._id });
+    }
 
-  @UseGuards(JwtAuthGuard)
-  @Patch('profile')
-  update(@User() user, @Body() updateUserDto: UpdateUserDto) {
-    return this.usersService.update({ _id: user._id }, updateUserDto);
-  }
+    @UseGuards(JwtAuthGuard)
+    @Patch('profile')
+    update(@User() user, @Body() updateUserDto: UpdateUserDto) {
+        return this.usersService.update({ _id: user._id }, updateUserDto);
+    }
 }

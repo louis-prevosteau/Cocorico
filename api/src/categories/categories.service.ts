@@ -7,24 +7,24 @@ import { CategoryDocument } from './entities/category.entity';
 
 @Injectable()
 export class CategoriesService {
-  constructor(
-    @InjectModel('Category')
-    private readonly categoryModel: Model<CategoryDocument>,
-  ) {}
+    constructor(
+        @InjectModel('Category')
+        private readonly categoryModel: Model<CategoryDocument>,
+    ) {}
 
-  create(createCategoryDto: CreateCategoryDto) {
-    return this.categoryModel.create(createCategoryDto);
-  }
+    create(createCategoryDto: CreateCategoryDto) {
+        return this.categoryModel.create(createCategoryDto);
+    }
 
-  findAll() {
-    return this.categoryModel.find();
-  }
+    findAll() {
+        return this.categoryModel.find();
+    }
 
-  update(filter, updateCategoryDto: UpdateCategoryDto) {
-    return this.categoryModel.findOneAndUpdate(filter, updateCategoryDto);
-  }
+    update(filter, updateCategoryDto: UpdateCategoryDto) {
+        return this.categoryModel.findOneAndUpdate(filter, updateCategoryDto);
+    }
 
-  remove(filter) {
-    return this.categoryModel.findOneAndDelete(filter);
-  }
+    remove(filter) {
+        return this.categoryModel.findOneAndDelete(filter);
+    }
 }

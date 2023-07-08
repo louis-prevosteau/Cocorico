@@ -14,28 +14,28 @@ import { CartsModule } from './carts/carts.module';
 import { OrdersModule } from './orders/orders.module';
 
 @Module({
-  imports: [
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: async (config: ConfigService) => ({
-        uri: config.get('MONGO_URI'),
-      }),
-    }),
-    ConfigModule.forRoot({
-      isGlobal: true,
-    }),
-    UsersModule,
-    AuthModule,
-    CategoriesModule,
-    CollectPointsModule,
-    ShopsModule,
-    ProductsModule,
-    CartItemsModule,
-    CartsModule,
-    OrdersModule,
-  ],
-  controllers: [AppController],
-  providers: [AppService],
+    imports: [
+        MongooseModule.forRootAsync({
+            imports: [ConfigModule],
+            inject: [ConfigService],
+            useFactory: async (config: ConfigService) => ({
+                uri: config.get('MONGO_URI'),
+            }),
+        }),
+        ConfigModule.forRoot({
+            isGlobal: true,
+        }),
+        UsersModule,
+        AuthModule,
+        CategoriesModule,
+        CollectPointsModule,
+        ShopsModule,
+        ProductsModule,
+        CartItemsModule,
+        CartsModule,
+        OrdersModule,
+    ],
+    controllers: [AppController],
+    providers: [AppService],
 })
 export class AppModule {}

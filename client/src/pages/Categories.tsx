@@ -1,5 +1,16 @@
-import { ButtonGroup, Grid, List, ListItem, ListItemText, Typography } from '@mui/material';
-import { CreateCategoryDialog, DeleteCategoryDialog, UpdateCategoryDialog } from 'components';
+import {
+    ButtonGroup,
+    Grid,
+    List,
+    ListItem,
+    ListItemText,
+    Typography,
+} from '@mui/material';
+import {
+    CreateCategoryDialog,
+    DeleteCategoryDialog,
+    UpdateCategoryDialog,
+} from 'components';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +18,6 @@ import { AppDispatch, RootState } from 'redux/Store';
 import { getCategories } from 'redux/actions';
 
 export const Categories = () => {
-
     const { categories } = useSelector((state: RootState) => state);
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
@@ -18,7 +28,9 @@ export const Categories = () => {
 
     return (
         <div>
-            <Typography variant='h4' align='center'>{t('pages.categories.title')}</Typography>
+            <Typography variant="h4" align="center">
+                {t('pages.categories.title')}
+            </Typography>
             <List>
                 {categories.map((category) => (
                     <ListItem

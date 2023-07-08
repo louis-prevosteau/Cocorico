@@ -1,6 +1,12 @@
-import { AnyAction } from "@reduxjs/toolkit"
-import { Shop } from "models"
-import { CREATE_SHOP, DELETE_SHOP, GET_SHOP, GET_SHOPS, UPDATE_SHOP } from "redux/ActionTypes";
+import { AnyAction } from '@reduxjs/toolkit';
+import { Shop } from 'models';
+import {
+    CREATE_SHOP,
+    DELETE_SHOP,
+    GET_SHOP,
+    GET_SHOPS,
+    UPDATE_SHOP,
+} from 'redux/ActionTypes';
 
 export const ShopsReducer = (state: Shop[] = [], action: AnyAction): Shop[] => {
     switch (action.type) {

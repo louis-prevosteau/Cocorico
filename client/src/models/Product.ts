@@ -1,4 +1,4 @@
-import { Shop } from "./Shop";
+import { Shop } from './Shop';
 
 export interface Product {
     _id?: string;

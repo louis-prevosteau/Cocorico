@@ -7,27 +7,27 @@ import { CollectPointDocument } from './entities/collect-point.entity';
 
 @Injectable()
 export class CollectPointsService {
-  constructor(
-    @InjectModel('CollectPoint')
-    private readonly collectPointModel: Model<CollectPointDocument>,
-  ) {}
+    constructor(
+        @InjectModel('CollectPoint')
+        private readonly collectPointModel: Model<CollectPointDocument>,
+    ) {}
 
-  create(createCollectPointDto: CreateCollectPointDto) {
-    return this.collectPointModel.create(createCollectPointDto);
-  }
+    create(createCollectPointDto: CreateCollectPointDto) {
+        return this.collectPointModel.create(createCollectPointDto);
+    }
 
-  findAll(filter = {}) {
-    return this.collectPointModel.find(filter).sort('zipcode');
-  }
+    findAll(filter = {}) {
+        return this.collectPointModel.find(filter).sort('zipcode');
+    }
 
-  update(filter, updateCollectPointDto: UpdateCollectPointDto) {
-    return this.collectPointModel.findOneAndUpdate(
-      filter,
-      updateCollectPointDto,
-    );
-  }
+    update(filter, updateCollectPointDto: UpdateCollectPointDto) {
+        return this.collectPointModel.findOneAndUpdate(
+            filter,
+            updateCollectPointDto,
+        );
+    }
 
-  remove(filter) {
-    return this.collectPointModel.findOneAndDelete(filter);
-  }
+    remove(filter) {
+        return this.collectPointModel.findOneAndDelete(filter);
+    }
 }

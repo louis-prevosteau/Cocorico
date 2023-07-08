@@ -1,7 +1,7 @@
 {
     "common": {
         "create": "Ajouter",
-        "delete":"Supprimer",
+        "delete": "Supprimer",
         "update": "Modifier",
         "cancel": "Annuler"
     },
@@ -49,7 +49,6 @@
                 "collectPoints": "Gérer les points de collectes",
                 "orders": "Gérer les commandes",
                 "users": "Tous les utilisateurs"
-
             }
         },
         "shops": {
@@ -99,6 +98,15 @@
                 "city": "Ville",
                 "zipcode": "Code Postal",
                 "country": "Pays"
+            }
+        },
+        "shop": {
+            "fields": {
+                "name": "Nom",
+                "description": "Description",
+                "category": "Catégorie",
+                "city": "Ville",
+                "department": "Département"
             }
         }
     },

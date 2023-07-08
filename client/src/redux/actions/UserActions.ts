@@ -8,42 +8,36 @@ import { handleError, handleSuccess } from 'utils/Toasts';
 export const getUsers = () => async (dispatch: Dispatch) => {
     try {
         const { data } = await api.getUsers();
-        dispatch(
-            {
-                type: GET_USERS,
-                payload: data
-            }
-        );
+        dispatch({
+            type: GET_USERS,
+            payload: data,
+        });
     } catch (error) {
-        handleError(error);     
+        handleError(error);
     }
 };
 
 export const getProfile = () => async (dispatch: Dispatch) => {
     try {
         const { data } = await api.getProfile();
-        dispatch(
-            {
-                type: GET_PROFILE,
-                payload: data
-            }
-        );
+        dispatch({
+            type: GET_PROFILE,
+            payload: data,
+        });
     } catch (error) {
-        handleError(error);     
+        handleError(error);
     }
 };
 
 export const updateProfile = (profile: User) => async (dispatch: Dispatch) => {
     try {
         const { data } = await api.updateProfile(profile);
-        dispatch(
-            {
-                type: UPDATE_PROFILE,
-                payload: data
-            }
-        );
+        dispatch({
+            type: UPDATE_PROFILE,
+            payload: data,
+        });
         handleSuccess(i18next.t('toasts.update'));
     } catch (error) {
-        handleError(error);     
+        handleError(error);
     }
 };

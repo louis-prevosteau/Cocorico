@@ -1,5 +1,4 @@
-import { toast } from "react-toastify";
-
+import { toast } from 'react-toastify';
 
 export const handleSuccess = (message: string) => {
     toast.success(message, {
@@ -7,7 +6,7 @@ export const handleSuccess = (message: string) => {
         autoClose: 5000,
         hideProgressBar: false,
         pauseOnHover: false,
-        closeOnClick: true
+        closeOnClick: true,
     });
 };
 
@@ -17,6 +16,6 @@ export const handleError = (error: any) => {
         autoClose: 5000,
         hideProgressBar: false,
         pauseOnHover: false,
-        closeOnClick: true
+        closeOnClick: true,
     });
 };

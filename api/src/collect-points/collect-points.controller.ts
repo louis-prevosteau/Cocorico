@@ -1,13 +1,13 @@
 import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-  UseGuards,
-  Query,
+    Controller,
+    Get,
+    Post,
+    Body,
+    Patch,
+    Param,
+    Delete,
+    UseGuards,
+    Query,
 } from '@nestjs/common';
 import { CollectPointsService } from './collect-points.service';
 import { CreateCollectPointDto } from './dto/create-collect-point.dto';
@@ -18,36 +18,39 @@ import { Role, Roles } from 'src/roles/roles.decorator';
 
 @Controller('collect-points')
 export class CollectPointsController {
-  constructor(private readonly collectPointsService: CollectPointsService) {}
+    constructor(private readonly collectPointsService: CollectPointsService) {}
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(Role.Admin)
-  @Post()
-  create(@Body() createCollectPointDto: CreateCollectPointDto) {
-    return this.collectPointsService.create(createCollectPointDto);
-  }
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @Roles(Role.Admin)
+    @Post()
+    create(@Body() createCollectPointDto: CreateCollectPointDto) {
+        return this.collectPointsService.create(createCollectPointDto);
+    }
 
-  @Get()
-  findAll(@Query('zipcode') zipcode) {
-    return this.collectPointsService.findAll(
-      zipcode ? { zipcode: { $regex: '.*' + zipcode + '.*' } } : {},
-    );
-  }
+    @Get()
+    findAll(@Query('zipcode') zipcode) {
+        return this.collectPointsService.findAll(
+            zipcode ? { zipcode: { $regex: '.*' + zipcode + '.*' } } : {},
+        );
+    }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(Role.Admin)
-  @Patch(':id')
-  update(
-    @Param('id') id: string,
-    @Body() updateCollectPointDto: UpdateCollectPointDto,
-  ) {
-    return this.collectPointsService.update({ _id: id }, updateCollectPointDto);
-  }
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @Roles(Role.Admin)
+    @Patch(':id')
+    update(
+        @Param('id') id: string,
+        @Body() updateCollectPointDto: UpdateCollectPointDto,
+    ) {
+        return this.collectPointsService.update(
+            { _id: id },
+            updateCollectPointDto,
+        );
+    }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(Role.Admin)
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.collectPointsService.remove({ _id: id });
-  }
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @Roles(Role.Admin)
+    @Delete(':id')
+    remove(@Param('id') id: string) {
+        return this.collectPointsService.remove({ _id: id });
+    }
 }

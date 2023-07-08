@@ -7,40 +7,40 @@ import { OrderDocument } from './entities/order.entity';
 
 @Injectable()
 export class OrdersService {
-  constructor(
-    @InjectModel('Order') private readonly orderModel: Model<OrderDocument>,
-  ) {}
+    constructor(
+        @InjectModel('Order') private readonly orderModel: Model<OrderDocument>,
+    ) {}
 
-  create(createOrderDto: CreateOrderDto) {
-    return this.orderModel.create(createOrderDto);
-  }
+    create(createOrderDto: CreateOrderDto) {
+        return this.orderModel.create(createOrderDto);
+    }
 
-  findAll(filter = {}) {
-    return this.orderModel
-      .find(filter)
-      .populate('user')
-      .populate({
-        path: 'cart',
-        populate: { path: 'products', populate: { path: 'product' } },
-      })
-      .sort('-createdAt');
-  }
+    findAll(filter = {}) {
+        return this.orderModel
+            .find(filter)
+            .populate('user')
+            .populate({
+                path: 'cart',
+                populate: { path: 'products', populate: { path: 'product' } },
+            })
+            .sort('-createdAt');
+    }
 
-  findOne(filter) {
-    return this.orderModel
-      .findOne(filter)
-      .populate('user')
-      .populate({
-        path: 'cart',
-        populate: { path: 'products', populate: { path: 'product' } },
-      });
-  }
+    findOne(filter) {
+        return this.orderModel
+            .findOne(filter)
+            .populate('user')
+            .populate({
+                path: 'cart',
+                populate: { path: 'products', populate: { path: 'product' } },
+            });
+    }
 
-  update(filter, updateOrderDto: UpdateOrderDto) {
-    return this.orderModel.findOneAndUpdate(filter, updateOrderDto);
-  }
+    update(filter, updateOrderDto: UpdateOrderDto) {
+        return this.orderModel.findOneAndUpdate(filter, updateOrderDto);
+    }
 
-  remove(filter) {
-    return this.orderModel.findOneAndDelete(filter);
-  }
+    remove(filter) {
+        return this.orderModel.findOneAndDelete(filter);
+    }
 }

@@ -6,21 +6,21 @@ import { CartDocument } from './entities/cart.entity';
 
 @Injectable()
 export class CartsService {
-  constructor(
-    @InjectModel('Cart') private readonly cartModel: Model<CartDocument>,
-  ) {}
+    constructor(
+        @InjectModel('Cart') private readonly cartModel: Model<CartDocument>,
+    ) {}
 
-  findOne(filter) {
-    return this.cartModel
-      .findOne(filter)
-      .populate({ path: 'products', populate: { path: 'product' } });
-  }
+    findOne(filter) {
+        return this.cartModel
+            .findOne(filter)
+            .populate({ path: 'products', populate: { path: 'product' } });
+    }
 
-  create(createCartDto: CreateCartDto) {
-    return this.cartModel.create(createCartDto);
-  }
+    create(createCartDto: CreateCartDto) {
+        return this.cartModel.create(createCartDto);
+    }
 
-  update(filter, data) {
-    return this.cartModel.findOneAndUpdate(filter, data);
-  }
+    update(filter, data) {
+        return this.cartModel.findOneAndUpdate(filter, data);
+    }
 }

@@ -1,5 +1,11 @@
 import { Edit } from '@mui/icons-material';
-import { Dialog, DialogContent, DialogTitle, IconButton, TextField } from '@mui/material';
+import {
+    Dialog,
+    DialogContent,
+    DialogTitle,
+    IconButton,
+    TextField,
+} from '@mui/material';
 import { DialogGroupButton } from 'components';
 import { Category } from 'models';
 import { useState } from 'react';
@@ -9,13 +15,10 @@ import { AppDispatch } from 'redux/Store';
 import { updateCategory } from 'redux/actions';
 
 export const UpdateCategoryDialog = ({ category }: { category: Category }) => {
-
-    const [state, setState] = useState(
-        {
-            open: false,
-            category: category
-        }
-    );
+    const [state, setState] = useState({
+        open: false,
+        category: category,
+    });
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
 
@@ -37,11 +40,19 @@ export const UpdateCategoryDialog = ({ category }: { category: Category }) => {
                 <DialogTitle>{t('forms.category.update')}</DialogTitle>
                 <DialogContent>
                     <TextField
-                        type='text'
+                        type="text"
                         label={t('forms.category.fields.name')}
                         value={state.category.name}
                         fullWidth
-                        onChange={(e) => setState({ ...state, category: { ...state.category, name: e.target.value }})}
+                        onChange={(e) =>
+                            setState({
+                                ...state,
+                                category: {
+                                    ...state.category,
+                                    name: e.target.value,
+                                },
+                            })
+                        }
                         sx={{ mb: 4 }}
                     />
                 </DialogContent>

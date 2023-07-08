@@ -4,12 +4,17 @@ import { useSelector } from 'react-redux';
 import { RootState } from 'redux/Store';
 
 export const Profile = () => {
-
     const { profile } = useSelector((state: RootState) => state);
-    
+
     return (
         <Box>
-            <Grid container spacing={3} direction='row' alignItems={'center'} justifyContent={'center'}>
+            <Grid
+                container
+                spacing={3}
+                direction="row"
+                alignItems={'center'}
+                justifyContent={'center'}
+            >
                 <Grid item>
                     <MyOrders />
                 </Grid>
