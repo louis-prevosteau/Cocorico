@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { CollectPointsService } from './collect-points.service';
-import { CollectPointsController } from './collect-points.controller';
 import { MongooseModule } from '@nestjs/mongoose';
+import { CollectPointsController } from './collect-points.controller';
+import { CollectPointsService } from './collect-points.service';
 import { CollectPointSchema } from './entities/collect-point.entity';
 
 @Module({

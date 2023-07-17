@@ -10,7 +10,7 @@ import {
     MenuItem,
     Select,
 } from '@mui/material';
-import { DialogGroupButton } from 'components/common/DialogGroupButton';
+import { DialogGroupButton } from 'components';
 import { CollectPoint } from 'models';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -1,24 +1,20 @@
-import { Delete } from '@mui/icons-material';
 import {
-    IconButton,
     Dialog,
     DialogTitle,
     DialogContent,
     DialogContentText,
+    MenuItem,
+    Typography,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
-import { CollectPoint } from 'models';
-import React, { useState } from 'react';
+import { Shop } from 'models';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
-import { deleteCollectPoint } from 'redux/actions';
+import { deleteShop } from 'redux/actions';
 
-export const DeleteCollectPointDialog = ({
-    collectPoint,
-}: {
-    collectPoint: CollectPoint;
-}) => {
+const DeleteShopDialog = ({ shop }: { shop: Shop }) => {
     const [state, setState] = useState({
         open: false,
     });
@@ -31,21 +27,18 @@ export const DeleteCollectPointDialog = ({
 
     const handleDelete = (e: any) => {
         e.preventDefault();
-        dispatch(deleteCollectPoint(collectPoint._id));
+        dispatch(deleteShop(shop._id));
     };
-
     return (
         <div>
-            <IconButton onClick={handleOpen} sx={{ color: 'white' }}>
-                <Delete />
-            </IconButton>
+            <MenuItem onClick={handleOpen}>
+                <Typography>{t('pages.myShops.actions.delete')}</Typography>
+            </MenuItem>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>
-                    {t('forms.collectPoint.delete.title')}
-                </DialogTitle>
+                <DialogTitle>{t('forms.shop.delete.title')}</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        {t('forms.collectPoint.delete.message')}
+                        {t('forms.shop.delete.message')}
                     </DialogContentText>
                 </DialogContent>
                 <DialogGroupButton
@@ -58,3 +51,5 @@ export const DeleteCollectPointDialog = ({
         </div>
     );
 };
+
+export default DeleteShopDialog;

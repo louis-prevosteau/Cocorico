@@ -18,3 +18,4 @@ export * from './manager/ShopCard';
 export * from './manager/UpdateCategoryDialog';
 export * from './manager/UpdateCollectPointDialog';
 export * from './manager/UpdateProfileDialog';
+export * from './manager/UpdateShopDialog';

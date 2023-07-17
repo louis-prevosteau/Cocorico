@@ -1,10 +1,10 @@
-import { Controller, Get, Body, Patch, UseGuards } from '@nestjs/common';
-import { UsersService } from './users.service';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { Body, Controller, Get, Patch, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { RolesGuard } from 'src/roles/roles.guard';
 import { Role, Roles } from 'src/roles/roles.decorator';
+import { RolesGuard } from 'src/roles/roles.guard';
+import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './users.decorator';
+import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {

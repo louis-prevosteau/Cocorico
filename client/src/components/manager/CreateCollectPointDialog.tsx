@@ -10,7 +10,7 @@ import {
     FormControl,
     InputLabel,
 } from '@mui/material';
-import { DialogGroupButton } from 'components/common/DialogGroupButton';
+import { DialogGroupButton } from 'components';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';

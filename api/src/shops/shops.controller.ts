@@ -1,22 +1,22 @@
 import {
-    Controller,
-    Get,
-    Post,
     Body,
-    Patch,
-    Param,
+    Controller,
     Delete,
-    UseGuards,
+    Get,
+    Param,
+    Patch,
+    Post,
     Query,
+    UseGuards,
 } from '@nestjs/common';
-import { ShopsService } from './shops.service';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { ProductsService } from 'src/products/products.service';
+import { Role, Roles } from 'src/roles/roles.decorator';
+import { RolesGuard } from 'src/roles/roles.guard';
+import { User } from 'src/users/users.decorator';
 import { CreateShopDto } from './dto/create-shop.dto';
 import { UpdateShopDto } from './dto/update-shop.dto';
-import { User } from 'src/users/users.decorator';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { RolesGuard } from 'src/roles/roles.guard';
-import { Role, Roles } from 'src/roles/roles.decorator';
-import { ProductsService } from 'src/products/products.service';
+import { ShopsService } from './shops.service';
 
 @Controller('shops')
 export class ShopsController {

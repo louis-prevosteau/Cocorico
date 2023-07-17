@@ -1,19 +1,108 @@
-import { CreateShopDialog } from 'components';
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from 'redux/Store';
-import { getCategories, getDepartments } from 'redux/actions';
+import { MoreVert, ShoppingBag } from '@mui/icons-material';
+import {
+    Avatar,
+    Chip,
+    IconButton,
+    List,
+    ListItem,
+    ListItemAvatar,
+    ListItemText,
+    Menu,
+    MenuItem,
+    Typography,
+} from '@mui/material';
+import { CreateShopDialog, UpdateShopDialog } from 'components';
+import DeleteShopDialog from 'components/manager/DeleteShopDialog';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from 'redux/Store';
+import { getMyShops } from 'redux/actions';
 
 export const MyShops = () => {
+    const [state, setState] = useState({
+        anchor: null,
+    });
+    const { shops } = useSelector((state: RootState) => state);
     const dispatch = useDispatch<AppDispatch>();
+    const { t } = useTranslation();
 
     useEffect(() => {
-        dispatch(getDepartments());
-        dispatch(getCategories());
+        dispatch(getMyShops());
     }, []);
 
     return (
         <div>
+            <Typography variant="h4" align="center">
+                {t('pages.myShops.title')}
+            </Typography>
+            <List>
+                {shops.map((shop) => (
+                    <ListItem
+                        key={shop._id}
+                        secondaryAction={
+                            <div>
+                                <IconButton
+                                    sx={{
+                                        backgroundColor: '#001D6E',
+                                        color: 'white',
+                                    }}
+                                    aria-controls="actions-menu"
+                                    onClick={(e: any) =>
+                                        setState({
+                                            ...state,
+                                            anchor: e.currentTarget,
+                                        })
+                                    }
+                                >
+                                    <MoreVert />
+                                </IconButton>
+                                <Menu
+                                    id="actions-menu"
+                                    anchorEl={state.anchor}
+                                    keepMounted
+                                    open={Boolean(state.anchor)}
+                                    onClose={() =>
+                                        setState({ ...state, anchor: null })
+                                    }
+                                >
+                                    <UpdateShopDialog shop={shop} />
+                                    <DeleteShopDialog shop={shop} />
+                                    <MenuItem>
+                                        <Typography>
+                                            {t(
+                                                'pages.myShops.actions.addProduct',
+                                            )}
+                                        </Typography>
+                                    </MenuItem>
+                                    <MenuItem>
+                                        <Typography>
+                                            {t(
+                                                'pages.myShops.actions.deleteProduct',
+                                            )}
+                                        </Typography>
+                                    </MenuItem>
+                                </Menu>
+                            </div>
+                        }
+                    >
+                        <ListItemAvatar>
+                            {shop.image ? (
+                                <Avatar alt={shop.name} src={shop.image} />
+                            ) : (
+                                <ShoppingBag
+                                    sx={{ color: '#001D6E' }}
+                                    fontSize="large"
+                                />
+                            )}
+                        </ListItemAvatar>
+                        <ListItemText
+                            primary={shop.name}
+                            secondary={<Chip label={shop.category.name} />}
+                        />
+                    </ListItem>
+                ))}
+            </List>
             <CreateShopDialog />
         </div>
     );

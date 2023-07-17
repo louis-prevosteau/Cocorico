@@ -27,6 +27,9 @@ export class Shop {
     city: string;
 
     @Prop({ required: true })
+    zipcode: string;
+
+    @Prop({ required: true })
     department: string;
 
     @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'User' })

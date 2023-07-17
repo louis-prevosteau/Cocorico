@@ -1,21 +1,21 @@
 import {
-    Controller,
-    Get,
-    Post,
     Body,
-    Patch,
-    Param,
+    Controller,
     Delete,
-    UseGuards,
+    Get,
+    Param,
+    Patch,
+    Post,
     Query,
+    UseGuards,
 } from '@nestjs/common';
-import { OrdersService } from './orders.service';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { Role, Roles } from 'src/roles/roles.decorator';
+import { RolesGuard } from 'src/roles/roles.guard';
+import { User } from 'src/users/users.decorator';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
-import { User } from 'src/users/users.decorator';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { RolesGuard } from 'src/roles/roles.guard';
-import { Role, Roles } from 'src/roles/roles.decorator';
+import { OrdersService } from './orders.service';
 
 @Controller('orders')
 export class OrdersController {

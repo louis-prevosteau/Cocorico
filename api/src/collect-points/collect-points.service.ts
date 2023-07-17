@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { CreateCollectPointDto } from './dto/create-collect-point.dto';
-import { UpdateCollectPointDto } from './dto/update-collect-point.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { CreateCollectPointDto } from './dto/create-collect-point.dto';
+import { UpdateCollectPointDto } from './dto/update-collect-point.dto';
 import { CollectPointDocument } from './entities/collect-point.entity';
 
 @Injectable()

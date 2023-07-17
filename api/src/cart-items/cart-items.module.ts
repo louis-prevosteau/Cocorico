@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { CartItemsService } from './cart-items.service';
 import { MongooseModule } from '@nestjs/mongoose';
+import { CartItemsService } from './cart-items.service';
 import { CartItemSchema } from './entities/cart-item.entity';
 
 @Module({

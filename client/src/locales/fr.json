@@ -29,6 +29,15 @@
             "title": "Points de collectes",
             "searchByZipcode": "Rechercher par code postal"
         },
+        "myShops": {
+            "title": "Mes boutiques",
+            "actions": {
+                "update": "Modifer une boutique",
+                "delete": "Supprimer une boutique",
+                "addProduct": "Ajouter un produit",
+                "deleteProduct": "Supprimer un produit"
+            }
+        },
         "profile": {
             "infos": {
                 "title": "Mon profil",
@@ -47,6 +56,7 @@
             "actions": {
                 "categories": "Gérer les catégories",
                 "collectPoints": "Gérer les points de collectes",
+                "myShops": "Gérer mes boutiques",
                 "orders": "Gérer les commandes",
                 "users": "Tous les utilisateurs"
             }
@@ -64,22 +74,22 @@
             }
         },
         "category": {
-            "create": "Ajouer une catégorie",
+            "create": "Ajouter une catégorie",
             "update": "Modifier une catégorie",
             "delete": {
                 "title": "Supprimer une catégorie",
-                "message": "Vous êtes sur le poit de supprimer une catégorie."
+                "message": "Vous êtes sur le point de supprimer une catégorie."
             },
             "fields": {
                 "name": "Nom"
             }
         },
         "collectPoint": {
-            "create": "Ajouer un point de collecte",
+            "create": "Ajouter un point de collecte",
             "update": "Modifier un point de collecte",
             "delete": {
                 "title": "Supprimer un point de collecte",
-                "message": "Vous êtes sur le poit de supprimer un point de collecte."
+                "message": "Vous êtes sur le point de supprimer un point de collecte."
             },
             "fields": {
                 "address": "Adresse",
@@ -101,11 +111,19 @@
             }
         },
         "shop": {
+            "create": "Ajouter une boutique",
+            "update": "Modifier une boutique",
+            "delete": {
+                "title": "Supprimer une boutique",
+                "message": "Vous êtes sur le point de supprimer une boutique."
+            },
+
             "fields": {
                 "name": "Nom",
                 "description": "Description",
                 "category": "Catégorie",
                 "city": "Ville",
+                "zipcode": "Code postal",
                 "department": "Département"
             }
         }

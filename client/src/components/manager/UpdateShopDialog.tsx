@@ -1,32 +1,28 @@
-import { Add } from '@mui/icons-material';
 import {
-    IconButton,
     Dialog,
     DialogTitle,
     DialogContent,
     TextField,
-    Select,
-    MenuItem,
     FormControl,
     InputLabel,
+    Select,
+    MenuItem,
+    Typography,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
-import { useState } from 'react';
+import { Shop } from 'models';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from 'redux/Store';
-import { createShop, getCitiesByZipcode } from 'redux/actions';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState, AppDispatch } from 'redux/Store';
+import { updateShop, getCitiesByZipcode } from 'redux/actions';
 
-export const CreateShopDialog = () => {
+export const UpdateShopDialog = ({ shop }: { shop: Shop }) => {
     const [state, setState] = useState({
         open: false,
         shop: {
-            name: '',
-            description: '',
+            ...shop,
             category: '',
-            city: '',
-            zipcode: '',
-            department: '',
         },
     });
     const { categories, cities, departments } = useSelector(
@@ -41,22 +37,16 @@ export const CreateShopDialog = () => {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        dispatch(createShop(state.shop));
+        dispatch(updateShop(shop._id, state.shop));
     };
 
     return (
         <div>
-            <IconButton
-                onClick={handleOpen}
-                sx={{
-                    backgroundColor: '#001D6E',
-                    color: 'white',
-                }}
-            >
-                <Add />
-            </IconButton>
+            <MenuItem onClick={handleOpen}>
+                <Typography>{t('pages.myShops.actions.update')}</Typography>
+            </MenuItem>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>{t('forms.shop.create')}</DialogTitle>
+                <DialogTitle>{t('forms.shop.update')}</DialogTitle>
                 <DialogContent>
                     <TextField
                         type="text"
@@ -118,17 +108,7 @@ export const CreateShopDialog = () => {
                         <InputLabel>
                             {t('forms.shop.fields.department')}
                         </InputLabel>
-                        <Select
-                            onChange={(e) =>
-                                setState({
-                                    ...state,
-                                    shop: {
-                                        ...state.shop,
-                                        department: e.target.value as string,
-                                    },
-                                })
-                            }
-                        >
+                        <Select>
                             {departments.map((department) => (
                                 <MenuItem
                                     key={department.code}

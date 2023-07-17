@@ -1,19 +1,19 @@
 import {
-    Controller,
-    Post,
     Body,
-    Patch,
-    Param,
-    UseGuards,
+    Controller,
     Get,
+    Param,
+    Patch,
+    Post,
+    UseGuards,
 } from '@nestjs/common';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { CartItemsService } from 'src/cart-items/cart-items.service';
+import { CreateCartItemDto } from 'src/cart-items/dto/create-cart-item.dto';
+import { ProductsService } from 'src/products/products.service';
+import { User } from 'src/users/users.decorator';
 import { CartsService } from './carts.service';
 import { CreateCartDto } from './dto/create-cart.dto';
-import { CartItemsService } from 'src/cart-items/cart-items.service';
-import { User } from 'src/users/users.decorator';
-import { CreateCartItemDto } from 'src/cart-items/dto/create-cart-item.dto';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { ProductsService } from 'src/products/products.service';
 
 @Controller('carts')
 export class CartsController {

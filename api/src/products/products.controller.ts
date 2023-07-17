@@ -1,21 +1,21 @@
 import {
-    Controller,
-    Get,
-    Post,
     Body,
-    Patch,
-    Param,
+    Controller,
     Delete,
+    Get,
+    Param,
+    Patch,
+    Post,
     Query,
     UseGuards,
 } from '@nestjs/common';
-import { ProductsService } from './products.service';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { Role, Roles } from 'src/roles/roles.decorator';
+import { RolesGuard } from 'src/roles/roles.guard';
+import { ShopsService } from 'src/shops/shops.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { RolesGuard } from 'src/roles/roles.guard';
-import { Role, Roles } from 'src/roles/roles.decorator';
-import { ShopsService } from 'src/shops/shops.service';
+import { ProductsService } from './products.service';
 
 @Controller('products')
 export class ProductsController {

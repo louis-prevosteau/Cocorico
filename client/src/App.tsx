@@ -24,6 +24,7 @@ import { Footer, HeaderBar } from 'components';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
 import { getProfile } from 'redux/actions';
+import { AllowedRoutes, ProtectedRoutes } from 'utils/routes';
 
 const App = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -42,21 +43,27 @@ const App = () => {
                         <Route path="/shops" element={<Shops />} />
                         <Route path="/shops/:id" element={<Shop />} />
                         <Route path="/products/:id" element={<Product />} />
-                        <Route path="/cart" element={<Cart />} />
                         <Route
                             path="/collect-points"
                             element={<CollectPoints />}
                         />
                         <Route path="/auth" element={<Authentication />} />
-                        <Route path="/profile" element={<Profile />} />
+                        <Route element={<ProtectedRoutes />}>
+                            <Route path="/cart" element={<Cart />} />
+                            <Route path="/profile" element={<Profile />} />
+                        </Route>
                         <Route path="/orders/:id" element={<Order />} />
-                        <Route path="/my-shops" element={<MyShops />} />
-                        <Route
-                            path="/admin/categories"
-                            element={<Categories />}
-                        />
-                        <Route path="/admin/users" element={<Users />} />
-                        <Route path="/admin/orders" element={<Orders />} />
+                        <Route element={<AllowedRoutes role="seller" />}>
+                            <Route path="/my-shops" element={<MyShops />} />
+                        </Route>
+                        <Route element={<AllowedRoutes role="admin" />}>
+                            <Route
+                                path="/admin/categories"
+                                element={<Categories />}
+                            />
+                            <Route path="/admin/users" element={<Users />} />
+                            <Route path="/admin/orders" element={<Orders />} />
+                        </Route>
                         <Route path="/*" element={<NotFound />} />
                     </Routes>
                 </Container>

@@ -21,7 +21,23 @@ export const ShopsReducer = (state: Shop[] = [], action: AnyAction): Shop[] => {
     }
 };
 
-export const ShopReducer = (state: Shop = {}, action: AnyAction): Shop => {
+export const ShopReducer = (
+    state: Shop = {
+        _id: '',
+        name: '',
+        image: '',
+        description: '',
+        category: {
+            _id: '',
+            name: '',
+        },
+        city: '',
+        zipcode: '',
+        department: '',
+        owner: {},
+    },
+    action: AnyAction,
+): Shop => {
     switch (action.type) {
         case GET_SHOP:
         case UPDATE_SHOP:

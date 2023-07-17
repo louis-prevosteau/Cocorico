@@ -1,20 +1,20 @@
 import {
-    Controller,
-    Get,
-    Post,
     Body,
-    Patch,
-    Param,
+    Controller,
     Delete,
-    UseGuards,
+    Get,
+    Param,
+    Patch,
+    Post,
     Query,
+    UseGuards,
 } from '@nestjs/common';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { Role, Roles } from 'src/roles/roles.decorator';
+import { RolesGuard } from 'src/roles/roles.guard';
 import { CollectPointsService } from './collect-points.service';
 import { CreateCollectPointDto } from './dto/create-collect-point.dto';
 import { UpdateCollectPointDto } from './dto/update-collect-point.dto';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { RolesGuard } from 'src/roles/roles.guard';
-import { Role, Roles } from 'src/roles/roles.decorator';
 
 @Controller('collect-points')
 export class CollectPointsController {
