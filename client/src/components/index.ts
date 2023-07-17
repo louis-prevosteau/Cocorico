@@ -3,6 +3,7 @@ export * from './common/Footer';
 export * from './common/GridList';
 export * from './common/HeaderBar';
 export * from './common/SearchInput';
+export * from './manager/AddProductDialog';
 export * from './manager/CollectPointsTable';
 export * from './manager/CreateCategoryDialog';
 export * from './manager/CreateCollectPointDialog';

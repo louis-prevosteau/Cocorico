@@ -1,5 +1,6 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import * as api from 'api';
+import i18next from 'i18next';
 import { CreateShop } from 'models';
 import {
     CREATE_SHOP,
@@ -55,7 +56,7 @@ export const createShop = (shop: CreateShop) => async (dispatch: Dispatch) => {
             type: CREATE_SHOP,
             payload: data,
         });
-        handleSuccess('hello world');
+        handleSuccess(i18next.t('toasts.create'));
     } catch (error) {
         handleError(error);
     }
@@ -69,7 +70,7 @@ export const updateShop =
                 type: UPDATE_SHOP,
                 payload: data,
             });
-            handleSuccess('hello world');
+            handleSuccess(i18next.t('toasts.update'));
         } catch (error) {
             handleError(error);
         }
@@ -82,7 +83,7 @@ export const deleteShop = (id: string) => async (dispatch: Dispatch) => {
             type: DELETE_SHOP,
             payload: data,
         });
-        handleSuccess('hello world');
+        handleSuccess(i18next.t('toasts.delete'));
     } catch (error) {
         handleError(error);
     }

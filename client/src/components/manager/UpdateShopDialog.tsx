@@ -11,11 +11,13 @@ import {
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
 import { Shop } from 'models';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from 'redux/Store';
-import { updateShop, getCitiesByZipcode } from 'redux/actions';
+import { updateShop, getCitiesByZipcode, getCategories } from 'redux/actions';
+// @ts-ignore
+import FileBase from 'react-file-base64';
 
 export const UpdateShopDialog = ({ shop }: { shop: Shop }) => {
     const [state, setState] = useState({
@@ -30,6 +32,11 @@ export const UpdateShopDialog = ({ shop }: { shop: Shop }) => {
     );
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
+
+    useEffect(() => {
+        dispatch(getCategories());
+        dispatch(getCitiesByZipcode(shop.zipcode));
+    }, []);
 
     const handleOpen = () => {
         setState({ ...state, open: !state.open });
@@ -51,6 +58,7 @@ export const UpdateShopDialog = ({ shop }: { shop: Shop }) => {
                     <TextField
                         type="text"
                         label={t('forms.shop.fields.name')}
+                        value={shop.name}
                         fullWidth
                         onChange={(e) =>
                             setState({
@@ -63,9 +71,26 @@ export const UpdateShopDialog = ({ shop }: { shop: Shop }) => {
                         }
                         sx={{ mb: 4 }}
                     />
+                    <FormControl fullWidth sx={{ mb: 4 }}>
+                        <InputLabel>{t('forms.shop.fields.image')}</InputLabel>
+                        <FileBase
+                            type="file"
+                            multiple={false}
+                            onDone={({ base64 }: { base64: any }) =>
+                                setState({
+                                    ...state,
+                                    shop: {
+                                        ...state.shop,
+                                        image: base64,
+                                    },
+                                })
+                            }
+                        />
+                    </FormControl>
                     <TextField
                         type="text"
                         label={t('forms.shop.fields.description')}
+                        value={shop.description}
                         multiline
                         fullWidth
                         onChange={(e) =>
@@ -122,6 +147,7 @@ export const UpdateShopDialog = ({ shop }: { shop: Shop }) => {
                     <TextField
                         type="text"
                         label={t('forms.shop.fields.zipcode')}
+                        value={shop.zipcode}
                         fullWidth
                         onChange={(e) =>
                             setState({
@@ -161,7 +187,7 @@ export const UpdateShopDialog = ({ shop }: { shop: Shop }) => {
                 <DialogGroupButton
                     handleClick={handleSubmit}
                     handleCancel={handleOpen}
-                    actionText={t('common.create')}
+                    actionText={t('common.update')}
                     cancelText={t('common.cancel')}
                 />
             </Dialog>

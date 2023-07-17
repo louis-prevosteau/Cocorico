@@ -16,12 +16,15 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/Store';
 import { createShop, getCitiesByZipcode } from 'redux/actions';
+// @ts-ignore
+import FileBase from 'react-file-base64';
 
 export const CreateShopDialog = () => {
     const [state, setState] = useState({
         open: false,
         shop: {
             name: '',
+            image: '',
             description: '',
             category: '',
             city: '',
@@ -73,6 +76,22 @@ export const CreateShopDialog = () => {
                         }
                         sx={{ mb: 4 }}
                     />
+                    <FormControl fullWidth sx={{ mb: 4 }}>
+                        <InputLabel>{t('forms.shop.fields.image')}</InputLabel>
+                        <FileBase
+                            type="file"
+                            multiple={false}
+                            onDone={({ base64 }: { base64: any }) =>
+                                setState({
+                                    ...state,
+                                    shop: {
+                                        ...state.shop,
+                                        image: base64,
+                                    },
+                                })
+                            }
+                        />
+                    </FormControl>
                     <TextField
                         type="text"
                         label={t('forms.shop.fields.description')}

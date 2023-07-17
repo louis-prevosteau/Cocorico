@@ -17,7 +17,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/Store';
-import { getMyShops } from 'redux/actions';
+import { getDepartments, getMyShops } from 'redux/actions';
 
 export const MyShops = () => {
     const [state, setState] = useState({
@@ -29,6 +29,7 @@ export const MyShops = () => {
 
     useEffect(() => {
         dispatch(getMyShops());
+        dispatch(getDepartments());
     }, []);
 
     return (

@@ -120,6 +120,7 @@
 
             "fields": {
                 "name": "Nom",
+                "image": "Image",
                 "description": "Description",
                 "category": "Catégorie",
                 "city": "Ville",

@@ -14,7 +14,7 @@ import {
     UpdateCollectPointDialog,
 } from 'components';
 import { User } from 'models';
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/Store';
