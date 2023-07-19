@@ -11,7 +11,11 @@ import {
     MenuItem,
     Typography,
 } from '@mui/material';
-import { CreateShopDialog, UpdateShopDialog } from 'components';
+import {
+    AddProductDialog,
+    CreateShopDialog,
+    UpdateShopDialog,
+} from 'components';
 import DeleteShopDialog from 'components/manager/DeleteShopDialog';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -69,13 +73,7 @@ export const MyShops = () => {
                                 >
                                     <UpdateShopDialog shop={shop} />
                                     <DeleteShopDialog shop={shop} />
-                                    <MenuItem>
-                                        <Typography>
-                                            {t(
-                                                'pages.myShops.actions.addProduct',
-                                            )}
-                                        </Typography>
-                                    </MenuItem>
+                                    <AddProductDialog shop={shop} />
                                     <MenuItem>
                                         <Typography>
                                             {t(

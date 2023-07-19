@@ -10,7 +10,7 @@ import {
     Typography,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
-import { Shop } from 'models';
+import { ShopProps } from 'models';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
@@ -19,7 +19,7 @@ import { updateShop, getCitiesByZipcode, getCategories } from 'redux/actions';
 // @ts-ignore
 import FileBase from 'react-file-base64';
 
-export const UpdateShopDialog = ({ shop }: { shop: Shop }) => {
+export const UpdateShopDialog = ({ shop }: ShopProps) => {
     const [state, setState] = useState({
         open: false,
         shop: {

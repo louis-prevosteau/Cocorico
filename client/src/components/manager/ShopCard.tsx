@@ -6,10 +6,10 @@ import {
     Chip,
     Typography,
 } from '@mui/material';
-import { Shop } from 'models';
+import { ShopProps } from 'models';
 import React from 'react';
 
-export const ShopCard = ({ shop }: { shop: Shop }) => {
+export const ShopCard = ({ shop }: ShopProps) => {
     return (
         <Card sx={{ display: 'flex' }}>
             <CardMedia

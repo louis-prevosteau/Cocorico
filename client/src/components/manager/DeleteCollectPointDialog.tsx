@@ -7,7 +7,7 @@ import {
     DialogContentText,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
-import { CollectPoint } from 'models';
+import { CollectPointProps } from 'models';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -16,9 +16,7 @@ import { deleteCollectPoint } from 'redux/actions';
 
 export const DeleteCollectPointDialog = ({
     collectPoint,
-}: {
-    collectPoint: CollectPoint;
-}) => {
+}: CollectPointProps) => {
     const [state, setState] = useState({
         open: false,
     });

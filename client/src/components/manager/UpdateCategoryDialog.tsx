@@ -7,14 +7,14 @@ import {
     TextField,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
-import { Category } from 'models';
+import { CategoryProps } from 'models';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
 import { updateCategory } from 'redux/actions';
 
-export const UpdateCategoryDialog = ({ category }: { category: Category }) => {
+export const UpdateCategoryDialog = ({ category }: CategoryProps) => {
     const [state, setState] = useState({
         open: false,
         category: category,

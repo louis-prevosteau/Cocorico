@@ -8,7 +8,7 @@ import {
     InputLabel,
     TextField,
 } from '@mui/material';
-import { User } from 'models';
+import { UserProps } from 'models';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -18,10 +18,10 @@ import { updateProfile } from 'redux/actions';
 import FileBase from 'react-file-base64';
 import { DialogGroupButton } from 'components';
 
-export const UpdateProfileDialog = ({ profile }: { profile: User }) => {
+export const UpdateProfileDialog = ({ user }: UserProps) => {
     const [state, setState] = useState({
         open: false,
-        profile: profile,
+        profile: user,
     });
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();

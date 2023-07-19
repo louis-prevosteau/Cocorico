@@ -1,7 +1,8 @@
 import { Grid } from '@mui/material';
-import React, { ReactNode } from 'react';
+import { GridListProps } from 'models';
+import React from 'react';
 
-export const GridList = ({ children }: { children: ReactNode }) => {
+export const GridList = ({ children }: GridListProps) => {
     return (
         <Grid
             container

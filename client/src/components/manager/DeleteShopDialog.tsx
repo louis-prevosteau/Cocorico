@@ -7,14 +7,14 @@ import {
     Typography,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
-import { Shop } from 'models';
+import { ShopProps } from 'models';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
 import { deleteShop } from 'redux/actions';
 
-const DeleteShopDialog = ({ shop }: { shop: Shop }) => {
+const DeleteShopDialog = ({ shop }: ShopProps) => {
     const [state, setState] = useState({
         open: false,
     });

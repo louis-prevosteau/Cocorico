@@ -11,7 +11,7 @@ import {
     Select,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
-import { CollectPoint } from 'models';
+import { CollectPointProps } from 'models';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,9 +20,7 @@ import { getCitiesByZipcode, updateCollectPoint } from 'redux/actions';
 
 export const UpdateCollectPointDialog = ({
     collectPoint,
-}: {
-    collectPoint: CollectPoint;
-}) => {
+}: CollectPointProps) => {
     const [state, setState] = useState({
         open: false,
         collectPoint: collectPoint,

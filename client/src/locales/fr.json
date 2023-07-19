@@ -110,8 +110,24 @@
                 "country": "Pays"
             }
         },
+        "product": {
+            "create": "Ajouter un produit à {{shop}}",
+            "update": "Modifier {{product}}",
+            "delete": "Supprimer {{product}}",
+            "fields": {
+                "name": "Nom",
+                "image": "Image",
+                "description": "Description",
+                "price": "Prix",
+                "madeIn": "Fabriqué à",
+                "available": "Disponible",
+                "unavailable": "Rupture de stock",
+                "returnable": "Consigné",
+                "unreturnable": "Non-consigné"
+            }
+        },
         "shop": {
-            "create": "Ajouter une boutique",
+            "create": "Créer une boutique",
             "update": "Modifier une boutique",
             "delete": {
                 "title": "Supprimer une boutique",

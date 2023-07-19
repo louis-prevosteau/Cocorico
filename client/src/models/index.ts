@@ -5,5 +5,6 @@ export * from './City';
 export * from './Department';
 export * from './Order';
 export * from './Product';
+export * from './Props';
 export * from './Shop';
 export * from './User';

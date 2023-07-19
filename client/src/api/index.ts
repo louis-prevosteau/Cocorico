@@ -3,10 +3,10 @@ import {
     CartItem,
     CreateCategory,
     CreateCollectPoint,
+    CreateProduct,
     CreateShop,
     Login,
     Order,
-    Product,
     Register,
     User,
 } from 'models';
@@ -54,8 +54,9 @@ export const updateStatus = (id: string, data: Order) =>
 export const deleteOrder = (id: string) => api.delete(`orders/${id}`);
 export const getProducts = (shop: string) => api.get(`products?shop=${shop}`);
 export const getProduct = (id: string) => api.get(`products/${id}`);
-export const createProduct = (data: Product) => api.post('products', data);
-export const updateProduct = (id: string, data: Product) =>
+export const createProduct = (data: CreateProduct) =>
+    api.post('products', data);
+export const updateProduct = (id: string, data: CreateProduct) =>
     api.patch(`products/${id}`, data);
 export const deleteProduct = (id: string) => api.delete(`products/${id}`);
 export const getShops = (category = null) =>

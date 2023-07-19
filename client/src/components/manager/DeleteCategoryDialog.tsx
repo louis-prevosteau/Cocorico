@@ -7,14 +7,14 @@ import {
     IconButton,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
-import { Category } from 'models';
+import { CategoryProps } from 'models';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
 import { deleteCategory } from 'redux/actions';
 
-export const DeleteCategoryDialog = ({ category }: { category: Category }) => {
+export const DeleteCategoryDialog = ({ category }: CategoryProps) => {
     const [state, setState] = useState({
         open: false,
     });

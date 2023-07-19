@@ -1,14 +1,9 @@
 import { Search } from '@mui/icons-material';
 import { Box, TextField } from '@mui/material';
+import { SearchInputProps } from 'models';
 import React from 'react';
 
-export const SearchInput = ({
-    label,
-    handleChange,
-}: {
-    label: string;
-    handleChange: React.ChangeEventHandler;
-}) => {
+export const SearchInput = ({ label, handleChange }: SearchInputProps) => {
     return (
         <Box
             sx={{

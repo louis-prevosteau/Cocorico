@@ -13,7 +13,7 @@ import {
     SearchInput,
     UpdateCollectPointDialog,
 } from 'components';
-import { User } from 'models';
+import { UserProps } from 'models';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,7 +21,7 @@ import { AppDispatch, RootState } from 'redux/Store';
 import { getCollectPoints } from 'redux/actions';
 import { COLLECT_POINTS_COLUMNS } from 'utils/Columns';
 
-export const CollectPointsTable = ({ user }: { user: User }) => {
+export const CollectPointsTable = ({ user }: UserProps) => {
     const { collectPoints } = useSelector((state: RootState) => state);
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();

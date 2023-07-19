@@ -11,11 +11,11 @@ import {
     InputLabel,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/Store';
-import { createShop, getCitiesByZipcode } from 'redux/actions';
+import { createShop, getCategories, getCitiesByZipcode } from 'redux/actions';
 // @ts-ignore
 import FileBase from 'react-file-base64';
 
@@ -37,6 +37,10 @@ export const CreateShopDialog = () => {
     );
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
+
+    useEffect(() => {
+        dispatch(getCategories());
+    }, []);
 
     const handleOpen = () => {
         setState({ ...state, open: !state.open });

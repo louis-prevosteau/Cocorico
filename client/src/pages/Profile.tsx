@@ -19,10 +19,10 @@ export const Profile = () => {
                     <MyOrders />
                 </Grid>
                 <Grid item>
-                    <ProfileManager profile={profile} />
+                    <ProfileManager user={profile} />
                 </Grid>
                 <Grid item>
-                    <DashboardActions profile={profile} />
+                    <DashboardActions user={profile} />
                 </Grid>
             </Grid>
         </Box>

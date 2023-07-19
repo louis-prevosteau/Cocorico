@@ -1,4 +1,5 @@
 import { Button, DialogActions } from '@mui/material';
+import { DialogButtonGroupProps } from 'models';
 import React from 'react';
 
 export const DialogGroupButton = ({
@@ -6,12 +7,7 @@ export const DialogGroupButton = ({
     handleCancel,
     actionText,
     cancelText,
-}: {
-    handleClick: React.MouseEventHandler;
-    handleCancel: React.MouseEventHandler;
-    actionText: string;
-    cancelText: string;
-}) => {
+}: DialogButtonGroupProps) => {
     return (
         <DialogActions>
             <Button onClick={handleClick} variant="contained" color="success">

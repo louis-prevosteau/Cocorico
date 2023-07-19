@@ -1,11 +1,10 @@
 import { Grid, Link, Paper } from '@mui/material';
-import { User } from 'models';
-import React from 'react';
+import { UserProps } from 'models';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import { ADMIN_ACTIONS, SELLER_ACTIONS } from 'utils/Links';
 
-export const DashboardActions = ({ profile }: { profile: User }) => {
+export const DashboardActions = ({ user }: UserProps) => {
     const { t } = useTranslation();
 
     return (
@@ -18,7 +17,7 @@ export const DashboardActions = ({ profile }: { profile: User }) => {
                 p={2}
                 direction="row"
             >
-                {profile.roles?.find((role) => role === 'admin') &&
+                {user.roles?.find((role) => role === 'admin') &&
                     ADMIN_ACTIONS.map((link) => (
                         <Grid item>
                             <Link
@@ -33,7 +32,7 @@ export const DashboardActions = ({ profile }: { profile: User }) => {
                             </Link>
                         </Grid>
                     ))}
-                {profile.roles?.find((role) => role === 'seller') &&
+                {user.roles?.find((role) => role === 'seller') &&
                     SELLER_ACTIONS.map((link) => (
                         <Link
                             component={RouterLink}
