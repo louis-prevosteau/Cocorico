@@ -35,6 +35,7 @@
                 "update": "Modifer une boutique",
                 "delete": "Supprimer une boutique",
                 "addProduct": "Ajouter un produit",
+                "updateProduct": "Modifier un produit",
                 "deleteProduct": "Supprimer un produit"
             }
         },
@@ -112,8 +113,11 @@
         },
         "product": {
             "create": "Ajouter un produit à {{shop}}",
-            "update": "Modifier {{product}}",
-            "delete": "Supprimer {{product}}",
+            "update": "Modifier un produit",
+            "delete": {
+                "title": "Supprimer un produit",
+                "message": "Vous êtes sur le point de supprimer un produit."
+            },
             "fields": {
                 "name": "Nom",
                 "image": "Image",

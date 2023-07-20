@@ -121,7 +121,7 @@ export const AddProductDialog = ({ shop }: ShopProps) => {
                     />
                     <TextField
                         type="text"
-                        label={t('forms.product.fields.city')}
+                        label={t('forms.product.fields.madeIn')}
                         value={state.product.madeIn}
                         fullWidth
                         onChange={(e) =>
@@ -136,13 +136,17 @@ export const AddProductDialog = ({ shop }: ShopProps) => {
                         sx={{ mb: 4 }}
                     />
                     <FormControlLabel
-                        label={t(
-                            `forms.product.fields.${
-                                state.product.available
-                                    ? 'available'
-                                    : 'unavailable'
-                            }`,
-                        )}
+                        label={
+                            <Typography fontWeight={'bolder'}>
+                                {t(
+                                    `forms.product.fields.${
+                                        state.product.available
+                                            ? 'available'
+                                            : 'unavailable'
+                                    }`,
+                                )}
+                            </Typography>
+                        }
                         control={
                             <Switch
                                 checked={state.product.available}
@@ -162,13 +166,17 @@ export const AddProductDialog = ({ shop }: ShopProps) => {
                         }}
                     />
                     <FormControlLabel
-                        label={t(
-                            `forms.product.fields.${
-                                state.product.returnable
-                                    ? 'returnable'
-                                    : 'unreturnable'
-                            }`,
-                        )}
+                        label={
+                            <Typography fontWeight={'bolder'}>
+                                {t(
+                                    `forms.product.fields.${
+                                        state.product.returnable
+                                            ? 'returnable'
+                                            : 'unreturnable'
+                                    }`,
+                                )}
+                            </Typography>
+                        }
                         control={
                             <Switch
                                 checked={state.product.returnable}

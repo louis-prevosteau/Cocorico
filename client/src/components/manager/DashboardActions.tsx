@@ -11,7 +11,7 @@ export const DashboardActions = ({ user }: UserProps) => {
         <Paper elevation={3}>
             <Grid
                 container
-                spacing={5}
+                spacing={1}
                 justifyContent={'center'}
                 alignItems={'center'}
                 p={2}

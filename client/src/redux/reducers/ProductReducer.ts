@@ -1,5 +1,5 @@
 import { AnyAction } from '@reduxjs/toolkit';
-import { Product } from 'models';
+import { Product, Shop } from 'models';
 import {
     CREATE_PRODUCT,
     DELETE_PRODUCT,
@@ -27,7 +27,17 @@ export const ProductsReducer = (
 };
 
 export const ProductReducer = (
-    state: Product = {},
+    state: Product = {
+        _id: '',
+        name: '',
+        image: '',
+        description: '',
+        price: 0,
+        shop: {} as Shop,
+        madeIn: '',
+        available: false,
+        returnable: false,
+    },
     action: AnyAction,
 ): Product => {
     switch (action.type) {

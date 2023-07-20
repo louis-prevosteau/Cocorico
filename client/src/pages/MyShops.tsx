@@ -14,6 +14,8 @@ import {
 import {
     AddProductDialog,
     CreateShopDialog,
+    DeleteProductDialog,
+    UpdateProductDialog,
     UpdateShopDialog,
 } from 'components';
 import DeleteShopDialog from 'components/manager/DeleteShopDialog';
@@ -74,13 +76,8 @@ export const MyShops = () => {
                                     <UpdateShopDialog shop={shop} />
                                     <DeleteShopDialog shop={shop} />
                                     <AddProductDialog shop={shop} />
-                                    <MenuItem>
-                                        <Typography>
-                                            {t(
-                                                'pages.myShops.actions.deleteProduct',
-                                            )}
-                                        </Typography>
-                                    </MenuItem>
+                                    <UpdateProductDialog shop={shop} />
+                                    <DeleteProductDialog shop={shop} />
                                 </Menu>
                             </div>
                         }
