@@ -3,6 +3,7 @@ import { GridList, ShopCard } from 'components';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { AppDispatch, RootState } from 'redux/Store';
 import { getShops } from 'redux/actions';
 
@@ -23,7 +24,9 @@ export const Shops = () => {
             <GridList>
                 {shops.map((shop) => (
                     <Grid item key={shop._id}>
-                        <ShopCard shop={shop} />
+                        <NavLink to={`/shops/${shop._id}`} style={{ textDecoration: 'none' }}>
+                            <ShopCard shop={shop} />
+                        </NavLink>
                     </Grid>
                 ))}
             </GridList>

@@ -1,4 +1,4 @@
-import { AppBar, BottomNavigation, Typography } from '@mui/material';
+import { AppBar, BottomNavigation, Box, Container, Typography } from '@mui/material';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -6,14 +6,14 @@ export const Footer = () => {
     const { t } = useTranslation();
 
     return (
-        <AppBar position="static" style={{ top: 'auto', bottom: 0 }}>
-            <BottomNavigation style={{ background: '#E6001F' }}>
-                <Typography align="center" variant="body2" color="inherit">
+        <Box sx={{ backgroundColor: '#E6001F', p: 6 }} component={'footer'}>
+            <Container maxWidth='md'>
+                <Typography variant='body2' align='center' color={'white'}>
                     {t('footer.credit', {
                         year: new Date().getFullYear(),
                     })}
                 </Typography>
-            </BottomNavigation>
-        </AppBar>
+            </Container>
+        </Box>
     );
 };
