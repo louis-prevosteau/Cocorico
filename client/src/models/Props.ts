@@ -3,6 +3,7 @@ import { Category } from './Category';
 import { User } from './User';
 import { CollectPoint } from './CollectPoint';
 import { Shop } from './Shop';
+import { Product } from './Product';
 
 export interface DialogButtonGroupProps {
     handleClick: MouseEventHandler;
@@ -26,6 +27,10 @@ export interface CategoryProps {
 
 export interface CollectPointProps {
     collectPoint: CollectPoint;
+}
+
+export interface ProductProps {
+    product: Product;
 }
 
 export interface ShopProps {
