@@ -57,6 +57,7 @@ export const CreateCollectPointDialog = () => {
                     <TextField
                         type="text"
                         label={t('forms.collectPoint.fields.address')}
+                        required
                         fullWidth
                         onChange={(e) =>
                             setState({
@@ -83,6 +84,7 @@ export const CreateCollectPointDialog = () => {
                                     },
                                 })
                             }
+                            required
                         >
                             {departments.map((dep) => (
                                 <MenuItem key={dep.code} value={dep.nom}>
@@ -94,6 +96,7 @@ export const CreateCollectPointDialog = () => {
                     <TextField
                         type="text"
                         label={t('forms.collectPoint.fields.zipcode')}
+                        required
                         fullWidth
                         onChange={(e) =>
                             setState({
@@ -125,6 +128,7 @@ export const CreateCollectPointDialog = () => {
                                     },
                                 })
                             }
+                            required
                         >
                             {cities.map((city) => (
                                 <MenuItem key={city.code} value={city.nom}>

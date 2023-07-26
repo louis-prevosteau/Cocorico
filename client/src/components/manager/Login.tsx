@@ -2,7 +2,6 @@ import { TextField, Button } from '@mui/material';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { AppDispatch } from 'redux/Store';
 import { login } from 'redux/actions';
 
@@ -13,12 +12,10 @@ export const Login = () => {
     });
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
-    const navigate = useNavigate();
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
         dispatch(login(state));
-        navigate('/');
     };
 
     return (

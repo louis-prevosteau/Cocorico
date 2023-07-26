@@ -3,6 +3,8 @@ import {
     Controller,
     Delete,
     Get,
+    HttpException,
+    HttpStatus,
     Param,
     Patch,
     Post,
@@ -29,6 +31,20 @@ export class ShopsController {
     @Roles(Role.Seller)
     @Post()
     create(@Body() createShopDto: CreateShopDto, @User() user) {
+        const { name, description, category, city, zipcode, department } =
+            createShopDto;
+        if (
+            !name ||
+            !description ||
+            !category ||
+            !city ||
+            !zipcode ||
+            !department
+        )
+            throw new HttpException(
+                'toasts.httpErrors.requiredFields',
+                HttpStatus.BAD_REQUEST,
+            );
         return this.shopsService.create({ ...createShopDto, owner: user._id });
     }
 
@@ -53,6 +69,20 @@ export class ShopsController {
     @Roles(Role.Seller)
     @Patch(':id')
     update(@Param('id') id: string, @Body() updateShopDto: UpdateShopDto) {
+        const { name, description, category, city, zipcode, department } =
+            updateShopDto;
+        if (
+            !name ||
+            !description ||
+            !category ||
+            !city ||
+            !zipcode ||
+            !department
+        )
+            throw new HttpException(
+                'toasts.httpErrors.requiredFields',
+                HttpStatus.BAD_REQUEST,
+            );
         return this.shopsService.update({ _id: id }, updateShopDto);
     }
 

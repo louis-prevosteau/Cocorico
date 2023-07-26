@@ -10,6 +10,7 @@ import { CategoriesModule } from './categories/categories.module';
 import { CollectPointsModule } from './collect-points/collect-points.module';
 import { OrdersModule } from './orders/orders.module';
 import { ProductsModule } from './products/products.module';
+import { ReviewsModule } from './reviews/reviews.module';
 import { ShopsModule } from './shops/shops.module';
 import { UsersModule } from './users/users.module';
 
@@ -34,6 +35,7 @@ import { UsersModule } from './users/users.module';
         CartItemsModule,
         CartsModule,
         OrdersModule,
+        ReviewsModule,
     ],
     controllers: [AppController],
     providers: [AppService],

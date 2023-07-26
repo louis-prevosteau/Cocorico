@@ -21,9 +21,11 @@ export const CollectPoints = () => {
                 {t('pages.collectPoints.title')}
             </Typography>
             <CollectPointsTable user={profile} />
-            <Grid display={'flex'} justifyContent={'right'}>
-                <CreateCollectPointDialog />
-            </Grid>
+            {profile.roles?.includes('admin') && (
+                <Grid display={'flex'} justifyContent={'right'}>
+                    <CreateCollectPointDialog />
+                </Grid>
+            )}
         </div>
     );
 };

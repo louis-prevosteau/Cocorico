@@ -50,6 +50,7 @@ export const UpdateCollectPointDialog = ({
                         type="text"
                         value={state.collectPoint.address}
                         label={t('forms.collectPoint.fields.address')}
+                        required
                         fullWidth
                         onChange={(e) =>
                             setState({
@@ -76,6 +77,7 @@ export const UpdateCollectPointDialog = ({
                                     },
                                 })
                             }
+                            required
                             value={state.collectPoint.department}
                         >
                             {departments.map((dep) => (
@@ -89,6 +91,7 @@ export const UpdateCollectPointDialog = ({
                         type="text"
                         value={state.collectPoint.zipcode}
                         label={t('forms.collectPoint.fields.zipcode')}
+                        required
                         fullWidth
                         onChange={(e) =>
                             setState({
@@ -120,6 +123,7 @@ export const UpdateCollectPointDialog = ({
                                     },
                                 })
                             }
+                            required
                             value={state.collectPoint.city}
                         >
                             {cities.map((city) => (

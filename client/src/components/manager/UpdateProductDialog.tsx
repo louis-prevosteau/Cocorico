@@ -94,6 +94,7 @@ export const UpdateProductDialog = ({ shop }: ShopProps) => {
                                 <TextField
                                     type="text"
                                     label={t('forms.product.fields.name')}
+                                    required
                                     value={state.product.name}
                                     fullWidth
                                     onChange={(e) =>
@@ -130,6 +131,7 @@ export const UpdateProductDialog = ({ shop }: ShopProps) => {
                                     label={t(
                                         'forms.product.fields.description',
                                     )}
+                                    required
                                     value={state.product.description}
                                     multiline
                                     fullWidth
@@ -147,6 +149,7 @@ export const UpdateProductDialog = ({ shop }: ShopProps) => {
                                 <TextField
                                     type="number"
                                     label={t('forms.product.fields.price')}
+                                    required
                                     value={state.product.price}
                                     fullWidth
                                     onChange={(e) =>
@@ -165,6 +168,7 @@ export const UpdateProductDialog = ({ shop }: ShopProps) => {
                                 <TextField
                                     type="text"
                                     label={t('forms.product.fields.madeIn')}
+                                    required
                                     value={state.product.madeIn}
                                     fullWidth
                                     onChange={(e) =>

@@ -24,7 +24,7 @@ export class AuthController {
         const userExist = await this.authService.isUserExist(registerDto.email);
         if (userExist)
             throw new HttpException(
-                'Utilisateur existant',
+                'toasts.httpErrors.userExist',
                 HttpStatus.BAD_REQUEST,
             );
         const user = await this.usersService.create({
@@ -44,7 +44,7 @@ export class AuthController {
         const user = await this.authService.validateUser(loginDto);
         if (!user)
             throw new HttpException(
-                'Utilisateur inconnu',
+                'toasts.httpErrors.unknownUser',
                 HttpStatus.BAD_REQUEST,
             );
         const { token } = this.authService.login(user);

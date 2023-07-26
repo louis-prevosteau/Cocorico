@@ -29,6 +29,9 @@ export class Product {
 
     @Prop({ default: false })
     returnable: boolean;
+
+    @Prop({ default: 0, min: 0, max: 5 })
+    averageNote: number;
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);

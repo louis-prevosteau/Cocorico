@@ -3,6 +3,7 @@ import * as api from 'api';
 import { handleError, handleSuccess } from 'utils/Toasts';
 import { GET_CART } from '../ActionTypes';
 import { CartItem } from 'models';
+import i18next from 'i18next';
 
 export const getCart = () => async (dispatch: Dispatch) => {
     try {
@@ -32,7 +33,7 @@ export const addProductToCart =
                 type: GET_CART,
                 payload: data,
             });
-            handleSuccess('hello world');
+            handleSuccess(i18next.t('toasts.cart.addProduct'));
         } catch (error) {
             handleError(error);
         }
@@ -46,7 +47,7 @@ export const deleteProductFromCart =
                 type: GET_CART,
                 payload: data,
             });
-            handleSuccess('hello world');
+            handleSuccess(i18next.t('toasts.cart.deleteProduct'));
         } catch (error) {
             handleError(error);
         }
@@ -59,7 +60,6 @@ export const clearCart = () => async (dispatch: Dispatch) => {
             type: GET_CART,
             payload: data,
         });
-        handleSuccess('hello world');
     } catch (error) {
         handleError(error);
     }

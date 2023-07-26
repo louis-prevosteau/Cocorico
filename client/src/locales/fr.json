@@ -162,12 +162,37 @@
             "created_at": "Date"
         }
     },
+    "orderStatuses": {
+        "cancelled": "Annulée",
+        "delivered": "Livrée",
+        "processing": "En cours de traitement",
+        "shipped": "Expédiée",
+        "waiting": "En attente"
+    },
     "toasts": {
         "authentication": "Autentification réussie",
+        "httpErrors": {
+            "unknownUser": "Utilisateur inconnu",
+            "userExist": "Utilisateur existant",
+            "requiredFields": "Champs requis"
+        },
         "create": "Ajout réussi",
         "delete": "Suppression réussie",
         "logout": "Utilisateur déconnecté",
-        "update": "Mise à jour réussie"
+        "update": "Mise à jour réussie",
+        "cart": {
+            "addProduct": "Produit ajouté au panier",
+            "deleteProduct": "Produit retiré du panier"
+        },
+        "order": {
+            "deleted": "Commande supprimée",
+            "passed": "Commande effectuée avec succès",
+            "statusUpdated": "Etat mis à jour"
+        },
+        "review": {
+            "add": "Avis ajouté",
+            "delete": "Avis supprimé"
+        }
     },
     "footer": {
         "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/Cocorico"

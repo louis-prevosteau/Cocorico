@@ -3,6 +3,8 @@ import {
     Controller,
     Delete,
     Get,
+    HttpException,
+    HttpStatus,
     Param,
     Patch,
     Post,
@@ -10,9 +12,9 @@ import {
     UseGuards,
 } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { ReviewsService } from 'src/reviews/reviews.service';
 import { Role, Roles } from 'src/roles/roles.decorator';
 import { RolesGuard } from 'src/roles/roles.guard';
-import { ShopsService } from 'src/shops/shops.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { ProductsService } from './products.service';
@@ -21,13 +23,19 @@ import { ProductsService } from './products.service';
 export class ProductsController {
     constructor(
         private readonly productsService: ProductsService,
-        private readonly shopsService: ShopsService,
+        private readonly reviewsService: ReviewsService,
     ) {}
 
     @UseGuards(JwtAuthGuard, RolesGuard)
     @Roles(Role.Seller)
     @Post()
     async create(@Body() createProductDto: CreateProductDto) {
+        const { name, description, price, madeIn } = createProductDto;
+        if (!name || !description || !price || !madeIn)
+            throw new HttpException(
+                'toasts.httpErrors.requiredFields',
+                HttpStatus.BAD_REQUEST,
+            );
         return this.productsService.create(createProductDto);
     }
 
@@ -48,6 +56,12 @@ export class ProductsController {
         @Param('id') id: string,
         @Body() updateProductDto: UpdateProductDto,
     ) {
+        const { name, description, price, madeIn } = updateProductDto;
+        if (!name || !description || !price || !madeIn)
+            throw new HttpException(
+                'toasts.httpErrors.requiredFields',
+                HttpStatus.BAD_REQUEST,
+            );
         return await this.productsService.update({ _id: id }, updateProductDto);
     }
 
@@ -55,6 +69,7 @@ export class ProductsController {
     @Roles(Role.Seller)
     @Delete(':id')
     async remove(@Param('id') id: string) {
+        await this.reviewsService.removeMany({ product: id });
         return this.productsService.remove({ _id: id });
     }
 }

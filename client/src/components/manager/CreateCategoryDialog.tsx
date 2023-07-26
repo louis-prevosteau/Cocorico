@@ -18,7 +18,7 @@ export const CreateCategoryDialog = () => {
         open: false,
         category: {
             name: '',
-        },
+        }
     });
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
@@ -49,6 +49,7 @@ export const CreateCategoryDialog = () => {
                     <TextField
                         type="text"
                         label={t('forms.category.fields.name')}
+                        required
                         fullWidth
                         onChange={(e) =>
                             setState({

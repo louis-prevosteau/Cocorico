@@ -1,5 +1,6 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import * as api from 'api';
+import i18next from 'i18next';
 import { Order } from 'models';
 import {
     CREATE_ORDER,
@@ -55,7 +56,7 @@ export const createOrder = (order: Order) => async (dispatch: Dispatch) => {
             type: CREATE_ORDER,
             payload: data,
         });
-        handleSuccess('hello world');
+        handleSuccess(i18next.t('toasts.order.passed'));
     } catch (error) {
         handleError(error);
     }
@@ -69,7 +70,7 @@ export const updateStatus =
                 type: UPDATE_STATUS,
                 payload: data,
             });
-            handleSuccess('hello world');
+            handleSuccess(i18next.t('toasts.order.statusUpdated'));
         } catch (error) {
             handleError(error);
         }
@@ -82,7 +83,7 @@ export const deleteOrder = (id: string) => async (dispatch: Dispatch) => {
             type: DELETE_ORDER,
             payload: data,
         });
-        handleSuccess('hello world');
+        handleSuccess(i18next.t('toasts.order.deleted'));
     } catch (error) {
         handleError(error);
     }

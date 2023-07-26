@@ -3,6 +3,8 @@ import {
     Controller,
     Delete,
     Get,
+    HttpException,
+    HttpStatus,
     Param,
     Patch,
     Post,
@@ -23,6 +25,11 @@ export class CategoriesController {
     @Roles(Role.Admin)
     @Post()
     create(@Body() createCategoryDto: CreateCategoryDto) {
+        if (!createCategoryDto.name)
+            throw new HttpException(
+                'toasts.httpErrors.requiredFields',
+                HttpStatus.BAD_REQUEST,
+            );
         return this.categoriesService.create(createCategoryDto);
     }
 
@@ -38,6 +45,11 @@ export class CategoriesController {
         @Param('id') id: string,
         @Body() updateCategoryDto: UpdateCategoryDto,
     ) {
+        if (!updateCategoryDto.name)
+            throw new HttpException(
+                'toasts.httpErrors.requiredFields',
+                HttpStatus.BAD_REQUEST,
+            );
         return this.categoriesService.update({ _id: id }, updateCategoryDto);
     }
 

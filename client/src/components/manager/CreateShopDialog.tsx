@@ -68,6 +68,7 @@ export const CreateShopDialog = () => {
                     <TextField
                         type="text"
                         label={t('forms.shop.fields.name')}
+                        required
                         fullWidth
                         onChange={(e) =>
                             setState({
@@ -99,6 +100,7 @@ export const CreateShopDialog = () => {
                     <TextField
                         type="text"
                         label={t('forms.shop.fields.description')}
+                        required
                         multiline
                         fullWidth
                         onChange={(e) =>
@@ -126,6 +128,7 @@ export const CreateShopDialog = () => {
                                     },
                                 })
                             }
+                            required
                         >
                             {categories.map((category) => (
                                 <MenuItem
@@ -151,6 +154,7 @@ export const CreateShopDialog = () => {
                                     },
                                 })
                             }
+                            required
                         >
                             {departments.map((department) => (
                                 <MenuItem
@@ -165,6 +169,7 @@ export const CreateShopDialog = () => {
                     <TextField
                         type="text"
                         label={t('forms.shop.fields.zipcode')}
+                        required
                         fullWidth
                         onChange={(e) =>
                             setState({
@@ -192,6 +197,7 @@ export const CreateShopDialog = () => {
                                     },
                                 })
                             }
+                            required
                         >
                             {cities.map((city) => (
                                 <MenuItem key={city.code} value={city.nom}>

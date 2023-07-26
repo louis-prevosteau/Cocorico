@@ -7,4 +7,5 @@ export class CreateProductDto {
     readonly madeIn: string;
     readonly available: boolean;
     readonly returnable: boolean;
+    readonly averageNote: number;
 }

@@ -16,22 +16,14 @@ import {
     Users,
 } from 'pages';
 import './i18n';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Footer, HeaderBar } from 'components';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from 'redux/Store';
-import { getProfile } from 'redux/actions';
 import { AllowedRoutes, ProtectedRoutes } from 'utils/routes';
 
 const App = () => {
-    const dispatch = useDispatch<AppDispatch>();
-
-    useEffect(() => {
-        dispatch(getProfile());
-    }, []);
 
     return (
         <div>

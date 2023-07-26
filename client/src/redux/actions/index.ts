@@ -6,5 +6,6 @@ export * from './CityActions';
 export * from './DepartmentActions';
 export * from './OrderActions';
 export * from './ProductActions';
+export * from './ReviewActions';
 export * from './ShopActions';
 export * from './UserActions';

@@ -42,6 +42,7 @@ export const UpdateCategoryDialog = ({ category }: CategoryProps) => {
                     <TextField
                         type="text"
                         label={t('forms.category.fields.name')}
+                        required
                         value={state.category.name}
                         fullWidth
                         onChange={(e) =>

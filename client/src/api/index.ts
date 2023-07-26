@@ -4,6 +4,7 @@ import {
     CreateCategory,
     CreateCollectPoint,
     CreateProduct,
+    CreateReview,
     CreateShop,
     Login,
     Order,
@@ -59,6 +60,9 @@ export const createProduct = (data: CreateProduct) =>
 export const updateProduct = (id: string, data: CreateProduct) =>
     api.patch(`products/${id}`, data);
 export const deleteProduct = (id: string) => api.delete(`products/${id}`);
+export const getReviews = (product: string) => api.get(`reviews?product=${product}`);
+export const createReview = (data: CreateReview) => api.post('reviews', data);
+export const deleteReview = (id: string) => api.delete(`reviews/${id}`); 
 export const getShops = (category = null) =>
     api.get(category ? `shops?category=${category}` : 'shops');
 export const getMyShops = () => api.get('shops/my-shops');

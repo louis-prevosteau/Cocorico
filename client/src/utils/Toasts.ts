@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import { toast } from 'react-toastify';
 
 export const handleSuccess = (message: string) => {
@@ -11,11 +12,13 @@ export const handleSuccess = (message: string) => {
 };
 
 export const handleError = (error: any) => {
-    toast.error(error.message, {
-        position: 'top-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        pauseOnHover: false,
-        closeOnClick: true,
-    });
+    if (error.response?.data?.message) {
+        toast.error(i18next.t(error.response?.data?.message), {
+            position: 'top-right',
+            autoClose: 5000,
+            hideProgressBar: false,
+            pauseOnHover: false,
+            closeOnClick: true,
+        });
+    }
 };

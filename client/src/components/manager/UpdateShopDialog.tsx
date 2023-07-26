@@ -58,6 +58,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                     <TextField
                         type="text"
                         label={t('forms.shop.fields.name')}
+                        required
                         value={shop.name}
                         fullWidth
                         onChange={(e) =>
@@ -90,6 +91,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                     <TextField
                         type="text"
                         label={t('forms.shop.fields.description')}
+                        required
                         value={shop.description}
                         multiline
                         fullWidth
@@ -118,6 +120,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                                     },
                                 })
                             }
+                            required
                         >
                             {categories.map((category) => (
                                 <MenuItem
@@ -133,7 +136,18 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                         <InputLabel>
                             {t('forms.shop.fields.department')}
                         </InputLabel>
-                        <Select>
+                        <Select
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    shop: {
+                                        ...state.shop,
+                                        department: e.target.value as string,
+                                    },
+                                })
+                            }
+                            required
+                        >
                             {departments.map((department) => (
                                 <MenuItem
                                     key={department.code}
@@ -147,6 +161,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                     <TextField
                         type="text"
                         label={t('forms.shop.fields.zipcode')}
+                        required
                         value={shop.zipcode}
                         fullWidth
                         onChange={(e) =>
@@ -175,6 +190,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                                     },
                                 })
                             }
+                            required
                         >
                             {cities.map((city) => (
                                 <MenuItem key={city.code} value={city.nom}>

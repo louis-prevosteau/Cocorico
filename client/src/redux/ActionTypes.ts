@@ -29,3 +29,6 @@ export const GET_PROFILE = 'GET_PROFILE';
 export const UPDATE_PROFILE = 'UPDATE_PROFILE';
 export const GET_DEPARTMENTS = 'GET_DEPARTMENTS';
 export const GET_CITIES = 'GET_CITIES';
+export const GET_REVIEWS = 'GET_REVIEWS';
+export const CREATE_REVIEW = 'CREATE_REVIEW';
+export const DELETE_REVIEW = 'DELETE_REVIEW';

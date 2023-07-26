@@ -10,6 +10,7 @@ export interface Product {
     madeIn: string;
     available: boolean;
     returnable: boolean;
+    averageNote: number;
 }
 
 export interface CreateProduct {
@@ -21,4 +22,5 @@ export interface CreateProduct {
     madeIn: string;
     available: boolean;
     returnable: boolean;
+    averageNote?: number;
 }

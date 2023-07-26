@@ -3,6 +3,8 @@ import {
     Controller,
     Delete,
     Get,
+    HttpException,
+    HttpStatus,
     Param,
     Patch,
     Post,
@@ -24,6 +26,12 @@ export class CollectPointsController {
     @Roles(Role.Admin)
     @Post()
     create(@Body() createCollectPointDto: CreateCollectPointDto) {
+        const { address, city, department, zipcode } = createCollectPointDto;
+        if (!address || !city || !zipcode || !department)
+            throw new HttpException(
+                'toasts.httpErrors.requiredFields',
+                HttpStatus.BAD_REQUEST,
+            );
         return this.collectPointsService.create(createCollectPointDto);
     }
 
@@ -41,6 +49,12 @@ export class CollectPointsController {
         @Param('id') id: string,
         @Body() updateCollectPointDto: UpdateCollectPointDto,
     ) {
+        const { address, city, department, zipcode } = updateCollectPointDto;
+        if (!address || !city || !zipcode || !department)
+            throw new HttpException(
+                'toasts.httpErrors.requiredFields',
+                HttpStatus.BAD_REQUEST,
+            );
         return this.collectPointsService.update(
             { _id: id },
             updateCollectPointDto,

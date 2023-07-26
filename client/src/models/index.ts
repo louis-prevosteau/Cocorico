@@ -6,5 +6,6 @@ export * from './Department';
 export * from './Order';
 export * from './Product';
 export * from './Props';
+export * from './Review';
 export * from './Shop';
 export * from './User';
