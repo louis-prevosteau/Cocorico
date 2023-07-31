@@ -16,7 +16,7 @@ export const Shop = () => {
 
     useEffect(() => {
         dispatch(getShop(id as string));
-        dispatch(getProducts(shop._id));
+        dispatch(getProducts(id as string));
     }, [id]);
     return (
         <div>
@@ -35,7 +35,7 @@ export const Shop = () => {
             <Box sx={{ maxWidth: 280, flexGrow: 1 }}>
                 <Grid container spacing={1}>
                     {products.map((product) => (
-                        <ProductCard product={product} />
+                        <ProductCard key={product._id} product={product} />
                     ))}
                 </Grid>
             </Box>

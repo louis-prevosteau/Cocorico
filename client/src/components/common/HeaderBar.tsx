@@ -55,6 +55,12 @@ export const HeaderBar = () => {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box
+                        component={'img'}
+                        src="./images/Cocorico.png"
+                        alt="logo"
+                        sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+                    />
+                    <Box
                         sx={{
                             flexGrow: 1,
                             display: {
@@ -98,6 +104,13 @@ export const HeaderBar = () => {
                             ))}
                         </Menu>
                     </Box>
+                    <Box
+                        component={'img'}
+                        src="./images/Cocorico.png"
+                        width='50%'
+                        alt="logo"
+                        sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, ml: 10, position: 'fixed' }}
+                    />
                     <Box
                         sx={{
                             flexGrow: 1,

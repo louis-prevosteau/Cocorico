@@ -14,7 +14,7 @@ export const ShopCard = ({ shop }: ShopProps) => {
         <Card sx={{ display: 'flex' }}>
             <CardMedia
                 component={'img'}
-                image={shop.image ? shop.image : './images/shop.png'}
+                image={shop.image ? shop.image : './images/logo.png'}
                 alt={shop.name}
                 sx={{ width: 90 }}
             />
