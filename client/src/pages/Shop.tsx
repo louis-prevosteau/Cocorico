@@ -27,8 +27,13 @@ export const Shop = () => {
                         <LocationOnOutlined />
                         {shop.city} ({shop.department})
                     </Grid>
-                    <Grid item marginLeft={1}>
-                        <Chip label={shop.category.name} color='success' />
+                    <Grid container item marginLeft={1} direction={'row'} spacing={5}>
+                        <Grid item>
+                            <Chip label={shop.category.name} color='success' />
+                        </Grid>
+                        <Grid item>
+                            <Typography variant='body2' color={'black'}>{shop.description}</Typography>
+                        </Grid>
                     </Grid>
                 </Grid>
             </AppBar>

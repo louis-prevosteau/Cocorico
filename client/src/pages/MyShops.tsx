@@ -43,7 +43,7 @@ export const MyShops = () => {
             <Typography variant="h4" align="center">
                 {t('pages.myShops.title')}
             </Typography>
-            <List>
+            <List sx={{ maxHeight: 650, overflow: 'auto' }}>
                 {shops.map((shop) => (
                     <ListItem
                         key={shop._id}

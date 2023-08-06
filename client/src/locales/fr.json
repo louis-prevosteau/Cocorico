@@ -64,6 +64,9 @@
         },
         "shops": {
             "title": "Toutes les boutiques"
+        },
+        "users": {
+            "title": "Tous les utilisateurs"
         }
     },
     "forms": {
@@ -160,6 +163,12 @@
             "id": "n °",
             "status": "Etat",
             "created_at": "Date"
+        },
+        "users": {
+            "username": "Pseudo",
+            "email": "Email",
+            "address": "Adresse",
+            "roles": "Rôles"
         }
     },
     "orderStatuses": {
@@ -168,6 +177,11 @@
         "processing": "En cours de traitement",
         "shipped": "Expédiée",
         "waiting": "En attente"
+    },
+    "roles": {
+        "admin": "Administrateur",
+        "seller": "Commerçant",
+        "member": "Client"
     },
     "toasts": {
         "authentication": "Autentification réussie",

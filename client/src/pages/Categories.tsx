@@ -31,7 +31,7 @@ export const Categories = () => {
             <Typography variant="h4" align="center">
                 {t('pages.categories.title')}
             </Typography>
-            <List>
+            <List sx={{ maxHeight: 650, overflow: 'auto' }}>
                 {categories.map((category) => (
                     <ListItem
                         key={category._id}

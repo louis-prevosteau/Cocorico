@@ -73,7 +73,7 @@ export const UpdateProductDialog = ({ shop }: ShopProps) => {
                         alignItems="center"
                     >
                         <Grid item>
-                            <List sx={{ maxWidth: 350 }}>
+                            <List sx={{ maxHeight: 200 }}>
                                 {products.map((product) => (
                                     <ListItemButton
                                         key={product._id}

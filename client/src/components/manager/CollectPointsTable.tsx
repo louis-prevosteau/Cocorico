@@ -35,7 +35,7 @@ export const CollectPointsTable = ({ user }: UserProps) => {
     };
 
     return (
-        <TableContainer component={Paper}>
+        <TableContainer component={Paper} sx={{ maxHeight: 'calc(100vh - 300px)', overflow: 'auto' }}>
             <SearchInput
                 label={t('pages.collectPoints.searchByZipcode')}
                 handleChange={handleChange}
