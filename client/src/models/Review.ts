@@ -1,4 +1,4 @@
-import { User } from "./User";
+import { User } from './User';
 
 export interface Review {
     _id: string;
@@ -6,7 +6,7 @@ export interface Review {
     content: string;
     note: number;
     user: User;
-    createdAt: string
+    createdAt: string;
 }
 
 export interface CreateReview {

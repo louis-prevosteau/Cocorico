@@ -21,6 +21,13 @@ export interface SearchInputProps {
     handleChange: ChangeEventHandler;
 }
 
+export interface CommonTableProps {
+    name: string;
+    columns: string[];
+    actions?: ReactNode;
+    children: ReactNode;
+}
+
 export interface CategoryProps {
     category: Category;
 }

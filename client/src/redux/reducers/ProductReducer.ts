@@ -37,7 +37,7 @@ export const ProductReducer = (
         madeIn: '',
         available: false,
         returnable: false,
-        averageNote: 0
+        averageNote: 0,
     },
     action: AnyAction,
 ): Product => {

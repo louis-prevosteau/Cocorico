@@ -21,18 +21,39 @@ export const Shop = () => {
     return (
         <div>
             <AppBar position="static" style={{ background: '#DEE5E9' }}>
-                <Typography fontWeight={'bold'} align='center' variant='h3' color={'black'}>{shop.name}</Typography>
-                <Grid container justifyContent={'flex-start'} direction='column' spacing={3} alignItems={'flex-start'}>
+                <Typography
+                    fontWeight={'bold'}
+                    align="center"
+                    variant="h3"
+                    color={'black'}
+                >
+                    {shop.name}
+                </Typography>
+                <Grid
+                    container
+                    justifyContent={'flex-start'}
+                    direction="column"
+                    spacing={3}
+                    alignItems={'flex-start'}
+                >
                     <Grid item color={'black'}>
                         <LocationOnOutlined />
                         {shop.city} ({shop.department})
                     </Grid>
-                    <Grid container item marginLeft={1} direction={'row'} spacing={5}>
+                    <Grid
+                        container
+                        item
+                        marginLeft={1}
+                        direction={'row'}
+                        spacing={5}
+                    >
                         <Grid item>
-                            <Chip label={shop.category.name} color='success' />
+                            <Chip label={shop.category.name} color="success" />
                         </Grid>
                         <Grid item>
-                            <Typography variant='body2' color={'black'}>{shop.description}</Typography>
+                            <Typography variant="body2" color={'black'}>
+                                {shop.description}
+                            </Typography>
                         </Grid>
                     </Grid>
                 </Grid>

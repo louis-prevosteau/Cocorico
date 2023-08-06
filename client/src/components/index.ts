@@ -1,3 +1,4 @@
+export * from './common/CommonTable';
 export * from './common/DialogGroupButton';
 export * from './common/Footer';
 export * from './common/GridList';

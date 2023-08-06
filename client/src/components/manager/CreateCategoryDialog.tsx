@@ -18,7 +18,7 @@ export const CreateCategoryDialog = () => {
         open: false,
         category: {
             name: '',
-        }
+        },
     });
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();

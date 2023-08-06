@@ -24,7 +24,10 @@ export const Shops = () => {
             <GridList>
                 {shops.map((shop) => (
                     <Grid item key={shop._id}>
-                        <NavLink to={`/shops/${shop._id}`} style={{ textDecoration: 'none' }}>
+                        <NavLink
+                            to={`/shops/${shop._id}`}
+                            style={{ textDecoration: 'none' }}
+                        >
                             <ShopCard shop={shop} />
                         </NavLink>
                     </Grid>

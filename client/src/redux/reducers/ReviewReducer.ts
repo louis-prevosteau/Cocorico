@@ -1,8 +1,11 @@
-import { AnyAction } from "@reduxjs/toolkit";
-import { Review } from "models";
-import { CREATE_REVIEW, DELETE_REVIEW, GET_REVIEWS } from "redux/ActionTypes";
+import { AnyAction } from '@reduxjs/toolkit';
+import { Review } from 'models';
+import { CREATE_REVIEW, DELETE_REVIEW, GET_REVIEWS } from 'redux/ActionTypes';
 
-export const ReviewsReducer = (state: Review[] = [], action: AnyAction): Review[] => {
+export const ReviewsReducer = (
+    state: Review[] = [],
+    action: AnyAction,
+): Review[] => {
     switch (action.type) {
         case GET_REVIEWS:
             return action.payload;

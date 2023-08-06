@@ -24,7 +24,6 @@ import { Footer, HeaderBar } from 'components';
 import { AllowedRoutes, ProtectedRoutes } from 'utils/routes';
 
 const App = () => {
-
     return (
         <div>
             <BrowserRouter>

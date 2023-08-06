@@ -1,14 +1,12 @@
 import {
     ButtonGroup,
     Paper,
-    Table,
-    TableBody,
     TableCell,
     TableContainer,
-    TableHead,
     TableRow,
 } from '@mui/material';
 import {
+    CommonTable,
     DeleteCollectPointDialog,
     SearchInput,
     UpdateCollectPointDialog,
@@ -35,63 +33,54 @@ export const CollectPointsTable = ({ user }: UserProps) => {
     };
 
     return (
-        <TableContainer component={Paper} sx={{ maxHeight: 'calc(100vh - 300px)', overflow: 'auto' }}>
+        <TableContainer
+            component={Paper}
+            sx={{ maxHeight: 'calc(100vh - 300px)', overflow: 'auto' }}
+        >
             <SearchInput
                 label={t('pages.collectPoints.searchByZipcode')}
                 handleChange={handleChange}
             />
-            <Table sx={{ minWidth: 700 }}>
-                <TableHead>
-                    <TableRow>
-                        {COLLECT_POINTS_COLUMNS.map((column) => (
-                            <TableCell
-                                sx={{
-                                    backgroundColor: '#001D6E',
-                                    color: 'white',
-                                }}
-                                key={column}
-                            >
-                                {t(`columns.collectPoints.${column}`)}
-                            </TableCell>
-                        ))}
+            <CommonTable
+                name="collectPoints"
+                columns={COLLECT_POINTS_COLUMNS}
+                actions={
+                    user.roles?.includes('admin') && (
+                        <TableCell
+                            sx={{
+                                backgroundColor: '#001D6E',
+                                color: 'white',
+                            }}
+                        >
+                            {t('columns.collectPoints.actions')}
+                        </TableCell>
+                    )
+                }
+            >
+                {collectPoints.map((collectPoint) => (
+                    <TableRow key={collectPoint._id}>
+                        <TableCell>{collectPoint.address}</TableCell>
+                        <TableCell>{collectPoint.city}</TableCell>
+                        <TableCell>{collectPoint.zipcode}</TableCell>
                         {user.roles?.includes('admin') && (
-                            <TableCell
-                                sx={{
-                                    backgroundColor: '#001D6E',
-                                    color: 'white',
-                                }}
-                            >
-                                {t('columns.collectPoints.actions')}
+                            <TableCell>
+                                <ButtonGroup
+                                    sx={{
+                                        backgroundColor: '#001D6E',
+                                    }}
+                                >
+                                    <UpdateCollectPointDialog
+                                        collectPoint={collectPoint}
+                                    />
+                                    <DeleteCollectPointDialog
+                                        collectPoint={collectPoint}
+                                    />
+                                </ButtonGroup>
                             </TableCell>
                         )}
                     </TableRow>
-                </TableHead>
-                <TableBody>
-                    {collectPoints.map((collectPoint) => (
-                        <TableRow key={collectPoint._id}>
-                            <TableCell>{collectPoint.address}</TableCell>
-                            <TableCell>{collectPoint.city}</TableCell>
-                            <TableCell>{collectPoint.zipcode}</TableCell>
-                            {user.roles?.includes('admin') && (
-                                <TableCell>
-                                    <ButtonGroup
-                                        sx={{
-                                            backgroundColor: '#001D6E',
-                                        }}
-                                    >
-                                        <UpdateCollectPointDialog
-                                            collectPoint={collectPoint}
-                                        />
-                                        <DeleteCollectPointDialog
-                                            collectPoint={collectPoint}
-                                        />
-                                    </ButtonGroup>
-                                </TableCell>
-                            )}
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
+                ))}
+            </CommonTable>
         </TableContainer>
     );
 };

@@ -107,9 +107,14 @@ export const HeaderBar = () => {
                     <Box
                         component={'img'}
                         src="./images/Cocorico.png"
-                        width='50%'
+                        width="50%"
                         alt="logo"
-                        sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, ml: 10, position: 'fixed' }}
+                        sx={{
+                            display: { xs: 'flex', md: 'none' },
+                            mr: 1,
+                            ml: 10,
+                            position: 'fixed',
+                        }}
                     />
                     <Box
                         sx={{
