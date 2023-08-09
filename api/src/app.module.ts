@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { MailerModule } from '@nestjs-modules/mailer';
+import { PugAdapter } from '@nestjs-modules/mailer/dist/adapters/pug.adapter';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
@@ -13,6 +15,9 @@ import { ProductsModule } from './products/products.module';
 import { ReviewsModule } from './reviews/reviews.module';
 import { ShopsModule } from './shops/shops.module';
 import { UsersModule } from './users/users.module';
+import { EmailService } from './email/email.service';
+import { EmailModule } from './email/email.module';
+import { join } from 'path';
 
 @Module({
     imports: [
@@ -22,6 +27,23 @@ import { UsersModule } from './users/users.module';
             useFactory: async (config: ConfigService) => ({
                 uri: config.get('MONGO_URI'),
             }),
+        }),
+        MailerModule.forRoot({
+            transport: {
+                host: 'localhost',
+                port: 1025,
+                secure: false,
+            },
+            defaults: {
+                from: '"No Reply" <no-reply@cocorico.fr>',
+            },
+            template: {
+                dir: join(__dirname, '..', 'templates'),
+                adapter: new PugAdapter(),
+                options: {
+                    strict: true,
+                },
+            },
         }),
         ConfigModule.forRoot({
             isGlobal: true,
@@ -36,8 +58,9 @@ import { UsersModule } from './users/users.module';
         CartsModule,
         OrdersModule,
         ReviewsModule,
+        EmailModule,
     ],
     controllers: [AppController],
-    providers: [AppService],
+    providers: [AppService, EmailService],
 })
 export class AppModule {}

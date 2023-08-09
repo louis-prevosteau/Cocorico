@@ -11,12 +11,14 @@ import { UsersService } from 'src/users/users.service';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RegisterDto } from './dto/register.dto';
+import { EmailService } from 'src/email/email.service';
 
 @Controller('auth')
 export class AuthController {
     constructor(
         private readonly authService: AuthService,
         private readonly usersService: UsersService,
+        private readonly emailService: EmailService,
     ) {}
 
     @Post('register')
@@ -34,6 +36,7 @@ export class AuthController {
                 await bcrypt.genSalt(10),
             ),
         });
+        await this.emailService.welcome(user);
         const { token } = this.authService.login(user);
         return { user, token };
     }

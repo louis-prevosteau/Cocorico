@@ -6,9 +6,11 @@ import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { JwtConstants } from './constants';
 import { JwtStrategy } from './strategies/jwt.strategy';
+import { EmailModule } from 'src/email/email.module';
 
 @Module({
     imports: [
+        EmailModule,
         UsersModule,
         PassportModule,
         JwtModule.register({
