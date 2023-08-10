@@ -3,7 +3,8 @@
         "create": "Ajouter",
         "delete": "Supprimer",
         "update": "Modifier",
-        "cancel": "Annuler"
+        "cancel": "Annuler",
+        "validate": "Valider"
     },
     "menu": {
         "shops": "Boutiques",
@@ -102,6 +103,12 @@
                 "zipcode": "Code postal"
             }
         },
+        "forgotPassword": {
+            "title": "Mot de passe oublié",
+            "fields": {
+                "email": "Email"
+            }
+        },
         "profile": {
             "update": "Modifier mon profil",
             "fields": {
@@ -185,10 +192,12 @@
     },
     "toasts": {
         "authentication": "Autentification réussie",
+        "resetMailSend": "Un lien de réinitialisation a été envoyé. Veuillez vérifier votre boîte mail.",
         "httpErrors": {
             "unknownUser": "Utilisateur inconnu",
             "userExist": "Utilisateur existant",
-            "requiredFields": "Champs requis"
+            "requiredFields": "Champs requis",
+            "invalidToken": "Jeton expiré"
         },
         "create": "Ajout réussi",
         "delete": "Suppression réussie",

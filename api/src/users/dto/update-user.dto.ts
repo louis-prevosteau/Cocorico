@@ -8,4 +8,6 @@ export class UpdateUserDto {
     readonly city: string;
     readonly zipcode: string;
     readonly country: string;
+    readonly resetToken: string;
+    readonly expiresAt: string;
 }

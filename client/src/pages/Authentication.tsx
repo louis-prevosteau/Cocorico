@@ -1,6 +1,6 @@
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { Box, Tab } from '@mui/material';
-import { Login, Register } from 'components';
+import { ForgotPasswordDialog, Login, Register } from 'components';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -41,6 +41,7 @@ export const Authentication = () => {
                     </TabPanel>
                 </Box>
             </TabContext>
+            <ForgotPasswordDialog />
         </Box>
     );
 };

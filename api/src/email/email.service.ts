@@ -1,5 +1,6 @@
 import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class EmailService {
@@ -12,6 +13,18 @@ export class EmailService {
             template: './welcome',
             context: {
                 username: user.username,
+            },
+        });
+    }
+
+    async resetPassword(user: any, token: string) {
+        await this.mailerService.sendMail({
+            to: user.email,
+            subject: 'Réinitialisation de mot de passe',
+            template: './resetPassword',
+            context: {
+                host: new ConfigService().get('CLIENT_URL'),
+                token,
             },
         });
     }

@@ -1,6 +1,6 @@
 import * as api from 'api';
 import { Dispatch } from '@reduxjs/toolkit';
-import { Login, Register } from 'models';
+import { ForgotPassword, Login, Register } from 'models';
 import { AUTH, CLEAR_AUTH } from '../ActionTypes';
 import { handleError, handleSuccess } from 'utils/Toasts';
 import i18next from 'i18next';
@@ -39,6 +39,15 @@ export const logout = () => (dispatch: Dispatch) => {
         });
         localStorage.removeItem('token');
         handleSuccess(i18next.t('toasts.logout'));
+    } catch (error) {
+        handleError(error);
+    }
+};
+
+export const forgotPassword = (data: ForgotPassword) => async (dispatch: Dispatch) => {
+    try {
+        await api.forgotPassword(data);
+        handleSuccess(i18next.t('toasts.resetMailSend'));
     } catch (error) {
         handleError(error);
     }
