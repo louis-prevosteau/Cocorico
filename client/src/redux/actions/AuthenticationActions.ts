@@ -44,11 +44,12 @@ export const logout = () => (dispatch: Dispatch) => {
     }
 };
 
-export const forgotPassword = (data: ForgotPassword) => async (dispatch: Dispatch) => {
-    try {
-        await api.forgotPassword(data);
-        handleSuccess(i18next.t('toasts.resetMailSend'));
-    } catch (error) {
-        handleError(error);
-    }
-};
+export const forgotPassword =
+    (data: ForgotPassword) => async (dispatch: Dispatch) => {
+        try {
+            await api.forgotPassword(data);
+            handleSuccess(i18next.t('toasts.resetMailSend'));
+        } catch (error) {
+            handleError(error);
+        }
+    };
