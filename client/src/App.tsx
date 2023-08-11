@@ -11,6 +11,7 @@ import {
     Orders,
     Product,
     Profile,
+    ResetPassword,
     Shop,
     Shops,
     Users,
@@ -39,6 +40,10 @@ const App = () => {
                             element={<CollectPoints />}
                         />
                         <Route path="/auth" element={<Authentication />} />
+                        <Route
+                            path="/reset-password/:token"
+                            element={<ResetPassword />}
+                        />
                         <Route element={<ProtectedRoutes />}>
                             <Route path="/cart" element={<Cart />} />
                             <Route path="/profile" element={<Profile />} />

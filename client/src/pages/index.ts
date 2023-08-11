@@ -9,6 +9,7 @@ export * from './Order';
 export * from './Orders';
 export * from './Product';
 export * from './Profile';
+export * from './ResetPassword';
 export * from './Shop';
 export * from './Shops';
 export * from './Users';

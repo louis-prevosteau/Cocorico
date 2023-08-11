@@ -40,6 +40,10 @@
                 "deleteProduct": "Supprimer un produit"
             }
         },
+        "notFound": {
+            "title": "Page inexistante",
+            "message": "Cette page n'existe pas. Faites demi-tour."
+        },
         "profile": {
             "infos": {
                 "title": "Mon profil",
