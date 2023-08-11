@@ -10,6 +10,7 @@ import {
     Login,
     Order,
     Register,
+    ResetPassword,
     User,
 } from 'models';
 
@@ -27,6 +28,8 @@ export const register = (data: Register) => api.post('auth/register', data);
 export const login = (data: Login) => api.post('auth/login', data);
 export const forgotPassword = (data: ForgotPassword) =>
     api.post('auth/forgot-password', data);
+export const resetPassword = (data: ResetPassword) =>
+    api.post('auth/reset-password', data);
 export const getCart = () => api.get('carts');
 export const createCart = () => api.post('carts');
 export const addProductToCart = (data: CartItem) =>

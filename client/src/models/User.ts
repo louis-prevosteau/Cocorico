@@ -26,3 +26,8 @@ export interface Login {
 export interface ForgotPassword {
     email: string;
 }
+
+export interface ResetPassword {
+    resetToken: string;
+    password: string;
+}

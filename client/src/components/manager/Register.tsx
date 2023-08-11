@@ -1,4 +1,4 @@
-import { Button, TextField } from '@mui/material';
+import { Button, Paper, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -20,7 +20,10 @@ export const Register = () => {
     };
 
     return (
-        <div>
+        <Paper elevation={3} sx={{ p: 3 }}>
+            <Typography variant="h5" sx={{ mb: 3, color: '#001D6E' }}>
+                {t('pages.authentication.register.title')}
+            </Typography>
             <form onSubmit={handleSubmit}>
                 <TextField
                     type="text"
@@ -33,7 +36,7 @@ export const Register = () => {
                         })
                     }
                     fullWidth
-                    sx={{ mb: 4 }}
+                    sx={{ mb: 2 }}
                 />
                 <TextField
                     type="email"
@@ -46,7 +49,7 @@ export const Register = () => {
                         })
                     }
                     fullWidth
-                    sx={{ mb: 4 }}
+                    sx={{ mb: 2 }}
                 />
                 <TextField
                     type="password"
@@ -59,12 +62,16 @@ export const Register = () => {
                         })
                     }
                     fullWidth
-                    sx={{ mb: 4 }}
+                    sx={{ mb: 3 }}
                 />
-                <Button type="submit" variant="outlined" color="inherit">
+                <Button
+                    type="submit"
+                    variant="outlined"
+                    sx={{ color: '#E6001F' }}
+                >
                     {t('pages.authentication.register.title')}
                 </Button>
             </form>
-        </div>
+        </Paper>
     );
 };
