@@ -13,7 +13,7 @@ export const Homepage = () => {
             sx={{
                 backgroundColor: '#DEE5E9',
                 padding: '1rem 0',
-                m: 3
+                m: 3,
             }}
         >
             <Container>
@@ -28,7 +28,7 @@ export const Homepage = () => {
                         textAlign: 'center',
                         border: '10px solid',
                         borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
-                        borderRadius: 5
+                        borderRadius: 5,
                     }}
                 >
                     <Typography

@@ -33,9 +33,7 @@ export const Authentication = () => {
                             borderColor: '#DEE5E9',
                         }}
                     >
-                        <TabList
-                            onChange={handleChange}
-                        >
+                        <TabList onChange={handleChange}>
                             <Tab
                                 label={t('pages.authentication.register.title')}
                                 value="register"
