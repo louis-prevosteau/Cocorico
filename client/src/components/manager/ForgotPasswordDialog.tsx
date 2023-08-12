@@ -43,7 +43,9 @@ export const ForgotPasswordDialog = () => {
                         color: 'white',
                         borderBottom: '1px solid #DEE5E9',
                     }}
-                >{t('forms.forgotPassword.title')}</DialogTitle>
+                >
+                    {t('forms.forgotPassword.title')}
+                </DialogTitle>
                 <DialogContent>
                     <Box sx={{ pt: 2 }}>
                         <TextField

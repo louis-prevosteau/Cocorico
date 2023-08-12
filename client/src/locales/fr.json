@@ -30,6 +30,11 @@
             "title": "Points de collectes",
             "searchByZipcode": "Rechercher par code postal"
         },
+        "homepage": {
+            "welcome": "Bienvenue sur Cocorico. La première plateforme de vente de produits fabriqués en France.",
+            "description": "Découvrez notre sélection de produits de haute qualité à des prix imbattables.",
+            "ourShops": "Découvrir les boutiques"
+        },
         "myShops": {
             "title": "Mes boutiques",
             "actions": {

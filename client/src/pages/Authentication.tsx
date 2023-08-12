@@ -23,7 +23,7 @@ export const Authentication = () => {
                     mt: 4,
                     border: '10px solid',
                     borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
-                    borderRadius: 5
+                    borderRadius: 5,
                 }}
             >
                 <TabContext value={state.value}>
@@ -35,8 +35,6 @@ export const Authentication = () => {
                     >
                         <TabList
                             onChange={handleChange}
-                            indicatorColor="primary"
-                            textColor="primary"
                         >
                             <Tab
                                 label={t('pages.authentication.register.title')}
