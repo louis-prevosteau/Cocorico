@@ -1,5 +1,5 @@
-import { Box, Grid } from '@mui/material';
-import { DashboardActions, MyOrders, ProfileManager } from 'components';
+import { Container, Grid } from '@mui/material';
+import { MyOrders, ProfileManager } from 'components';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/Store';
@@ -14,24 +14,15 @@ export const Profile = () => {
     }, []);
 
     return (
-        <Box>
-            <Grid
-                container
-                spacing={3}
-                direction="row"
-                alignItems={'center'}
-                justifyContent={'center'}
-            >
-                <Grid item>
-                    <MyOrders />
-                </Grid>
-                <Grid item>
+        <Container maxWidth="md">
+            <Grid container spacing={3} alignItems="stretch" sx={{ mt: 2 }}>
+                <Grid item xs={12} md={6}>
                     <ProfileManager user={profile} />
                 </Grid>
-                <Grid item>
-                    <DashboardActions user={profile} />
+                <Grid item xs={12} md={6}>
+                    <MyOrders />
                 </Grid>
             </Grid>
-        </Box>
+        </Container>
     );
 };

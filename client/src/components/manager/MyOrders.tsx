@@ -24,15 +24,15 @@ export const MyOrders = () => {
     }, []);
 
     return (
-        <Paper elevation={3}>
-            <Typography variant="h5" align="center">
+        <Paper elevation={3} sx={{ p: 2, bgcolor: '#DEE5E9' }}>
+            <Typography variant="h5" align="center" sx={{ mb: 2, color: '#001D6E' }}>
                 {t('pages.profile.myOrders.title')}
             </Typography>
             <Table size="small">
                 <TableHead>
                     <TableRow>
                         {MY_ORDERS_COLUMNS.map((column) => (
-                            <TableCell key={column}>
+                            <TableCell key={column} sx={{ color: '#001D6E' }}>
                                 {t(`columns.myOrders.${column}`)}
                             </TableCell>
                         ))}
@@ -42,9 +42,9 @@ export const MyOrders = () => {
                     {orders.length !== 0 ? (
                         orders.map((order) => (
                             <TableRow key={order._id}>
-                                <TableCell>{order._id}</TableCell>
-                                <TableCell>{order.status}</TableCell>
-                                <TableCell>
+                                <TableCell sx={{ color: '#001D6E' }}>{order._id}</TableCell>
+                                <TableCell sx={{ color: '#001D6E' }}>{order.status}</TableCell>
+                                <TableCell sx={{ color: '#001D6E' }}>
                                     {new Date(
                                         order.createdAt as string,
                                     ).toLocaleDateString('fr-FR')}
@@ -52,7 +52,7 @@ export const MyOrders = () => {
                             </TableRow>
                         ))
                     ) : (
-                        <Typography variant="body1">
+                        <Typography variant="body1" sx={{ color: '#001D6E' }}>
                             {t('pages.profile.myOrders.noOrders')}
                         </Typography>
                     )}

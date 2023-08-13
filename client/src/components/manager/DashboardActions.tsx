@@ -8,25 +8,24 @@ export const DashboardActions = ({ user }: UserProps) => {
     const { t } = useTranslation();
 
     return (
-        <Paper elevation={3}>
+        <Paper elevation={3} sx={{ p: 2, bgcolor: '#DEE5E9' }}>
             <Grid
                 container
                 spacing={1}
                 justifyContent={'center'}
                 alignItems={'center'}
-                p={2}
                 direction="row"
             >
                 {user.roles?.find((role) => role === 'admin') &&
                     ADMIN_ACTIONS.map((link) => (
-                        <Grid item>
+                        <Grid item key={link.path}>
                             <Link
                                 component={RouterLink}
-                                key={link.path}
                                 to={link.path}
                                 underline="none"
                                 variant="button"
                                 color="darkblue"
+                                sx={{ color: '#001D6E' }}
                             >
                                 {t(`pages.profile.actions.${link.name}`)}
                             </Link>
@@ -34,16 +33,18 @@ export const DashboardActions = ({ user }: UserProps) => {
                     ))}
                 {user.roles?.find((role) => role === 'seller') &&
                     SELLER_ACTIONS.map((link) => (
-                        <Link
-                            component={RouterLink}
-                            key={link.path}
-                            to={link.path}
-                            underline="none"
-                            variant="button"
-                            color="darkblue"
-                        >
-                            {t(`pages.profile.actions.${link.name}`)}
-                        </Link>
+                        <Grid item key={link.path}>
+                            <Link
+                                component={RouterLink}
+                                to={link.path}
+                                underline="none"
+                                variant="button"
+                                color="darkblue"
+                                sx={{ color: '#001D6E' }}
+                            >
+                                {t(`pages.profile.actions.${link.name}`)}
+                            </Link>
+                        </Grid>
                     ))}
             </Grid>
         </Paper>
