@@ -28,7 +28,7 @@ export const Categories = () => {
 
     return (
         <div>
-            <Typography variant="h4" align="center">
+            <Typography variant="h4" align="center" sx={{ color: '#001D6E', my: 3 }}>
                 {t('pages.categories.title')}
             </Typography>
             <List sx={{ maxHeight: 650, overflow: 'auto' }}>
@@ -36,21 +36,25 @@ export const Categories = () => {
                     <ListItem
                         key={category._id}
                         secondaryAction={
-                            <ButtonGroup
-                                sx={{
-                                    backgroundColor: '#001D6E',
-                                }}
-                            >
+                            <ButtonGroup>
                                 <UpdateCategoryDialog category={category} />
                                 <DeleteCategoryDialog category={category} />
                             </ButtonGroup>
                         }
+                        sx={{
+                            backgroundColor: '#DEE5E9',
+                            mb: 1,
+                            borderRadius: 5,
+                        }}
                     >
-                        <ListItemText primary={category.name} />
+                        <ListItemText
+                            primary={category.name}
+                            primaryTypographyProps={{ color: '#001D6E' }}
+                        />
                     </ListItem>
                 ))}
             </List>
-            <Grid display={'flex'} justifyContent={'right'}>
+            <Grid container justifyContent="flex-end" sx={{ mt: 3 }}>
                 <CreateCategoryDialog />
             </Grid>
         </div>

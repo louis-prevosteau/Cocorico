@@ -1,5 +1,6 @@
 import { Edit } from '@mui/icons-material';
 import {
+    Box,
     Dialog,
     DialogContent,
     DialogTitle,
@@ -33,29 +34,35 @@ export const UpdateCategoryDialog = ({ category }: CategoryProps) => {
 
     return (
         <div>
-            <IconButton onClick={handleOpen} sx={{ color: 'white' }}>
-                <Edit />
+            <IconButton onClick={handleOpen}>
+                <Edit color='action' />
             </IconButton>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>{t('forms.category.update')}</DialogTitle>
+                <DialogTitle sx={{
+                        backgroundColor: '#001D6E',
+                        color: 'white',
+                        borderBottom: '1px solid #DEE5E9',
+                    }}>{t('forms.category.update')}</DialogTitle>
                 <DialogContent>
-                    <TextField
-                        type="text"
-                        label={t('forms.category.fields.name')}
-                        required
-                        value={state.category.name}
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                category: {
-                                    ...state.category,
-                                    name: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
+                    <Box sx={{ pt: 2 }}>
+                        <TextField
+                            type="text"
+                            label={t('forms.category.fields.name')}
+                            required
+                            value={state.category.name}
+                            fullWidth
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    category: {
+                                        ...state.category,
+                                        name: e.target.value,
+                                    },
+                                })
+                            }
+                            sx={{ mb: 4 }}
+                        />
+                    </Box>
                 </DialogContent>
                 <DialogGroupButton
                     handleClick={handleSubmit}

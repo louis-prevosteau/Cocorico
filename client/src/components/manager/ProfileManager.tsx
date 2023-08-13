@@ -18,31 +18,31 @@ export const ProfileManager = ({ user }: UserProps) => {
                 sx={{ width: 120, height: 120, mx: 'auto', my: 2 }}
             />
             <Box>
-                <Typography variant="h5" sx={{ color: '#001D6E' }}>
+                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.username')} {user.username}
                 </Typography>
-                <Typography variant="h5" sx={{ color: '#001D6E' }}>
+                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.email')} {user.email}
                 </Typography>
-                <Typography variant="h5" sx={{ color: '#001D6E' }}>
+                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.address')}{' '}
                     {user.address
                         ? user.address
                         : t('pages.profile.infos.notSpecified')}
                 </Typography>
-                <Typography variant="h5" sx={{ color: '#001D6E' }}>
+                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.city')}{' '}
                     {user.city
                         ? user.city
                         : t('pages.profile.infos.notSpecified')}
                 </Typography>
-                <Typography variant="h5" sx={{ color: '#001D6E' }}>
+                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.zipcode')}{' '}
                     {user.zipcode
                         ? user.zipcode
                         : t('pages.profile.infos.notSpecified')}
                 </Typography>
-                <Typography variant="h5" sx={{ color: '#001D6E' }}>
+                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.country')}{' '}
                     {user.country
                         ? user.country

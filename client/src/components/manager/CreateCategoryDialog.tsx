@@ -1,5 +1,6 @@
 import { Add } from '@mui/icons-material';
 import {
+    Box,
     Dialog,
     DialogContent,
     DialogTitle,
@@ -44,24 +45,30 @@ export const CreateCategoryDialog = () => {
                 <Add />
             </IconButton>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>{t('forms.category.create')}</DialogTitle>
+                <DialogTitle sx={{
+                        backgroundColor: '#001D6E',
+                        color: 'white',
+                        borderBottom: '1px solid #DEE5E9',
+                    }}>{t('forms.category.create')}</DialogTitle>
                 <DialogContent>
-                    <TextField
-                        type="text"
-                        label={t('forms.category.fields.name')}
-                        required
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                category: {
-                                    ...state.category,
-                                    name: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
+                    <Box sx={{ pt: 2 }}>
+                        <TextField
+                            type="text"
+                            label={t('forms.category.fields.name')}
+                            required
+                            fullWidth
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    category: {
+                                        ...state.category,
+                                        name: e.target.value,
+                                    },
+                                })
+                            }
+                            sx={{ mb: 4 }}
+                        />
+                    </Box>
                 </DialogContent>
                 <DialogGroupButton
                     handleClick={handleSubmit}

@@ -1,5 +1,6 @@
 import { Edit } from '@mui/icons-material';
 import {
+    Box,
     Dialog,
     DialogContent,
     DialogTitle,
@@ -40,123 +41,125 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
             <IconButton onClick={handleOpen}>
                 <Edit />
             </IconButton>
-            <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>{t('forms.profile.update')}</DialogTitle>
-                <DialogContent>
-                    <TextField
-                        type="text"
-                        label={t('forms.profile.fields.username')}
-                        value={state.profile.username}
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                profile: {
-                                    ...state.profile,
-                                    username: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
-                    <TextField
-                        type="email"
-                        label={t('forms.profile.fields.email')}
-                        value={state.profile.email}
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                profile: {
-                                    ...state.profile,
-                                    email: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
-                    <FormControl fullWidth sx={{ mb: 4 }}>
-                        <InputLabel>
-                            {t('forms.profile.fields.avatar')}
-                        </InputLabel>
-                        <FileBase
-                            type="file"
-                            multiple={false}
-                            onDone={({ base64 }: { base64: any }) =>
+            <Dialog open={state.open} onClose={handleOpen} maxWidth="xs">
+                <DialogTitle sx={{ backgroundColor: '#001D6E', color: '#DEE5E9' }}>{t('forms.profile.update')}</DialogTitle>
+                <DialogContent sx={{ backgroundColor: '#DEE5E9', color: '#001D6E' }}>
+                    <Box sx={{ pt: 2 }}>
+                        <TextField
+                            type="text"
+                            label={t('forms.profile.fields.username')}
+                            value={state.profile.username}
+                            fullWidth
+                            onChange={(e) =>
                                 setState({
                                     ...state,
                                     profile: {
                                         ...state.profile,
-                                        avatar: base64,
+                                        username: e.target.value,
                                     },
                                 })
                             }
+                            sx={{ mb: 2 }}
                         />
-                    </FormControl>
-                    <TextField
-                        type="text"
-                        label={t('forms.profile.fields.address')}
-                        value={state.profile.address}
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                profile: {
-                                    ...state.profile,
-                                    address: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
-                    <TextField
-                        type="text"
-                        label={t('forms.profile.fields.city')}
-                        value={state.profile.city}
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                profile: {
-                                    ...state.profile,
-                                    city: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
-                    <TextField
-                        type="text"
-                        label={t('forms.profile.fields.zipcode')}
-                        value={state.profile.zipcode}
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                profile: {
-                                    ...state.profile,
-                                    zipcode: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
-                    <TextField
-                        type="text"
-                        label={t('forms.profile.fields.country')}
-                        value={state.profile.country}
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                profile: {
-                                    ...state.profile,
-                                    country: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
+                        <TextField
+                            type="email"
+                            label={t('forms.profile.fields.email')}
+                            value={state.profile.email}
+                            fullWidth
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    profile: {
+                                        ...state.profile,
+                                        email: e.target.value,
+                                    },
+                                })
+                            }
+                            sx={{ mb: 2 }}
+                        />
+                        <FormControl fullWidth sx={{ mb: 2 }}>
+                            <InputLabel>
+                                {t('forms.profile.fields.avatar')}
+                            </InputLabel>
+                            <FileBase
+                                type="file"
+                                multiple={false}
+                                onDone={({ base64 }: { base64: any }) =>
+                                    setState({
+                                        ...state,
+                                        profile: {
+                                            ...state.profile,
+                                            avatar: base64,
+                                        },
+                                    })
+                                }
+                            />
+                        </FormControl>
+                        <TextField
+                            type="text"
+                            label={t('forms.profile.fields.address')}
+                            value={state.profile.address}
+                            fullWidth
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    profile: {
+                                        ...state.profile,
+                                        address: e.target.value,
+                                    },
+                                })
+                            }
+                            sx={{ mb: 2 }}
+                        />
+                        <TextField
+                            type="text"
+                            label={t('forms.profile.fields.city')}
+                            value={state.profile.city}
+                            fullWidth
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    profile: {
+                                        ...state.profile,
+                                        city: e.target.value,
+                                    },
+                                })
+                            }
+                            sx={{ mb: 2 }}
+                        />
+                        <TextField
+                            type="text"
+                            label={t('forms.profile.fields.zipcode')}
+                            value={state.profile.zipcode}
+                            fullWidth
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    profile: {
+                                        ...state.profile,
+                                        zipcode: e.target.value,
+                                    },
+                                })
+                            }
+                            sx={{ mb: 2 }}
+                        />
+                        <TextField
+                            type="text"
+                            label={t('forms.profile.fields.country')}
+                            value={state.profile.country}
+                            fullWidth
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    profile: {
+                                        ...state.profile,
+                                        country: e.target.value,
+                                    },
+                                })
+                            }
+                            sx={{ mb: 2 }}
+                        />
+                    </Box>
                 </DialogContent>
                 <DialogGroupButton
                     handleClick={handleSubmit}

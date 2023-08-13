@@ -11,7 +11,7 @@ export const Footer = () => {
                 pt: 1,
                 bottom: 0,
                 width: '100%',
-                position: 'fixed',
+                position: 'static',
             }}
             component={'footer'}
         >

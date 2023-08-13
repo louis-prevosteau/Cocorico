@@ -111,66 +111,10 @@ export const HeaderBar = () => {
                         alt="logo"
                         sx={{
                             display: { xs: 'flex', md: 'none' },
-                            mr: 6,
-                            ml: 6,
+                            mr: 5,
+                            ml: 5,
                         }}
                     />
-                    <Box
-                        sx={{
-                            display: {
-                                xs: 'flex',
-                                md: 'none',
-                            },
-                        }}
-                    >
-                        {isAuth || token ? (
-                            <div>
-                                <IconButton
-                                    onClick={handleOpenUserMenu}
-                                    aria-controls="user-menu"
-                                    color="inherit"
-                                >
-                                    {profile.avatar ? (
-                                        <Avatar
-                                            alt={profile.username}
-                                            src={profile.avatar}
-                                        />
-                                    ) : (
-                                        <AccountCircle />
-                                    )}
-                                </IconButton>
-                                <Menu
-                                    id="user-menu"
-                                    anchorEl={state.anchorElUser}
-                                    keepMounted
-                                    open={Boolean(state.anchorElUser)}
-                                    onClose={handleCloseUserMenu}
-                                >
-                                    {USER_MENU_ITEMS.map((item) => (
-                                        <MenuItem
-                                            onClick={() => navigate(item.path)}
-                                        >
-                                            {t(item.name)}
-                                        </MenuItem>
-                                    ))}
-                                    <MenuItem onClick={handleLogout}>
-                                        {t('menu.logout')}
-                                    </MenuItem>
-                                </Menu>
-                            </div>
-                        ) : (
-                            <IconButton
-                                onClick={() => navigate('/auth')}
-                                sx={{
-                                    my: 2,
-                                    color: 'white',
-                                    display: 'block',
-                                }}
-                            >
-                                <Login color="inherit" />
-                            </IconButton>
-                        )}
-                    </Box>
                     <Box
                         sx={{
                             flexGrow: 1,

@@ -32,12 +32,14 @@ export const DeleteCategoryDialog = ({ category }: CategoryProps) => {
 
     return (
         <div>
-            <IconButton onClick={handleOpen} sx={{ color: 'white' }}>
-                <Delete />
+            <IconButton onClick={handleOpen}>
+                <Delete color='action' />
             </IconButton>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>{t('forms.category.delete.title')}</DialogTitle>
-                <DialogContent>
+                <DialogTitle sx={{ backgroundColor: '#E6001F', color: '#DEE5E9' }}>
+                    {t('forms.category.delete.title')}
+                </DialogTitle>
+                <DialogContent sx={{ backgroundColor: '#DEE5E9' }}>
                     <DialogContentText>
                         {t('forms.category.delete.message')}
                     </DialogContentText>
