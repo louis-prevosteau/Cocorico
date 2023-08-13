@@ -17,7 +17,7 @@ export const ShopCard = ({ shop }: ShopProps) => {
                 bgcolor: '#DEE5E9',
                 marginBottom: 3,
                 width: '90vw',
-                maxWidth: 300, 
+                maxWidth: 300,
             }}
         >
             <CardMedia

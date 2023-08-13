@@ -28,7 +28,11 @@ export const Categories = () => {
 
     return (
         <div>
-            <Typography variant="h4" align="center" sx={{ color: '#001D6E', my: 3 }}>
+            <Typography
+                variant="h4"
+                align="center"
+                sx={{ color: '#001D6E', my: 3 }}
+            >
                 {t('pages.categories.title')}
             </Typography>
             <List sx={{ maxHeight: 650, overflow: 'auto' }}>

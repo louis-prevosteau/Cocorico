@@ -9,7 +9,11 @@ export const ProfileManager = ({ user }: UserProps) => {
 
     return (
         <Paper elevation={3} sx={{ p: 2, bgcolor: '#DEE5E9' }}>
-            <Typography variant="h5" align="center" sx={{ mb: 2, color: '#001D6E' }}>
+            <Typography
+                variant="h5"
+                align="center"
+                sx={{ mb: 2, color: '#001D6E' }}
+            >
                 {t('pages.profile.infos.title')}
             </Typography>
             <Avatar
@@ -18,31 +22,31 @@ export const ProfileManager = ({ user }: UserProps) => {
                 sx={{ width: 120, height: 120, mx: 'auto', my: 2 }}
             />
             <Box>
-                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
+                <Typography variant="subtitle1" sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.username')} {user.username}
                 </Typography>
-                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
+                <Typography variant="subtitle1" sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.email')} {user.email}
                 </Typography>
-                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
+                <Typography variant="subtitle1" sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.address')}{' '}
                     {user.address
                         ? user.address
                         : t('pages.profile.infos.notSpecified')}
                 </Typography>
-                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
+                <Typography variant="subtitle1" sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.city')}{' '}
                     {user.city
                         ? user.city
                         : t('pages.profile.infos.notSpecified')}
                 </Typography>
-                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
+                <Typography variant="subtitle1" sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.zipcode')}{' '}
                     {user.zipcode
                         ? user.zipcode
                         : t('pages.profile.infos.notSpecified')}
                 </Typography>
-                <Typography variant='subtitle1' sx={{ color: '#001D6E' }}>
+                <Typography variant="subtitle1" sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.country')}{' '}
                     {user.country
                         ? user.country

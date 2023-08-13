@@ -28,7 +28,11 @@ export const Users = () => {
             </Typography>
             <TableContainer
                 component={Paper}
-                sx={{ maxHeight: 'calc(100vh - 300px)', overflow: 'auto' }}
+                sx={{
+                    maxHeight: 'calc(100vh - 300px)',
+                    overflow: 'auto',
+                    marginTop: 3,
+                }}
             >
                 <CommonTable name="users" columns={USERS_COLUMNS}>
                     {users.map((user) => (

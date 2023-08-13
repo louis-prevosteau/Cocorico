@@ -45,11 +45,15 @@ export const CreateCategoryDialog = () => {
                 <Add />
             </IconButton>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle sx={{
+                <DialogTitle
+                    sx={{
                         backgroundColor: '#001D6E',
                         color: 'white',
                         borderBottom: '1px solid #DEE5E9',
-                    }}>{t('forms.category.create')}</DialogTitle>
+                    }}
+                >
+                    {t('forms.category.create')}
+                </DialogTitle>
                 <DialogContent>
                     <Box sx={{ pt: 2 }}>
                         <TextField

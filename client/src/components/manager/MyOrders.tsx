@@ -25,7 +25,11 @@ export const MyOrders = () => {
 
     return (
         <Paper elevation={3} sx={{ p: 2, bgcolor: '#DEE5E9' }}>
-            <Typography variant="h5" align="center" sx={{ mb: 2, color: '#001D6E' }}>
+            <Typography
+                variant="h5"
+                align="center"
+                sx={{ mb: 2, color: '#001D6E' }}
+            >
                 {t('pages.profile.myOrders.title')}
             </Typography>
             <Table size="small">
@@ -42,8 +46,12 @@ export const MyOrders = () => {
                     {orders.length !== 0 ? (
                         orders.map((order) => (
                             <TableRow key={order._id}>
-                                <TableCell sx={{ color: '#001D6E' }}>{order._id}</TableCell>
-                                <TableCell sx={{ color: '#001D6E' }}>{order.status}</TableCell>
+                                <TableCell sx={{ color: '#001D6E' }}>
+                                    {order._id}
+                                </TableCell>
+                                <TableCell sx={{ color: '#001D6E' }}>
+                                    {order.status}
+                                </TableCell>
                                 <TableCell sx={{ color: '#001D6E' }}>
                                     {new Date(
                                         order.createdAt as string,

@@ -42,8 +42,14 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
                 <Edit />
             </IconButton>
             <Dialog open={state.open} onClose={handleOpen} maxWidth="xs">
-                <DialogTitle sx={{ backgroundColor: '#001D6E', color: '#DEE5E9' }}>{t('forms.profile.update')}</DialogTitle>
-                <DialogContent sx={{ backgroundColor: '#DEE5E9', color: '#001D6E' }}>
+                <DialogTitle
+                    sx={{ backgroundColor: '#001D6E', color: '#DEE5E9' }}
+                >
+                    {t('forms.profile.update')}
+                </DialogTitle>
+                <DialogContent
+                    sx={{ backgroundColor: '#DEE5E9', color: '#001D6E' }}
+                >
                     <Box sx={{ pt: 2 }}>
                         <TextField
                             type="text"

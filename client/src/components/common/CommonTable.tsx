@@ -24,14 +24,27 @@ export const CommonTable = ({
                         <TableCell
                             sx={{
                                 backgroundColor: '#001D6E',
-                                color: 'white',
+                                color: '#DEE5E9',
+                                fontWeight: 'bold',
+                                fontSize: '1rem',
                             }}
                             key={column}
                         >
                             {t(`columns.${name}.${column}`)}
                         </TableCell>
                     ))}
-                    {actions}
+                    {actions && (
+                        <TableCell
+                            sx={{
+                                backgroundColor: '#001D6E',
+                                color: '#DEE5E9',
+                                fontWeight: 'bold',
+                                fontSize: '1rem',
+                            }}
+                        >
+                            {t('common.actions')}
+                        </TableCell>
+                    )}
                 </TableRow>
             </TableHead>
             <TableBody>{children}</TableBody>

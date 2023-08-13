@@ -35,14 +35,18 @@ export const UpdateCategoryDialog = ({ category }: CategoryProps) => {
     return (
         <div>
             <IconButton onClick={handleOpen}>
-                <Edit color='action' />
+                <Edit color="action" />
             </IconButton>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle sx={{
+                <DialogTitle
+                    sx={{
                         backgroundColor: '#001D6E',
                         color: 'white',
                         borderBottom: '1px solid #DEE5E9',
-                    }}>{t('forms.category.update')}</DialogTitle>
+                    }}
+                >
+                    {t('forms.category.update')}
+                </DialogTitle>
                 <DialogContent>
                     <Box sx={{ pt: 2 }}>
                         <TextField
