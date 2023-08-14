@@ -33,8 +33,7 @@ export const UpdateCollectPointDialog = ({
         setState({ ...state, open: !state.open });
     };
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         dispatch(updateCollectPoint(collectPoint._id, state.collectPoint));
     };
 

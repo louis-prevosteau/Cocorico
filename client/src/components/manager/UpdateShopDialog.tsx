@@ -42,8 +42,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
         setState({ ...state, open: !state.open });
     };
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         dispatch(updateShop(shop._id, state.shop));
     };
 

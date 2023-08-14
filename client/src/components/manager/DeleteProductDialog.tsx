@@ -40,8 +40,7 @@ export const DeleteProductDialog = ({ shop }: ShopProps) => {
         setState({ ...state, productSelected: true, product: product });
     };
 
-    const handleDelete = (e: any) => {
-        e.preventDefault();
+    const handleDelete = () => {
         dispatch(deleteProduct(state.product._id));
     };
 

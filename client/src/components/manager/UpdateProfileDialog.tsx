@@ -31,8 +31,7 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
         setState({ ...state, open: !state.open });
     };
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         dispatch(updateProfile(state.profile));
     };
 

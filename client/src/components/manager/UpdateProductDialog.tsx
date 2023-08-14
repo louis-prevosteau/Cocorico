@@ -46,8 +46,7 @@ export const UpdateProductDialog = ({ shop }: ShopProps) => {
         setState({ ...state, productSelected: true, product: product });
     };
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         dispatch(
             updateProduct(
                 state.product._id,

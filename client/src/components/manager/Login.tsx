@@ -13,8 +13,7 @@ export const Login = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         dispatch(login(state));
     };
 
@@ -23,41 +22,40 @@ export const Login = () => {
             <Typography variant="h5" sx={{ mb: 3, color: '#001D6E' }}>
                 {t('pages.authentication.login.title')}
             </Typography>
-            <form onSubmit={handleSubmit}>
-                <TextField
-                    type="email"
-                    variant="outlined"
-                    label={t('forms.authentication.fields.email')}
-                    onChange={(e) =>
-                        setState({
-                            ...state,
-                            email: e.target.value,
-                        })
-                    }
-                    fullWidth
-                    sx={{ mb: 2 }}
-                />
-                <TextField
-                    type="password"
-                    variant="outlined"
-                    label={t('forms.authentication.fields.password')}
-                    onChange={(e) =>
-                        setState({
-                            ...state,
-                            password: e.target.value,
-                        })
-                    }
-                    fullWidth
-                    sx={{ mb: 3 }}
-                />
-                <Button
-                    type="submit"
-                    variant="outlined"
-                    sx={{ color: '#E6001F' }}
-                >
-                    {t('pages.authentication.login.title')}
-                </Button>
-            </form>
+            <TextField
+                type="email"
+                variant="outlined"
+                label={t('forms.authentication.fields.email')}
+                onChange={(e) =>
+                    setState({
+                        ...state,
+                        email: e.target.value,
+                    })
+                }
+                fullWidth
+                sx={{ mb: 2 }}
+            />
+            <TextField
+                type="password"
+                variant="outlined"
+                label={t('forms.authentication.fields.password')}
+                onChange={(e) =>
+                    setState({
+                        ...state,
+                        password: e.target.value,
+                    })
+                }
+                fullWidth
+                sx={{ mb: 3 }}
+            />
+            <Button
+                type="submit"
+                variant="outlined"
+                sx={{ color: '#E6001F' }}
+                onClick={handleSubmit}
+            >
+                {t('pages.authentication.login.title')}
+            </Button>
         </Paper>
     );
 };

@@ -27,8 +27,7 @@ export const ForgotPasswordDialog = () => {
         setState({ ...state, open: !state.open });
     };
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         dispatch(forgotPassword(state.data));
     };
     return (

@@ -25,8 +25,7 @@ const DeleteShopDialog = ({ shop }: ShopProps) => {
         setState({ ...state, open: !state.open });
     };
 
-    const handleDelete = (e: any) => {
-        e.preventDefault();
+    const handleDelete = () => {
         dispatch(deleteShop(shop._id));
     };
     return (

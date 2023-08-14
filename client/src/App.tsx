@@ -17,14 +17,22 @@ import {
     Users,
 } from 'pages';
 import './i18n';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Footer, HeaderBar } from 'components';
 import { AllowedRoutes, ProtectedRoutes } from 'utils/routes';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from 'redux/Store';
+import { getProfile } from 'redux/actions';
 
 const App = () => {
+    const dispatch = useDispatch<AppDispatch>();
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) dispatch(getProfile());
+    }, []);
     return (
         <div>
             <BrowserRouter>

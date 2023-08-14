@@ -27,8 +27,7 @@ export const UpdateCategoryDialog = ({ category }: CategoryProps) => {
         setState({ ...state, open: !state.open });
     };
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         dispatch(updateCategory(category._id, state.category));
     };
 

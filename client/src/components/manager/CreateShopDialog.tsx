@@ -46,8 +46,7 @@ export const CreateShopDialog = () => {
         setState({ ...state, open: !state.open });
     };
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         dispatch(createShop(state.shop));
     };
 

@@ -73,6 +73,11 @@
                 "users": "Tous les utilisateurs"
             }
         },
+        "resetPassword": {
+            "title": "Réinitialiser mon mot de passe",
+            "password": "Saisissez votre nouveau mot de passe",
+            "confirmed": "Confirmez votre nouveau mot de passe"
+        },
         "shops": {
             "title": "Toutes les boutiques"
         },

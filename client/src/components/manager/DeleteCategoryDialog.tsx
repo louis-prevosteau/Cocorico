@@ -25,8 +25,7 @@ export const DeleteCategoryDialog = ({ category }: CategoryProps) => {
         setState({ ...state, open: !state.open });
     };
 
-    const handleDelete = (e: any) => {
-        e.preventDefault();
+    const handleDelete = () => {
         dispatch(deleteCategory(category._id));
     };
 
