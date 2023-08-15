@@ -51,7 +51,7 @@ export const HeaderBar = () => {
     };
 
     return (
-        <AppBar position="static" style={{ background: '#001D6E' }}>
+        <AppBar position='static' style={{ background: '#001D6E' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box
@@ -115,6 +115,22 @@ export const HeaderBar = () => {
                             ml: 5,
                         }}
                     />
+                    <Box
+                        sx={{
+                            flexGrow: 1,
+                            display: {
+                                xs: 'flex',
+                                md: 'none',
+                            },
+                        }}
+                    >
+                        <IconButton
+                            onClick={() => navigate('/auth')}
+                            color='inherit'
+                        >
+                            <Login />
+                        </IconButton>
+                    </Box>
                     <Box
                         sx={{
                             flexGrow: 1,

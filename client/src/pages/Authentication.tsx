@@ -1,13 +1,18 @@
 import { TabContext, TabList, TabPanel } from '@mui/lab';
-import { Box, Container, Paper, Tab } from '@mui/material';
+import { Box, Container, Grid, Paper, Tab } from '@mui/material';
+import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import { ForgotPasswordDialog, Login, Register } from 'components';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from 'redux/Store';
+import { googleLogin, googlecallback } from 'redux/actions';
 
 export const Authentication = () => {
     const [state, setState] = useState({
         value: 'register',
     });
+    const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -51,7 +56,17 @@ export const Authentication = () => {
                         </TabPanel>
                     </Box>
                 </TabContext>
-                <ForgotPasswordDialog />
+                <Grid container direction='row' spacing={3}>
+                    <Grid item>
+                        <ForgotPasswordDialog />
+                    </Grid>
+                    <Grid item>
+                        <GoogleLogin onSuccess={function (credentialResponse: CredentialResponse) {
+                            dispatch(googleLogin(credentialResponse));
+                            dispatch(googlecallback());
+                        } } />
+                    </Grid>
+                </Grid>
             </Paper>
         </Container>
     );

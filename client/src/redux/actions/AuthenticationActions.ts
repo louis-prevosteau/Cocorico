@@ -4,6 +4,7 @@ import { ForgotPassword, Login, Register, ResetPassword } from 'models';
 import { AUTH, CLEAR_AUTH } from '../ActionTypes';
 import { handleError, handleSuccess } from 'utils/Toasts';
 import i18next from 'i18next';
+import { CredentialResponse } from '@react-oauth/google';
 
 export const register =
     (registerData: Register) => async (dispatch: Dispatch) => {
@@ -27,6 +28,26 @@ export const login = (loginData: Login) => async (dispatch: Dispatch) => {
         });
         localStorage.setItem('token', data.token);
         handleSuccess(i18next.t('toasts.authentication'));
+    } catch (error) {
+        handleError(error);
+    }
+};
+
+export const googleLogin = (credentialResponse: CredentialResponse) => async (dispatch: Dispatch) => {
+    try {
+        await api.googleLogin(credentialResponse);
+        dispatch({
+            type: AUTH,
+        });
+        localStorage.setItem('token', credentialResponse.credential as string);
+    } catch (error) {
+        handleError(error);
+    }
+};
+
+export const googlecallback = () => async (dispatch: Dispatch) => {
+    try {
+        await api.googlecallback();
     } catch (error) {
         handleError(error);
     }

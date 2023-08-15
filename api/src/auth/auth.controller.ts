@@ -1,10 +1,13 @@
 import {
     Body,
     Controller,
+    Get,
     HttpCode,
     HttpException,
     HttpStatus,
     Post,
+    Res,
+    UseGuards,
 } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
@@ -16,6 +19,7 @@ import { EmailService } from 'src/email/email.service';
 import { ForgotPasswordDto } from './dto/forgotPassword.dto';
 import { ConfigService } from '@nestjs/config';
 import { ResetPasswordDto } from './dto/resetPassword.dto';
+import { GoogleAuthGuard } from './guards/google-auth.guard';
 
 const generateResetToken = (id: any) => {
     const expiresIn = '1h';
@@ -109,5 +113,15 @@ export class AuthController {
             },
         );
         return user;
+    }
+
+    @Post('google')
+    @UseGuards(GoogleAuthGuard)
+    async googleLogin() {}
+
+    @Get('google-callback')
+    @UseGuards(GoogleAuthGuard)
+    async googleLoginCallback(@Res() res: any) {
+        return res.redirect('/');
     }
 }

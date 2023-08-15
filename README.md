@@ -39,8 +39,8 @@ Dans le fichier .env, complétez les variables suivantes :
 
 MONGO_URI= #url MongoDB
 JWT_SECRET= #clé secrète JWT
-GOOGLE_CLIENT_ID= #clientID Google (non implémenté)
-GOOGLE_CLIENT_SECRET= #clientSecret Google (non implémenté)
+GOOGLE_CLIENT_ID= #clientID Google
+GOOGLE_CLIENT_SECRET= #clientSecret Google
 ```
 
 ```

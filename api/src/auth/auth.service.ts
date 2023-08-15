@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
+import * as crypto from 'crypto';
 import { UsersService } from 'src/users/users.service';
 import { LoginDto } from './dto/login.dto';
-import { ResetPasswordDto } from './dto/resetPassword.dto';
+import { Profile } from 'passport-google-oauth20';
 
 @Injectable()
 export class AuthService {
@@ -33,5 +34,22 @@ export class AuthService {
     login(user: any) {
         const payload = { sub: user._id };
         return { token: this.jwtService.sign(payload) };
+    }
+
+    async findOrCreateGoogleUser(profile: Profile) {
+        let user = await this.usersService.findOne({
+            email: profile.emails[0].value,
+        });
+        if (!user)
+            user = await this.usersService.create({
+                username: profile.displayName,
+                email: profile.emails[0].value,
+                avatar: profile.photos[0].value,
+                password: await bcrypt.hash(
+                    crypto.randomBytes(64),
+                    await bcrypt.genSalt(),
+                ),
+            });
+        return user;
     }
 }
