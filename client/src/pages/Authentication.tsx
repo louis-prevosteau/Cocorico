@@ -61,7 +61,7 @@ export const Authentication = () => {
                         <ForgotPasswordDialog />
                     </Grid>
                     <Grid item>
-                        <GoogleLogin onSuccess={function (credentialResponse: CredentialResponse) {
+                        <GoogleLogin useOneTap onSuccess={function (credentialResponse: CredentialResponse) {
                             dispatch(googleLogin(credentialResponse));
                             dispatch(googlecallback());
                         } } />

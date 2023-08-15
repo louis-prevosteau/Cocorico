@@ -51,14 +51,17 @@ export const HeaderBar = () => {
     };
 
     return (
-        <AppBar position='static' style={{ background: '#001D6E' }}>
-            <Container maxWidth="xl">
+        <AppBar position='static' sx={{ backgroundColor: '#001D6E' }}>
+            <Container maxWidth='xl'>
                 <Toolbar disableGutters>
                     <Box
-                        component={'img'}
-                        src="./images/Cocorico.png"
-                        alt="logo"
-                        sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+                        component='img'
+                        src='./images/Cocorico.png'
+                        alt='logo'
+                        sx={{
+                            display: { xs: 'none', md: 'flex' },
+                            mr: 1,
+                        }}
                     />
                     <Box
                         sx={{
@@ -71,13 +74,13 @@ export const HeaderBar = () => {
                     >
                         <IconButton
                             onClick={handleOpenNavMenu}
-                            aria-controls="navbar"
-                            color="inherit"
+                            aria-controls='navbar'
+                            color='inherit'
                         >
                             <MenuIcon />
                         </IconButton>
                         <Menu
-                            id="navbar"
+                            id='navbar'
                             anchorEl={state.anchorElNav}
                             anchorOrigin={{
                                 vertical: 'bottom',
@@ -98,17 +101,20 @@ export const HeaderBar = () => {
                             }}
                         >
                             {MENU_ITEMS.map((item) => (
-                                <MenuItem onClick={() => navigate(item.path)}>
+                                <MenuItem
+                                    key={item.path}
+                                    onClick={() => navigate(item.path)}
+                                >
                                     <Typography>{t(item.name)}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
                     <Box
-                        component={'img'}
-                        src="./images/Cocorico.png"
-                        width="50%"
-                        alt="logo"
+                        component='img'
+                        src='./images/Cocorico.png'
+                        width='50%'
+                        alt='logo'
                         sx={{
                             display: { xs: 'flex', md: 'none' },
                             mr: 5,
@@ -116,20 +122,16 @@ export const HeaderBar = () => {
                         }}
                     />
                     <Box
-                        sx={{
-                            flexGrow: 1,
-                            display: {
-                                xs: 'flex',
-                                md: 'none',
-                            },
-                        }}
+                        sx={{ display: { xs: 'flex', md: 'none' } }}
                     >
-                        <IconButton
-                            onClick={() => navigate('/auth')}
-                            color='inherit'
-                        >
-                            <Login />
-                        </IconButton>
+                        {!isAuth && !token ? (
+                            <IconButton
+                                onClick={() => navigate('/auth')}
+                                color="inherit"
+                            >
+                                <Login />
+                            </IconButton>
+                        ) : null}
                     </Box>
                     <Box
                         sx={{
@@ -142,6 +144,7 @@ export const HeaderBar = () => {
                     >
                         {MENU_ITEMS.map((item) => (
                             <Button
+                                key={item.path}
                                 onClick={() => navigate(item.path)}
                                 sx={{
                                     my: 2,
@@ -158,8 +161,8 @@ export const HeaderBar = () => {
                             <div>
                                 <IconButton
                                     onClick={handleOpenUserMenu}
-                                    aria-controls="user-menu"
-                                    color="inherit"
+                                    aria-controls='user-menu'
+                                    color='inherit'
                                 >
                                     {profile.avatar ? (
                                         <Avatar
@@ -171,7 +174,7 @@ export const HeaderBar = () => {
                                     )}
                                 </IconButton>
                                 <Menu
-                                    id="user-menu"
+                                    id='user-menu'
                                     anchorEl={state.anchorElUser}
                                     keepMounted
                                     open={Boolean(state.anchorElUser)}
@@ -179,7 +182,10 @@ export const HeaderBar = () => {
                                 >
                                     {USER_MENU_ITEMS.map((item) => (
                                         <MenuItem
-                                            onClick={() => navigate(item.path)}
+                                            key={item.path}
+                                            onClick={() =>
+                                                navigate(item.path)
+                                            }
                                         >
                                             {t(item.name)}
                                         </MenuItem>

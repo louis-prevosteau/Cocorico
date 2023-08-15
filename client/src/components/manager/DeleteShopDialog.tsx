@@ -14,7 +14,7 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
 import { deleteShop } from 'redux/actions';
 
-const DeleteShopDialog = ({ shop }: ShopProps) => {
+export const DeleteShopDialog = ({ shop }: ShopProps) => {
     const [state, setState] = useState({
         open: false,
     });
@@ -31,10 +31,14 @@ const DeleteShopDialog = ({ shop }: ShopProps) => {
     return (
         <div>
             <MenuItem onClick={handleOpen}>
-                <Typography>{t('pages.myShops.actions.delete')}</Typography>
+                <Typography sx={{ color: '#E6001F' }}>
+                    {t('pages.myShops.actions.delete')}
+                </Typography>
             </MenuItem>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>{t('forms.shop.delete.title')}</DialogTitle>
+                <DialogTitle sx={{ backgroundColor: '#E6001F', color: 'white' }}>
+                    {t('forms.shop.delete.title')}
+                </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
                         {t('forms.shop.delete.message')}
@@ -50,5 +54,3 @@ const DeleteShopDialog = ({ shop }: ShopProps) => {
         </div>
     );
 };
-
-export default DeleteShopDialog;

@@ -13,6 +13,7 @@ export * from './manager/DashboardActions';
 export * from './manager/DeleteCategoryDialog';
 export * from './manager/DeleteCollectPointDialog';
 export * from './manager/DeleteProductDialog';
+export * from './manager/DeleteShopDialog';
 export * from './manager/ForgotPasswordDialog';
 export * from './manager/Login';
 export * from './manager/MyOrders';

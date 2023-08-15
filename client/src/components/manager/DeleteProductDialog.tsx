@@ -47,12 +47,14 @@ export const DeleteProductDialog = ({ shop }: ShopProps) => {
     return (
         <div>
             <MenuItem onClick={handleOpen}>
-                <Typography>
+                <Typography sx={{ color: '#E6001F' }}>
                     {t('pages.myShops.actions.deleteProduct')}
                 </Typography>
             </MenuItem>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>{t('forms.product.delete.title')}</DialogTitle>
+                <DialogTitle sx={{ backgroundColor: '#E6001F', color: 'white' }}>
+                    {t('forms.product.delete.title')}
+                </DialogTitle>
                 <DialogContent>
                     <Grid
                         container

@@ -1,4 +1,5 @@
 import {
+    Box,
     Dialog,
     DialogContent,
     DialogTitle,
@@ -47,158 +48,160 @@ export const AddProductDialog = ({ shop }: ShopProps) => {
     return (
         <div>
             <MenuItem onClick={handleOpen}>
-                <Typography>{t('pages.myShops.actions.addProduct')}</Typography>
+                <Typography sx={{ color: '#001D6E' }}>{t('pages.myShops.actions.addProduct')}</Typography>
             </MenuItem>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>
+                <DialogTitle sx={{ backgroundColor: '#001D6E', color: 'white' }}>
                     {t('forms.product.create', { shop: shop.name })}
                 </DialogTitle>
                 <DialogContent>
-                    <TextField
-                        type="text"
-                        label={t('forms.product.fields.name')}
-                        required
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                product: {
-                                    ...state.product,
-                                    name: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
-                    <FormControl fullWidth sx={{ mb: 4 }}>
-                        <InputLabel>
-                            {t('forms.product.fields.image')}
-                        </InputLabel>
-                        <FileBase
-                            type="file"
-                            multiple={false}
-                            onDone={({ base64 }: { base64: any }) =>
+                    <Box sx={{ pt: 2 }}>
+                        <TextField
+                            type="text"
+                            label={t('forms.product.fields.name')}
+                            required
+                            fullWidth
+                            onChange={(e) =>
                                 setState({
                                     ...state,
                                     product: {
                                         ...state.product,
-                                        image: base64,
+                                        name: e.target.value,
                                     },
                                 })
                             }
+                            sx={{ mb: 4 }}
                         />
-                    </FormControl>
-                    <TextField
-                        type="text"
-                        label={t('forms.product.fields.description')}
-                        required
-                        multiline
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                product: {
-                                    ...state.product,
-                                    description: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
-                    <TextField
-                        type="number"
-                        label={t('forms.product.fields.price')}
-                        required
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                product: {
-                                    ...state.product,
-                                    price: parseFloat(e.target.value),
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
-                    <TextField
-                        type="text"
-                        label={t('forms.product.fields.madeIn')}
-                        required
-                        value={state.product.madeIn}
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                product: {
-                                    ...state.product,
-                                    madeIn: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
-                    <FormControlLabel
-                        label={
-                            <Typography fontWeight={'bolder'}>
-                                {t(
-                                    `forms.product.fields.${
-                                        state.product.available
-                                            ? 'available'
-                                            : 'unavailable'
-                                    }`,
-                                )}
-                            </Typography>
-                        }
-                        control={
-                            <Switch
-                                checked={state.product.available}
-                                onChange={() =>
+                        <FormControl fullWidth sx={{ mb: 4 }}>
+                            <InputLabel>
+                                {t('forms.product.fields.image')}
+                            </InputLabel>
+                            <FileBase
+                                type="file"
+                                multiple={false}
+                                onDone={({ base64 }: { base64: any }) =>
                                     setState({
                                         ...state,
                                         product: {
                                             ...state.product,
-                                            available: !state.product.available,
+                                            image: base64,
                                         },
                                     })
                                 }
                             />
-                        }
-                        sx={{
-                            color: state.product.available ? 'green' : 'red',
-                        }}
-                    />
-                    <FormControlLabel
-                        label={
-                            <Typography fontWeight={'bolder'}>
-                                {t(
-                                    `forms.product.fields.${
-                                        state.product.returnable
-                                            ? 'returnable'
-                                            : 'unreturnable'
-                                    }`,
-                                )}
-                            </Typography>
-                        }
-                        control={
-                            <Switch
-                                checked={state.product.returnable}
-                                onChange={() =>
-                                    setState({
-                                        ...state,
-                                        product: {
-                                            ...state.product,
-                                            returnable:
-                                                !state.product.returnable,
-                                        },
-                                    })
-                                }
-                            />
-                        }
-                        sx={{
-                            color: state.product.returnable ? 'green' : 'red',
-                        }}
-                    />
+                        </FormControl>
+                        <TextField
+                            type="text"
+                            label={t('forms.product.fields.description')}
+                            required
+                            multiline
+                            fullWidth
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    product: {
+                                        ...state.product,
+                                        description: e.target.value,
+                                    },
+                                })
+                            }
+                            sx={{ mb: 4 }}
+                        />
+                        <TextField
+                            type="number"
+                            label={t('forms.product.fields.price')}
+                            required
+                            fullWidth
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    product: {
+                                        ...state.product,
+                                        price: parseFloat(e.target.value),
+                                    },
+                                })
+                            }
+                            sx={{ mb: 4 }}
+                        />
+                        <TextField
+                            type="text"
+                            label={t('forms.product.fields.madeIn')}
+                            required
+                            value={state.product.madeIn}
+                            fullWidth
+                            onChange={(e) =>
+                                setState({
+                                    ...state,
+                                    product: {
+                                        ...state.product,
+                                        madeIn: e.target.value,
+                                    },
+                                })
+                            }
+                            sx={{ mb: 4 }}
+                        />
+                        <FormControlLabel
+                            label={
+                                <Typography fontWeight={'bolder'}>
+                                    {t(
+                                        `forms.product.fields.${
+                                            state.product.available
+                                                ? 'available'
+                                                : 'unavailable'
+                                        }`,
+                                    )}
+                                </Typography>
+                            }
+                            control={
+                                <Switch
+                                    checked={state.product.available}
+                                    onChange={() =>
+                                        setState({
+                                            ...state,
+                                            product: {
+                                                ...state.product,
+                                                available: !state.product.available,
+                                            },
+                                        })
+                                    }
+                                />
+                            }
+                            sx={{
+                                color: state.product.available ? 'green' : 'red',
+                            }}
+                        />
+                        <FormControlLabel
+                            label={
+                                <Typography fontWeight={'bolder'}>
+                                    {t(
+                                        `forms.product.fields.${
+                                            state.product.returnable
+                                                ? 'returnable'
+                                                : 'unreturnable'
+                                        }`,
+                                    )}
+                                </Typography>
+                            }
+                            control={
+                                <Switch
+                                    checked={state.product.returnable}
+                                    onChange={() =>
+                                        setState({
+                                            ...state,
+                                            product: {
+                                                ...state.product,
+                                                returnable:
+                                                    !state.product.returnable,
+                                            },
+                                        })
+                                    }
+                                />
+                            }
+                            sx={{
+                                color: state.product.returnable ? 'green' : 'red',
+                            }}
+                        />
+                    </Box>
                 </DialogContent>
                 <DialogGroupButton
                     handleClick={handleSubmit}

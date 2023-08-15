@@ -8,17 +8,16 @@ import {
     ListItemAvatar,
     ListItemText,
     Menu,
-    MenuItem,
     Typography,
 } from '@mui/material';
 import {
     AddProductDialog,
     CreateShopDialog,
     DeleteProductDialog,
+    DeleteShopDialog,
     UpdateProductDialog,
     UpdateShopDialog,
 } from 'components';
-import DeleteShopDialog from 'components/manager/DeleteShopDialog';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -40,7 +39,11 @@ export const MyShops = () => {
 
     return (
         <div>
-            <Typography variant="h4" align="center">
+            <Typography
+                variant="h4"
+                align="center"
+                sx={{ color: '#001D6E', marginBottom: 20 }}
+            >
                 {t('pages.myShops.title')}
             </Typography>
             <List sx={{ maxHeight: 650, overflow: 'auto' }}>
@@ -81,20 +84,29 @@ export const MyShops = () => {
                                 </Menu>
                             </div>
                         }
+                        sx={{
+                            backgroundColor: '#DEE5E9',
+                            marginBottom: 10,
+                        }}
                     >
                         <ListItemAvatar>
                             {shop.image ? (
                                 <Avatar alt={shop.name} src={shop.image} />
                             ) : (
                                 <ShoppingBag
-                                    sx={{ color: '#001D6E' }}
+                                    sx={{ color: '#E6001F' }}
                                     fontSize="large"
                                 />
                             )}
                         </ListItemAvatar>
                         <ListItemText
                             primary={shop.name}
-                            secondary={<Chip label={shop.category.name} />}
+                            secondary={
+                                <Chip
+                                    label={shop.category.name}
+                                    sx={{ backgroundColor: '#E6001F', color: 'white' }}
+                                />
+                            }
                         />
                     </ListItem>
                 ))}
