@@ -1,4 +1,3 @@
-import { CredentialResponse } from '@react-oauth/google';
 import axios from 'axios';
 import {
     CartItem,
@@ -27,7 +26,7 @@ api.interceptors.request.use((req) => {
 
 export const register = (data: Register) => api.post('auth/register', data);
 export const login = (data: Login) => api.post('auth/login', data);
-export const googleLogin = (data: CredentialResponse) => api.post('auth/google', data);
+export const googleLogin = () => api.get('auth/google');
 export const googlecallback = () => api.get('auth/google-callback');
 export const forgotPassword = (data: ForgotPassword) =>
     api.post('auth/forgot-password', data);

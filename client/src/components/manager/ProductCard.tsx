@@ -6,14 +6,13 @@ import {
     CardMedia,
     Grid,
     Rating,
-    Tooltip,
     Typography,
 } from '@mui/material';
 import { ProductProps } from 'models';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({ product }: ProductProps) => {
+export const ProductCard = ({ product }: ProductProps) => {
     const navigate = useNavigate();
     return (
         <Card sx={{ display: 'flex', m: 2 }}>
@@ -63,6 +62,4 @@ const ProductCard = ({ product }: ProductProps) => {
             </CardActionArea>
         </Card>
     );
-};
-
-export default ProductCard;
+};;

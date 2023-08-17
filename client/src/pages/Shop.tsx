@@ -1,6 +1,6 @@
 import { LocationOnOutlined } from '@mui/icons-material';
 import { AppBar, Box, Chip, Grid, Typography } from '@mui/material';
-import ProductCard from 'components/manager/ProductCard';
+import { ProductCard } from 'components';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,38 +20,34 @@ export const Shop = () => {
     }, [id]);
     return (
         <div>
-            <AppBar position="static" style={{ background: '#DEE5E9' }}>
+            <AppBar position="static" sx={{ backgroundColor: '#DEE5E9' }}>
                 <Typography
-                    fontWeight={'bold'}
+                    fontWeight="bold"
                     align="center"
                     variant="h3"
-                    color={'black'}
+                    color="textPrimary"
                 >
                     {shop.name}
                 </Typography>
                 <Grid
                     container
-                    justifyContent={'flex-start'}
+                    justifyContent="flex-start"
                     direction="column"
                     spacing={3}
-                    alignItems={'flex-start'}
+                    alignItems="flex-start"
                 >
-                    <Grid item color={'black'}>
-                        <LocationOnOutlined />
-                        {shop.city} ({shop.department})
+                    <Grid item>
+                        <LocationOnOutlined sx={{ color: '#333' }} />
+                        <Typography variant="body1" color="textSecondary">
+                            {shop.city} ({shop.department})
+                        </Typography>
                     </Grid>
-                    <Grid
-                        container
-                        item
-                        marginLeft={1}
-                        direction={'row'}
-                        spacing={5}
-                    >
+                    <Grid container item marginLeft={1} direction="row" spacing={5}>
                         <Grid item>
                             <Chip label={shop.category.name} color="success" />
                         </Grid>
                         <Grid item>
-                            <Typography variant="body2" color={'black'}>
+                            <Typography variant="body2" color="textPrimary">
                                 {shop.description}
                             </Typography>
                         </Grid>
@@ -59,10 +55,12 @@ export const Shop = () => {
                 </Grid>
             </AppBar>
             <Box sx={{ maxWidth: 280, flexGrow: 1 }}>
-                <Grid container spacing={1}>
-                    {products.map((product) => (
-                        <ProductCard key={product._id} product={product} />
-                    ))}
+                <Grid container spacing={1} direction={'row'}>
+                    <Grid item>
+                        {products.map((product) => (
+                            <ProductCard key={product._id} product={product} />
+                        ))}
+                    </Grid>
                 </Grid>
             </Box>
         </div>

@@ -115,7 +115,7 @@ export class AuthController {
         return user;
     }
 
-    @Post('google')
+    @Get('google')
     @UseGuards(GoogleAuthGuard)
     async googleLogin() {}
 

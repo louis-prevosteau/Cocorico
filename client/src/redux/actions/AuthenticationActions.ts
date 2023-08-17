@@ -35,7 +35,7 @@ export const login = (loginData: Login) => async (dispatch: Dispatch) => {
 
 export const googleLogin = (credentialResponse: CredentialResponse) => async (dispatch: Dispatch) => {
     try {
-        await api.googleLogin(credentialResponse);
+        await api.googleLogin();
         dispatch({
             type: AUTH,
         });
