@@ -36,7 +36,9 @@ export const DeleteShopDialog = ({ shop }: ShopProps) => {
                 </Typography>
             </MenuItem>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle sx={{ backgroundColor: '#E6001F', color: 'white' }}>
+                <DialogTitle
+                    sx={{ backgroundColor: '#E6001F', color: 'white' }}
+                >
                     {t('forms.shop.delete.title')}
                 </DialogTitle>
                 <DialogContent>

@@ -50,10 +50,16 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
     return (
         <div>
             <MenuItem onClick={handleOpen}>
-                <Typography sx={{ color: '#001D6E' }}>{t('pages.myShops.actions.update')}</Typography>
+                <Typography sx={{ color: '#001D6E' }}>
+                    {t('pages.myShops.actions.update')}
+                </Typography>
             </MenuItem>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle sx={{ backgroundColor: '#001D6E', color: 'white' }}>{t('forms.shop.update')}</DialogTitle>
+                <DialogTitle
+                    sx={{ backgroundColor: '#001D6E', color: 'white' }}
+                >
+                    {t('forms.shop.update')}
+                </DialogTitle>
                 <DialogContent>
                     <Box sx={{ pt: 2 }}>
                         <TextField
@@ -74,7 +80,9 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                             sx={{ mb: 4 }}
                         />
                         <FormControl fullWidth sx={{ mb: 4 }}>
-                            <InputLabel>{t('forms.shop.fields.image')}</InputLabel>
+                            <InputLabel>
+                                {t('forms.shop.fields.image')}
+                            </InputLabel>
                             <FileBase
                                 type="file"
                                 multiple={false}
@@ -143,7 +151,8 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                                         ...state,
                                         shop: {
                                             ...state.shop,
-                                            department: e.target.value as string,
+                                            department: e.target
+                                                .value as string,
                                         },
                                     })
                                 }
@@ -180,7 +189,9 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                             sx={{ mb: 4 }}
                         />
                         <FormControl sx={{ mb: 4, width: 300 }}>
-                            <InputLabel>{t('forms.shop.fields.city')}</InputLabel>
+                            <InputLabel>
+                                {t('forms.shop.fields.city')}
+                            </InputLabel>
                             <Select
                                 onChange={(e) =>
                                     setState({

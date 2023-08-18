@@ -62,4 +62,4 @@ export const ProductCard = ({ product }: ProductProps) => {
             </CardActionArea>
         </Card>
     );
-};;
+};

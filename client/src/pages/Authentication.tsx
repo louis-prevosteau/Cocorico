@@ -56,15 +56,20 @@ export const Authentication = () => {
                         </TabPanel>
                     </Box>
                 </TabContext>
-                <Grid container direction='row' spacing={3}>
+                <Grid container direction="row" spacing={3}>
                     <Grid item>
                         <ForgotPasswordDialog />
                     </Grid>
                     <Grid item>
-                        <GoogleLogin useOneTap onSuccess={function (credentialResponse: CredentialResponse) {
-                            dispatch(googleLogin(credentialResponse));
-                            dispatch(googlecallback());
-                        } } />
+                        <GoogleLogin
+                            useOneTap
+                            onSuccess={function (
+                                credentialResponse: CredentialResponse,
+                            ) {
+                                dispatch(googleLogin(credentialResponse));
+                                dispatch(googlecallback());
+                            }}
+                        />
                     </Grid>
                 </Grid>
             </Paper>

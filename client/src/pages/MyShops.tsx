@@ -104,7 +104,10 @@ export const MyShops = () => {
                             secondary={
                                 <Chip
                                     label={shop.category.name}
-                                    sx={{ backgroundColor: '#E6001F', color: 'white' }}
+                                    sx={{
+                                        backgroundColor: '#E6001F',
+                                        color: 'white',
+                                    }}
                                 />
                             }
                         />

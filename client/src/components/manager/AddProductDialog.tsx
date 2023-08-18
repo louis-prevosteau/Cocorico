@@ -48,10 +48,14 @@ export const AddProductDialog = ({ shop }: ShopProps) => {
     return (
         <div>
             <MenuItem onClick={handleOpen}>
-                <Typography sx={{ color: '#001D6E' }}>{t('pages.myShops.actions.addProduct')}</Typography>
+                <Typography sx={{ color: '#001D6E' }}>
+                    {t('pages.myShops.actions.addProduct')}
+                </Typography>
             </MenuItem>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle sx={{ backgroundColor: '#001D6E', color: 'white' }}>
+                <DialogTitle
+                    sx={{ backgroundColor: '#001D6E', color: 'white' }}
+                >
                     {t('forms.product.create', { shop: shop.name })}
                 </DialogTitle>
                 <DialogContent>
@@ -160,14 +164,17 @@ export const AddProductDialog = ({ shop }: ShopProps) => {
                                             ...state,
                                             product: {
                                                 ...state.product,
-                                                available: !state.product.available,
+                                                available:
+                                                    !state.product.available,
                                             },
                                         })
                                     }
                                 />
                             }
                             sx={{
-                                color: state.product.available ? 'green' : 'red',
+                                color: state.product.available
+                                    ? 'green'
+                                    : 'red',
                             }}
                         />
                         <FormControlLabel
@@ -198,7 +205,9 @@ export const AddProductDialog = ({ shop }: ShopProps) => {
                                 />
                             }
                             sx={{
-                                color: state.product.returnable ? 'green' : 'red',
+                                color: state.product.returnable
+                                    ? 'green'
+                                    : 'red',
                             }}
                         />
                     </Box>

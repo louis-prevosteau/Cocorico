@@ -42,7 +42,13 @@ export const Shop = () => {
                             {shop.city} ({shop.department})
                         </Typography>
                     </Grid>
-                    <Grid container item marginLeft={1} direction="row" spacing={5}>
+                    <Grid
+                        container
+                        item
+                        marginLeft={1}
+                        direction="row"
+                        spacing={5}
+                    >
                         <Grid item>
                             <Chip label={shop.category.name} color="success" />
                         </Grid>

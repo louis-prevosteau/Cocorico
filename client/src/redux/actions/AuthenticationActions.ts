@@ -33,17 +33,21 @@ export const login = (loginData: Login) => async (dispatch: Dispatch) => {
     }
 };
 
-export const googleLogin = (credentialResponse: CredentialResponse) => async (dispatch: Dispatch) => {
-    try {
-        await api.googleLogin();
-        dispatch({
-            type: AUTH,
-        });
-        localStorage.setItem('token', credentialResponse.credential as string);
-    } catch (error) {
-        handleError(error);
-    }
-};
+export const googleLogin =
+    (credentialResponse: CredentialResponse) => async (dispatch: Dispatch) => {
+        try {
+            await api.googleLogin();
+            dispatch({
+                type: AUTH,
+            });
+            localStorage.setItem(
+                'token',
+                credentialResponse.credential as string,
+            );
+        } catch (error) {
+            handleError(error);
+        }
+    };
 
 export const googlecallback = () => async (dispatch: Dispatch) => {
     try {

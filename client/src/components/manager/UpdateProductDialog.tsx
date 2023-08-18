@@ -63,7 +63,11 @@ export const UpdateProductDialog = ({ shop }: ShopProps) => {
                 </Typography>
             </MenuItem>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle sx={{ backgroundColor: '#001D6E', color: 'white' }}>{t('forms.product.update')}</DialogTitle>
+                <DialogTitle
+                    sx={{ backgroundColor: '#001D6E', color: 'white' }}
+                >
+                    {t('forms.product.update')}
+                </DialogTitle>
                 <DialogContent>
                     <Grid
                         container

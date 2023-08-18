@@ -51,13 +51,13 @@ export const HeaderBar = () => {
     };
 
     return (
-        <AppBar position='static' sx={{ backgroundColor: '#001D6E' }}>
-            <Container maxWidth='xl'>
+        <AppBar position="static" sx={{ backgroundColor: '#001D6E' }}>
+            <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box
-                        component='img'
-                        src='./images/Cocorico.png'
-                        alt='logo'
+                        component="img"
+                        src="./images/Cocorico.png"
+                        alt="logo"
                         sx={{
                             display: { xs: 'none', md: 'flex' },
                             mr: 1,
@@ -74,13 +74,13 @@ export const HeaderBar = () => {
                     >
                         <IconButton
                             onClick={handleOpenNavMenu}
-                            aria-controls='navbar'
-                            color='inherit'
+                            aria-controls="navbar"
+                            color="inherit"
                         >
                             <MenuIcon />
                         </IconButton>
                         <Menu
-                            id='navbar'
+                            id="navbar"
                             anchorEl={state.anchorElNav}
                             anchorOrigin={{
                                 vertical: 'bottom',
@@ -111,19 +111,17 @@ export const HeaderBar = () => {
                         </Menu>
                     </Box>
                     <Box
-                        component='img'
-                        src='./images/Cocorico.png'
-                        width='50%'
-                        alt='logo'
+                        component="img"
+                        src="./images/Cocorico.png"
+                        width="50%"
+                        alt="logo"
                         sx={{
                             display: { xs: 'flex', md: 'none' },
                             mr: 5,
                             ml: 5,
                         }}
                     />
-                    <Box
-                        sx={{ display: { xs: 'flex', md: 'none' } }}
-                    >
+                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         {!isAuth && !token ? (
                             <IconButton
                                 onClick={() => navigate('/auth')}
@@ -161,8 +159,8 @@ export const HeaderBar = () => {
                             <div>
                                 <IconButton
                                     onClick={handleOpenUserMenu}
-                                    aria-controls='user-menu'
-                                    color='inherit'
+                                    aria-controls="user-menu"
+                                    color="inherit"
                                 >
                                     {profile.avatar ? (
                                         <Avatar
@@ -174,7 +172,7 @@ export const HeaderBar = () => {
                                     )}
                                 </IconButton>
                                 <Menu
-                                    id='user-menu'
+                                    id="user-menu"
                                     anchorEl={state.anchorElUser}
                                     keepMounted
                                     open={Boolean(state.anchorElUser)}
@@ -183,9 +181,7 @@ export const HeaderBar = () => {
                                     {USER_MENU_ITEMS.map((item) => (
                                         <MenuItem
                                             key={item.path}
-                                            onClick={() =>
-                                                navigate(item.path)
-                                            }
+                                            onClick={() => navigate(item.path)}
                                         >
                                             {t(item.name)}
                                         </MenuItem>
