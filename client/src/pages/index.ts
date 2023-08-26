@@ -8,6 +8,7 @@ export * from './Inventory';
 export * from './NotFound';
 export * from './Order';
 export * from './Orders';
+export * from './Policy';
 export * from './Product';
 export * from './Profile';
 export * from './ResetPassword';

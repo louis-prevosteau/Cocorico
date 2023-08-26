@@ -9,9 +9,10 @@ export const Footer = () => {
             sx={{
                 backgroundColor: '#E6001F',
                 pt: 1,
+                pb: 2,
                 bottom: 0,
                 width: '100%',
-                position: 'static',
+                position: 'relative',
             }}
             component={'footer'}
         >
@@ -25,6 +26,21 @@ export const Footer = () => {
                     {t('footer.credit', {
                         year: new Date().getFullYear(),
                     })}
+                </Typography>
+                <Typography
+                    variant="body2"
+                    align="center"
+                    color={'white'}
+                    mt={1}
+                >
+                    <a
+                        href="/policy"
+                        style={{ color: 'white', textDecoration: 'underline' }}
+                    >
+                        {t('footer.cguLink')}
+                    </a>{' '}
+                    | {t('footer.contactEmail')} : support@cocorico.fr |{' '}
+                    {t('footer.contactPhone')} : 06 66 66 66 66
                 </Typography>
             </Container>
         </Box>

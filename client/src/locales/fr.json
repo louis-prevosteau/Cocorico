@@ -53,6 +53,47 @@
             "title": "Page inexistante",
             "message": "Cette page n'existe pas. Faites demi-tour."
         },
+        "policy": {
+            "titles": {
+                "main": "Conditions Générales d'Utilisation de Cocorico",
+                "account": "1. Compte Utilisateur",
+                "use": "2. Utilisation de Cocorico",
+                "userContent": "3. Contenu de l'Utilisateur",
+                "orders": "4. Commandes et Paiements",
+                "delivery": "5. Livraison et Retours",
+                "responsability": "6. Limitation de Responsabilité",
+                "policyUpdate": "7. Modifications des CGU",
+                "law": "8. Loi Applicable"
+            },
+            "intro": {
+                "date": "Date d'entrée en vigueur : 26 août 2023",
+                "content": "Les présentes Conditions Générales d'Utilisation (ci-après dénommées \"CGU\") régissent l'accès et l'utilisation de la plateforme e-commerce (ci-après dénommée Cocorico) exploitée par Cocorico (ci-après dénommée \"nous\", \"notre\", \"nos\"). En accédant à Cocorico et en l'utilisant, vous acceptez pleinement et sans réserve ces CGU. Si vous n'êtes pas d'accord avec ces termes, veuillez ne pas utiliser Cocorico."
+            },
+            "bodies": {
+                "account1": "1.1 Pour accéder à certaines fonctionnalités de Cocorico, vous pourriez devoir créer un compte utilisateur. Vous acceptez de fournir des informations exactes, à jour et complètes lors de la création de votre compte, et de maintenir ces informations à jour.",
+                "account2": "1.2 Vous êtes responsable de la confidentialité de votre compte et de votre mot de passe, ainsi que de toute activité qui se produit sous votre compte.",
+                "account3": "1.3 Vous vous engagez à ne pas utiliser le compte d'autrui sans autorisation et à informer immédiatement Cocorico en cas d'utilisation non autorisée de votre compte.",
+                "use1": "2.1 Vous acceptez d'utiliser Cocorico conformément aux lois en vigueur et aux présentes CGU. Vous vous engagez à ne pas utiliser Cocorico à des fins illégales, frauduleuses ou nuisibles.",
+                "use2": "2.2 Vous acceptez de ne pas perturber ou endommager Cocorico, ses serveurs ou réseaux associés.",
+                "use3": "2.3 Vous ne devez pas tenter d'accéder à des zones de Cocorico auxquelles vous n'avez pas l'autorisation d'accéder, ni de contourner les mesures de sécurité mises en place.",
+                "userContent1": "3.1 En soumettant du contenu sur Cocorico, tel que des commentaires, des avis ou des images, vous accordez à Cocorico une licence non exclusive, mondiale, libre de redevance pour utiliser, reproduire, modifier, distribuer et afficher ce contenu dans le cadre de l'exploitation de Cocorico.",
+                "userContent2": "3.2 Vous garantissez que tout contenu que vous soumettez est votre propre création, ne viole pas les droits de tiers, et ne contrevient à aucune loi.",
+                "orders1": "4.1 Les informations relatives aux produits présentées sur Cocorico ne constituent pas une offre contractuelle. Les commandes passées sont soumises à notre acceptation.",
+                "orders2": "4.2 Les prix indiqués sur Cocorico sont en euro et sont sujets à changement sans préavis. Des frais d'expédition et taxes pourraient s'appliquer et seront indiqués au moment de la commande.",
+                "orders3": "4.3 Les paiements sont à effectuer au moment de la commande. Nous acceptons les modes de paiement indiqués sur Cocorico.",
+                "delivery1": "5.1 Les détails concernant les options de livraison sont spécifiés sur Cocorico.",
+                "delivery2": "5.2 Les informations sur notre politique de retour et de remboursement sont disponibles sur Cocorico.",
+                "responsability1": "6.1 Nous ne pouvons garantir que Cocorico sera exempte d'erreurs, de virus ou d'autres éléments nuisibles. Vous utilisez Cocorico à vos propres risques.",
+                "responsability2": "6.2 Dans la mesure permise par la loi applicable, Cocorico décline toute responsabilité pour tout dommage direct, indirect, accessoire, consécutif ou autre résultant de l'utilisation de Cocorico.",
+                "policyUpdate1": "7.1 Nous nous réservons le droit de modifier ces CGU à tout moment. Les modifications prendront effet dès leur publication sur Cocorico.",
+                "law1": "8.1 Ces CGU sont régies par les lois en vigueur en France et tout litige relatif à ces CGU sera soumis à la juridiction exclusive des tribunaux compétents."
+            },
+            "conclusion": "En utilisant la Plateforme, vous acceptez pleinement ces Conditions Générales d'Utilisation. Si vous avez des questions concernant ces CGU, veuillez nous contacter à support@cocorico.fr.",
+            "company": "Cocorico",
+            "address": "56 Boulevard Montebourg 75005 Paris",
+            "contact": "support@cocorico.fr",
+            "phone": "06 66 66 66 66"
+        },
         "profile": {
             "infos": {
                 "title": "Mon profil",
@@ -237,6 +278,9 @@
         }
     },
     "footer": {
-        "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/Cocorico"
+        "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/Cocorico",
+        "cguLink": "CGU",
+        "contactEmail": "Support",
+        "contactPhone": "Tel"
     }
 }

@@ -10,6 +10,7 @@ import {
     NotFound,
     Order,
     Orders,
+    Policy,
     Product,
     Profile,
     ResetPassword,
@@ -73,6 +74,7 @@ const App = () => {
                             <Route path="/admin/users" element={<Users />} />
                             <Route path="/admin/orders" element={<Orders />} />
                         </Route>
+                        <Route path="/policy" element={<Policy />} />
                         <Route path="/*" element={<NotFound />} />
                     </Routes>
                 </Container>

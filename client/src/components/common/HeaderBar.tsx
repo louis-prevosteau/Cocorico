@@ -117,8 +117,8 @@ export const HeaderBar = () => {
                         alt="logo"
                         sx={{
                             display: { xs: 'flex', md: 'none' },
-                            mr: 5,
-                            ml: 5,
+                            alignItems: 'center',
+                            justifyContent: 'center',
                         }}
                     />
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
