@@ -47,3 +47,7 @@ export interface ShopProps {
 export interface UserProps {
     user: User;
 }
+
+export interface ProductsListProps {
+    shopId: string;
+}

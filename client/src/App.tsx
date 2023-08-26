@@ -1,11 +1,12 @@
 import { Container } from '@mui/material';
 import {
+    AddProduct,
     Authentication,
     Cart,
     Categories,
     CollectPoints,
     Homepage,
-    MyShops,
+    Inventory,
     NotFound,
     Order,
     Orders,
@@ -58,7 +59,11 @@ const App = () => {
                         </Route>
                         <Route path="/orders/:id" element={<Order />} />
                         <Route element={<AllowedRoutes role="seller" />}>
-                            <Route path="/my-shops" element={<MyShops />} />
+                            <Route path="/inventory" element={<Inventory />} />
+                            <Route
+                                path="/shops/add-product"
+                                element={<AddProduct />}
+                            />
                         </Route>
                         <Route element={<AllowedRoutes role="admin" />}>
                             <Route

@@ -9,15 +9,15 @@ import {
     Res,
     UseGuards,
 } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
+import { EmailService } from 'src/email/email.service';
 import { UsersService } from 'src/users/users.service';
 import { AuthService } from './auth.service';
+import { ForgotPasswordDto } from './dto/forgotPassword.dto';
 import { LoginDto } from './dto/login.dto';
 import { RegisterDto } from './dto/register.dto';
-import { EmailService } from 'src/email/email.service';
-import { ForgotPasswordDto } from './dto/forgotPassword.dto';
-import { ConfigService } from '@nestjs/config';
 import { ResetPasswordDto } from './dto/resetPassword.dto';
 import { GoogleAuthGuard } from './guards/google-auth.guard';
 

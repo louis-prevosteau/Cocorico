@@ -9,13 +9,19 @@ import {
     MenuItem,
     FormControl,
     InputLabel,
+    Tooltip,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/Store';
-import { createShop, getCategories, getCitiesByZipcode } from 'redux/actions';
+import {
+    createShop,
+    getCategories,
+    getCitiesByZipcode,
+    getDepartments,
+} from 'redux/actions';
 // @ts-ignore
 import FileBase from 'react-file-base64';
 
@@ -39,6 +45,7 @@ export const CreateShopDialog = () => {
     const { t } = useTranslation();
 
     useEffect(() => {
+        dispatch(getDepartments());
         dispatch(getCategories());
     }, []);
 
@@ -52,15 +59,17 @@ export const CreateShopDialog = () => {
 
     return (
         <div>
-            <IconButton
-                onClick={handleOpen}
-                sx={{
-                    backgroundColor: '#001D6E',
-                    color: 'white',
-                }}
-            >
-                <Add />
-            </IconButton>
+            <Tooltip title={t('forms.shop.create')}>
+                <IconButton
+                    onClick={handleOpen}
+                    sx={{
+                        backgroundColor: '#001D6E',
+                        color: 'white',
+                    }}
+                >
+                    <Add />
+                </IconButton>
+            </Tooltip>
             <Dialog open={state.open} onClose={handleOpen}>
                 <DialogTitle>{t('forms.shop.create')}</DialogTitle>
                 <DialogContent>

@@ -32,18 +32,21 @@
             "searchByZipcode": "Rechercher par code postal"
         },
         "homepage": {
-            "welcome": "Bienvenue sur Cocorico. La première plateforme de vente de produits fabriqués en France.",
-            "description": "Découvrez notre sélection de produits de haute qualité à des prix imbattables.",
+            "welcome": "Bienvenue sur Cocorico. La première plateforme de vente de articles fabriqués en France.",
+            "description": "Découvrez notre sélection de articles de haute qualité à des prix imbattables.",
             "ourShops": "Découvrir les boutiques"
         },
-        "myShops": {
-            "title": "Mes boutiques",
+        "inventory": {
+            "title": "Mes stocks",
+            "shops": "Boutiques",
+            "products": "Articles",
+            "noProducts": "Il n'y a pas de articles pour cette boutique",
             "actions": {
                 "update": "Modifer une boutique",
                 "delete": "Supprimer une boutique",
-                "addProduct": "Ajouter un produit",
-                "updateProduct": "Modifier un produit",
-                "deleteProduct": "Supprimer un produit"
+                "addProduct": "Ajouter un article",
+                "updateProduct": "Modifier un article",
+                "deleteProduct": "Supprimer un article"
             }
         },
         "notFound": {
@@ -68,7 +71,7 @@
             "actions": {
                 "categories": "Gérer les catégories",
                 "collectPoints": "Gérer les points de collectes",
-                "myShops": "Gérer mes boutiques",
+                "inventory": "Gérer mes stocks",
                 "orders": "Gérer les commandes",
                 "users": "Tous les utilisateurs"
             }
@@ -137,17 +140,18 @@
             }
         },
         "product": {
-            "create": "Ajouter un produit à {{shop}}",
-            "update": "Modifier un produit",
+            "create": "Ajouter un article à {{shop}}",
+            "update": "Modifier un article",
             "delete": {
-                "title": "Supprimer un produit",
-                "message": "Vous êtes sur le point de supprimer un produit."
+                "title": "Supprimer un article",
+                "message": "Vous êtes sur le point de supprimer un article."
             },
             "fields": {
                 "name": "Nom",
                 "image": "Image",
                 "description": "Description",
                 "price": "Prix",
+                "shop": "Boutique",
                 "madeIn": "Fabriqué à",
                 "available": "Disponible",
                 "unavailable": "Rupture de stock",
@@ -219,8 +223,8 @@
         "logout": "Utilisateur déconnecté",
         "update": "Mise à jour réussie",
         "cart": {
-            "addProduct": "Produit ajouté au panier",
-            "deleteProduct": "Produit retiré du panier"
+            "addProduct": "article ajouté au panier",
+            "deleteProduct": "article retiré du panier"
         },
         "order": {
             "deleted": "Commande supprimée",

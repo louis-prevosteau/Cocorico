@@ -7,8 +7,9 @@ import {
     InputLabel,
     Select,
     MenuItem,
-    Typography,
     Box,
+    IconButton,
+    Tooltip,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
 import { ShopProps } from 'models';
@@ -19,6 +20,7 @@ import { RootState, AppDispatch } from 'redux/Store';
 import { updateShop, getCitiesByZipcode, getCategories } from 'redux/actions';
 // @ts-ignore
 import FileBase from 'react-file-base64';
+import { Edit } from '@mui/icons-material';
 
 export const UpdateShopDialog = ({ shop }: ShopProps) => {
     const [state, setState] = useState({
@@ -49,11 +51,11 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
 
     return (
         <div>
-            <MenuItem onClick={handleOpen}>
-                <Typography sx={{ color: '#001D6E' }}>
-                    {t('pages.myShops.actions.update')}
-                </Typography>
-            </MenuItem>
+            <Tooltip title={t('pages.inventory.actions.update')}>
+                <IconButton onClick={handleOpen}>
+                    <Edit />
+                </IconButton>
+            </Tooltip>
             <Dialog open={state.open} onClose={handleOpen}>
                 <DialogTitle
                     sx={{ backgroundColor: '#001D6E', color: 'white' }}

@@ -26,6 +26,7 @@ export const Authentication = () => {
                 sx={{
                     p: 3,
                     mt: 4,
+                    mb: 4,
                     border: '10px solid',
                     borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
                     borderRadius: 5,

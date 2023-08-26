@@ -3,41 +3,29 @@ import {
     DialogContent,
     DialogContentText,
     DialogTitle,
-    Grid,
-    List,
-    ListItemButton,
-    ListItemText,
-    MenuItem,
+    IconButton,
+    Tooltip,
     Typography,
 } from '@mui/material';
-import { Product, ShopProps } from 'models';
-import React, { useEffect, useState } from 'react';
+import { ProductProps } from 'models';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState, AppDispatch } from 'redux/Store';
-import { deleteProduct, getProducts } from 'redux/actions';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from 'redux/Store';
+import { deleteProduct } from 'redux/actions';
 import { DialogGroupButton } from 'components';
+import { Delete } from '@mui/icons-material';
 
-export const DeleteProductDialog = ({ shop }: ShopProps) => {
+export const DeleteProductDialog = ({ product }: ProductProps) => {
     const [state, setState] = useState({
         open: false,
-        productSelected: false,
-        product: {} as Product,
+        product: product,
     });
-    const { products } = useSelector((state: RootState) => state);
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
 
-    useEffect(() => {
-        dispatch(getProducts(shop._id));
-    }, [shop]);
-
     const handleOpen = () => {
         setState({ ...state, open: !state.open });
-    };
-
-    const handleSelectProduct = (e: any, product: Product) => {
-        setState({ ...state, productSelected: true, product: product });
     };
 
     const handleDelete = () => {
@@ -46,11 +34,11 @@ export const DeleteProductDialog = ({ shop }: ShopProps) => {
 
     return (
         <div>
-            <MenuItem onClick={handleOpen}>
-                <Typography sx={{ color: '#E6001F' }}>
-                    {t('pages.myShops.actions.deleteProduct')}
-                </Typography>
-            </MenuItem>
+            <Tooltip title={t('pages.inventory.actions.deleteProduct')}>
+                <IconButton onClick={handleOpen}>
+                    <Delete />
+                </IconButton>
+            </Tooltip>
             <Dialog open={state.open} onClose={handleOpen}>
                 <DialogTitle
                     sx={{ backgroundColor: '#E6001F', color: 'white' }}
@@ -58,37 +46,9 @@ export const DeleteProductDialog = ({ shop }: ShopProps) => {
                     {t('forms.product.delete.title')}
                 </DialogTitle>
                 <DialogContent>
-                    <Grid
-                        container
-                        direction={'row'}
-                        justifyContent={'center'}
-                        alignItems="center"
-                    >
-                        <Grid item>
-                            <List sx={{ maxHeight: 200 }}>
-                                {products.map((product) => (
-                                    <ListItemButton
-                                        key={product._id}
-                                        selected={
-                                            state.product._id === product._id
-                                        }
-                                        onClick={(e) =>
-                                            handleSelectProduct(e, product)
-                                        }
-                                    >
-                                        <ListItemText primary={product.name} />
-                                    </ListItemButton>
-                                ))}
-                            </List>
-                        </Grid>
-                    </Grid>
-                    {state.productSelected && (
-                        <Grid item>
-                            <DialogContentText>
-                                {t('forms.product.delete.message')}
-                            </DialogContentText>
-                        </Grid>
-                    )}
+                    <DialogContentText>
+                        {t('forms.product.delete.message')}
+                    </DialogContentText>
                 </DialogContent>
                 <DialogGroupButton
                     handleClick={handleDelete}

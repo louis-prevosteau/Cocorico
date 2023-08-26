@@ -41,7 +41,7 @@ export const ADMIN_ACTIONS = [
 
 export const SELLER_ACTIONS = [
     {
-        path: '/my-shops',
-        name: 'myShops',
+        path: '/inventory',
+        name: 'inventory',
     },
 ];

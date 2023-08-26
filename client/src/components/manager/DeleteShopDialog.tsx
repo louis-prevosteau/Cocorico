@@ -1,10 +1,11 @@
+import { Delete } from '@mui/icons-material';
 import {
     Dialog,
     DialogTitle,
     DialogContent,
     DialogContentText,
-    MenuItem,
-    Typography,
+    Tooltip,
+    IconButton,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
 import { ShopProps } from 'models';
@@ -30,11 +31,11 @@ export const DeleteShopDialog = ({ shop }: ShopProps) => {
     };
     return (
         <div>
-            <MenuItem onClick={handleOpen}>
-                <Typography sx={{ color: '#E6001F' }}>
-                    {t('pages.myShops.actions.delete')}
-                </Typography>
-            </MenuItem>
+            <Tooltip title={t('pages.inventory.actions.delete')}>
+                <IconButton onClick={handleOpen}>
+                    <Delete />
+                </IconButton>
+            </Tooltip>
             <Dialog open={state.open} onClose={handleOpen}>
                 <DialogTitle
                     sx={{ backgroundColor: '#E6001F', color: 'white' }}
