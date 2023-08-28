@@ -281,6 +281,8 @@
         "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/Cocorico",
         "cguLink": "CGU",
         "contactEmail": "Support",
-        "contactPhone": "Tel"
+        "contactPhone": "Tel",
+        "freeShipping": "Livraison gratuite",
+        "securePayment": "Paiement sécurisé"
     }
 }

@@ -25,7 +25,7 @@ export const Register = () => {
             </Typography>
             <TextField
                 type="text"
-                variant="outlined"
+                variant="filled"
                 label={t('forms.authentication.fields.username')}
                 onChange={(e) =>
                     setState({
@@ -38,7 +38,7 @@ export const Register = () => {
             />
             <TextField
                 type="email"
-                variant="outlined"
+                variant="filled"
                 label={t('forms.authentication.fields.email')}
                 onChange={(e) =>
                     setState({
@@ -51,7 +51,7 @@ export const Register = () => {
             />
             <TextField
                 type="password"
-                variant="outlined"
+                variant="filled"
                 label={t('forms.authentication.fields.password')}
                 onChange={(e) =>
                     setState({

@@ -15,7 +15,12 @@ export const Profile = () => {
 
     return (
         <Container maxWidth="md">
-            <Grid container spacing={3} alignItems="stretch" sx={{ mt: 2 }}>
+            <Grid
+                container
+                spacing={3}
+                alignItems="stretch"
+                sx={{ mt: 2, mb: 2 }}
+            >
                 <Grid item xs={12} md={6}>
                     <ProfileManager user={profile} />
                 </Grid>

@@ -32,13 +32,16 @@ export const ResetPassword = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
+                    border: '5px solid',
+                    borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+                    borderRadius: 5,
                 }}
             >
                 <Typography variant="h5" color="#001D6E">
                     {t('pages.resetPassword.title')}
                 </Typography>
                 <TextField
-                    variant="outlined"
+                    variant="filled"
                     margin="normal"
                     required
                     fullWidth
@@ -51,7 +54,7 @@ export const ResetPassword = () => {
                     sx={{ mt: 3 }}
                 />
                 <TextField
-                    variant="outlined"
+                    variant="filled"
                     margin="normal"
                     required
                     fullWidth

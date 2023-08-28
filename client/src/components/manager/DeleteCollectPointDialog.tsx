@@ -37,7 +37,9 @@ export const DeleteCollectPointDialog = ({
                 <Delete />
             </IconButton>
             <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>
+                <DialogTitle
+                    sx={{ backgroundColor: '#E6001F', color: 'white' }}
+                >
                     {t('forms.collectPoint.delete.title')}
                 </DialogTitle>
                 <DialogContent>

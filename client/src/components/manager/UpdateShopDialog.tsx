@@ -56,14 +56,23 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                     <Edit />
                 </IconButton>
             </Tooltip>
-            <Dialog open={state.open} onClose={handleOpen}>
+            <Dialog open={state.open} onClose={handleOpen} maxWidth="xs">
                 <DialogTitle
                     sx={{ backgroundColor: '#001D6E', color: 'white' }}
                 >
                     {t('forms.shop.update')}
                 </DialogTitle>
-                <DialogContent>
-                    <Box sx={{ pt: 2 }}>
+                <DialogContent
+                    sx={{ backgroundColor: '#DEE5E9', color: '#001D6E' }}
+                >
+                    <Box
+                        sx={{
+                            pt: 2,
+                            border: '5px solid',
+                            borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+                            borderRadius: 5,
+                        }}
+                    >
                         <TextField
                             type="text"
                             label={t('forms.shop.fields.name')}
@@ -79,6 +88,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                                     },
                                 })
                             }
+                            variant="filled"
                             sx={{ mb: 4 }}
                         />
                         <FormControl fullWidth sx={{ mb: 4 }}>
@@ -115,6 +125,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                                     },
                                 })
                             }
+                            variant="filled"
                             sx={{ mb: 4 }}
                         />
                         <FormControl sx={{ mb: 4, width: 300 }}>
@@ -131,6 +142,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                                         },
                                     })
                                 }
+                                variant="filled"
                                 required
                             >
                                 {categories.map((category) => (
@@ -158,6 +170,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                                         },
                                     })
                                 }
+                                variant="filled"
                                 required
                             >
                                 {departments.map((department) => (
@@ -188,6 +201,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                             onBlur={() =>
                                 dispatch(getCitiesByZipcode(state.shop.zipcode))
                             }
+                            variant="filled"
                             sx={{ mb: 4 }}
                         />
                         <FormControl sx={{ mb: 4, width: 300 }}>
@@ -204,6 +218,7 @@ export const UpdateShopDialog = ({ shop }: ShopProps) => {
                                         },
                                     })
                                 }
+                                variant="filled"
                                 required
                             >
                                 {cities.map((city) => (

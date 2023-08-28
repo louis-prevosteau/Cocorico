@@ -24,7 +24,7 @@ export const Login = () => {
             </Typography>
             <TextField
                 type="email"
-                variant="outlined"
+                variant="filled"
                 label={t('forms.authentication.fields.email')}
                 onChange={(e) =>
                     setState({
@@ -37,7 +37,7 @@ export const Login = () => {
             />
             <TextField
                 type="password"
-                variant="outlined"
+                variant="filled"
                 label={t('forms.authentication.fields.password')}
                 onChange={(e) =>
                     setState({

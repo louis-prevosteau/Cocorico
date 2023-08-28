@@ -49,7 +49,14 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
                 <DialogContent
                     sx={{ backgroundColor: '#DEE5E9', color: '#001D6E' }}
                 >
-                    <Box sx={{ pt: 2 }}>
+                    <Box
+                        sx={{
+                            pt: 2,
+                            border: '5px solid',
+                            borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+                            borderRadius: 5,
+                        }}
+                    >
                         <TextField
                             type="text"
                             label={t('forms.profile.fields.username')}
@@ -64,6 +71,7 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
                                     },
                                 })
                             }
+                            variant="filled"
                             sx={{ mb: 2 }}
                         />
                         <TextField
@@ -80,6 +88,7 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
                                     },
                                 })
                             }
+                            variant="filled"
                             sx={{ mb: 2 }}
                         />
                         <FormControl fullWidth sx={{ mb: 2 }}>
@@ -114,6 +123,7 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
                                     },
                                 })
                             }
+                            variant="filled"
                             sx={{ mb: 2 }}
                         />
                         <TextField
@@ -130,6 +140,7 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
                                     },
                                 })
                             }
+                            variant="filled"
                             sx={{ mb: 2 }}
                         />
                         <TextField
@@ -146,6 +157,7 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
                                     },
                                 })
                             }
+                            variant="filled"
                             sx={{ mb: 2 }}
                         />
                         <TextField
@@ -162,6 +174,7 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
                                     },
                                 })
                             }
+                            variant="filled"
                             sx={{ mb: 2 }}
                         />
                     </Box>

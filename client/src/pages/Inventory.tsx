@@ -48,7 +48,16 @@ export const Inventory = () => {
                 {t('pages.inventory.title')}
             </Typography>
             <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
+                <Grid
+                    item
+                    xs={12}
+                    md={6}
+                    sx={{
+                        border: '5px solid',
+                        borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+                        marginBottom: { xs: '1rem' },
+                    }}
+                >
                     <Typography
                         variant="subtitle1"
                         align="center"
@@ -99,7 +108,16 @@ export const Inventory = () => {
                     </RadioGroup>
                     <CreateShopDialog />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid
+                    item
+                    xs={12}
+                    md={6}
+                    sx={{
+                        border: '5px solid',
+                        borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+                        marginBottom: { xs: '1rem' },
+                    }}
+                >
                     <Typography
                         variant="subtitle1"
                         align="center"

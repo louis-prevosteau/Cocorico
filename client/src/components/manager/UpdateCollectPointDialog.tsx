@@ -9,6 +9,7 @@ import {
     InputLabel,
     MenuItem,
     Select,
+    Box,
 } from '@mui/material';
 import { DialogGroupButton } from 'components';
 import { CollectPointProps } from 'models';
@@ -42,96 +43,117 @@ export const UpdateCollectPointDialog = ({
             <IconButton onClick={handleOpen} sx={{ color: 'white' }}>
                 <Edit />
             </IconButton>
-            <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle>{t('forms.collectPoint.update')}</DialogTitle>
-                <DialogContent>
-                    <TextField
-                        type="text"
-                        value={state.collectPoint.address}
-                        label={t('forms.collectPoint.fields.address')}
-                        required
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                collectPoint: {
-                                    ...state.collectPoint,
-                                    address: e.target.value,
-                                },
-                            })
-                        }
-                        sx={{ mb: 4 }}
-                    />
-                    <FormControl sx={{ mb: 4, width: 300 }}>
-                        <InputLabel>
-                            {t('forms.collectPoint.fields.department')}
-                        </InputLabel>
-                        <Select
+            <Dialog open={state.open} onClose={handleOpen} maxWidth="xs">
+                <DialogTitle
+                    sx={{ backgroundColor: '#001D6E', color: '#DEE5E9' }}
+                >
+                    {t('forms.collectPoint.update')}
+                </DialogTitle>
+                <DialogContent
+                    sx={{ backgroundColor: '#DEE5E9', color: '#001D6E' }}
+                >
+                    <Box
+                        sx={{
+                            pt: 2,
+                            border: '5px solid',
+                            borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+                            borderRadius: 5,
+                        }}
+                    >
+                        <TextField
+                            type="text"
+                            value={state.collectPoint.address}
+                            label={t('forms.collectPoint.fields.address')}
+                            required
+                            fullWidth
                             onChange={(e) =>
                                 setState({
                                     ...state,
                                     collectPoint: {
                                         ...state.collectPoint,
-                                        department: e.target.value,
+                                        address: e.target.value,
                                     },
                                 })
                             }
+                            variant="filled"
+                            sx={{ mb: 4 }}
+                        />
+                        <FormControl sx={{ mb: 4, width: 300 }}>
+                            <InputLabel>
+                                {t('forms.collectPoint.fields.department')}
+                            </InputLabel>
+                            <Select
+                                onChange={(e) =>
+                                    setState({
+                                        ...state,
+                                        collectPoint: {
+                                            ...state.collectPoint,
+                                            department: e.target.value,
+                                        },
+                                    })
+                                }
+                                variant="filled"
+                                required
+                                value={state.collectPoint.department}
+                            >
+                                {departments.map((dep) => (
+                                    <MenuItem key={dep.code} value={dep.nom}>
+                                        {dep.nom} - {dep.code}
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
+                        <TextField
+                            type="text"
+                            value={state.collectPoint.zipcode}
+                            label={t('forms.collectPoint.fields.zipcode')}
                             required
-                            value={state.collectPoint.department}
-                        >
-                            {departments.map((dep) => (
-                                <MenuItem key={dep.code} value={dep.nom}>
-                                    {dep.nom} - {dep.code}
-                                </MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
-                    <TextField
-                        type="text"
-                        value={state.collectPoint.zipcode}
-                        label={t('forms.collectPoint.fields.zipcode')}
-                        required
-                        fullWidth
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                collectPoint: {
-                                    ...state.collectPoint,
-                                    zipcode: e.target.value,
-                                },
-                            })
-                        }
-                        onBlur={() =>
-                            dispatch(
-                                getCitiesByZipcode(state.collectPoint.zipcode),
-                            )
-                        }
-                        sx={{ mb: 4 }}
-                    />
-                    <FormControl sx={{ mb: 4, width: 300 }}>
-                        <InputLabel>
-                            {t('forms.collectPoint.fields.city')}
-                        </InputLabel>
-                        <Select
+                            fullWidth
                             onChange={(e) =>
                                 setState({
                                     ...state,
                                     collectPoint: {
                                         ...state.collectPoint,
-                                        city: e.target.value as string,
+                                        zipcode: e.target.value,
                                     },
                                 })
                             }
-                            required
-                            value={state.collectPoint.city}
-                        >
-                            {cities.map((city) => (
-                                <MenuItem key={city.code} value={city.nom}>
-                                    {city.nom}
-                                </MenuItem>
-                            ))}
-                        </Select>
-                    </FormControl>
+                            onBlur={() =>
+                                dispatch(
+                                    getCitiesByZipcode(
+                                        state.collectPoint.zipcode,
+                                    ),
+                                )
+                            }
+                            variant="filled"
+                            sx={{ mb: 4 }}
+                        />
+                        <FormControl sx={{ mb: 4, width: 300 }}>
+                            <InputLabel>
+                                {t('forms.collectPoint.fields.city')}
+                            </InputLabel>
+                            <Select
+                                onChange={(e) =>
+                                    setState({
+                                        ...state,
+                                        collectPoint: {
+                                            ...state.collectPoint,
+                                            city: e.target.value as string,
+                                        },
+                                    })
+                                }
+                                variant="filled"
+                                required
+                                value={state.collectPoint.city}
+                            >
+                                {cities.map((city) => (
+                                    <MenuItem key={city.code} value={city.nom}>
+                                        {city.nom}
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
+                    </Box>
                 </DialogContent>
                 <DialogGroupButton
                     handleClick={handleSubmit}

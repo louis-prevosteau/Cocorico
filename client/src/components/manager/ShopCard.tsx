@@ -14,7 +14,8 @@ export const ShopCard = ({ shop }: ShopProps) => {
         <Card
             sx={{
                 display: 'flex',
-                bgcolor: '#DEE5E9',
+                border: '5px solid',
+                borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
                 marginBottom: 3,
                 width: '90vw',
                 maxWidth: 300,

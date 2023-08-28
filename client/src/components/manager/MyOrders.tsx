@@ -24,7 +24,14 @@ export const MyOrders = () => {
     }, []);
 
     return (
-        <Paper elevation={3} sx={{ p: 2, bgcolor: '#DEE5E9' }}>
+        <Paper
+            elevation={3}
+            sx={{
+                p: 2,
+                border: '5px solid',
+                borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+            }}
+        >
             <Typography
                 variant="h5"
                 align="center"

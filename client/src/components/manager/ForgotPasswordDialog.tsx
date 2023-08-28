@@ -45,13 +45,24 @@ export const ForgotPasswordDialog = () => {
                 >
                     {t('forms.forgotPassword.title')}
                 </DialogTitle>
-                <DialogContent>
-                    <Box sx={{ pt: 2 }}>
+                <DialogContent
+                    sx={{ backgroundColor: '#DEE5E9', color: '#001D6E' }}
+                >
+                    <Box
+                        sx={{
+                            pt: 2,
+                            pb: 2,
+                            border: '5px solid',
+                            borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+                            borderRadius: 5,
+                        }}
+                    >
                         <TextField
                             type="text"
                             label={t('forms.forgotPassword.fields.email')}
                             required
                             fullWidth
+                            variant="filled"
                             onChange={(e) =>
                                 setState({
                                     ...state,
@@ -62,7 +73,6 @@ export const ForgotPasswordDialog = () => {
                                 })
                             }
                             sx={{
-                                mb: 4,
                                 borderColor: '#DEE5E9',
                             }}
                         />

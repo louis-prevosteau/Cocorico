@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { CollectPointsTable, CreateCollectPointDialog } from 'components';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -16,16 +16,23 @@ export const CollectPoints = () => {
     }, []);
 
     return (
-        <div>
-            <Typography variant="h4" align="center">
+        <Box p={3} bgcolor="#DEE5E9">
+            <Typography
+                variant="h4"
+                align="center"
+                gutterBottom
+                style={{ color: '#001D6E' }}
+            >
                 {t('pages.collectPoints.title')}
             </Typography>
-            <CollectPointsTable user={profile} />
+            <Box mb={2}>
+                <CollectPointsTable user={profile} />
+            </Box>
             {profile.roles?.includes('admin') && (
-                <Grid display={'flex'} justifyContent={'right'}>
+                <Box display="flex" justifyContent="flex-end">
                     <CreateCollectPointDialog />
-                </Grid>
+                </Box>
             )}
-        </div>
+        </Box>
     );
 };

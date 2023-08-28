@@ -12,8 +12,29 @@ export const SearchInput = ({ label, handleChange }: SearchInputProps) => {
                 margin: 1,
             }}
         >
-            <Search sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-            <TextField type="text" label={label} onChange={handleChange} />
+            <Search sx={{ color: '#001D6E', mr: 1, my: 0.5 }} />
+            <TextField
+                type="text"
+                label={label}
+                onChange={handleChange}
+                variant="outlined"
+                size="small"
+                sx={{
+                    backgroundColor: '#DEE5E9',
+                    '& .MuiInputBase-root': {
+                        color: '#001D6E',
+                    },
+                    '& .MuiOutlinedInput-notchedOutline': {
+                        borderColor: '#E6001F',
+                    },
+                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                        borderColor: '#E6001F',
+                    },
+                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                        borderColor: '#E6001F',
+                    },
+                }}
+            />
         </Box>
     );
 };

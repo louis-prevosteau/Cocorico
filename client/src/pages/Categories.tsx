@@ -46,14 +46,18 @@ export const Categories = () => {
                             </ButtonGroup>
                         }
                         sx={{
-                            backgroundColor: '#DEE5E9',
                             mb: 1,
-                            borderRadius: 5,
+                            border: '5px solid',
+                            borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+                            borderRadius: 2,
                         }}
                     >
                         <ListItemText
                             primary={category.name}
-                            primaryTypographyProps={{ color: '#001D6E' }}
+                            primaryTypographyProps={{
+                                color: '#001D6E',
+                                fontWeight: 'bold',
+                            }}
                         />
                     </ListItem>
                 ))}
