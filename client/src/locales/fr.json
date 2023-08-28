@@ -31,6 +31,33 @@
             "title": "Points de collectes",
             "searchByZipcode": "Rechercher par code postal"
         },
+        "confidential": {
+            "titles": {
+                "main": "Mentions Légales de Cocorico",
+                "host": "Hébergeur de Cocorico :",
+                "dev": "Réalisation et Conception de Cocorico :",
+                "intellectualProp": "Propriété Intellectuelle :",
+                "datasCollect": "Collecte de Données :",
+                "cookies": "Cookies :",
+                "responsability": "Responsabilité :",
+                "externalLinks": "Liens Externes :",
+                "juridiction": "Droit Applicable et Juridiction :",
+                "contact": "Contact :"
+            },
+            "bodies": {
+                "companyInfos": "CocoriCorp\nSARL\ncontact@cocorico.fr\n06 66 66 66 66",
+                "hostInfo": "Cocorico n'est pas hébergé pour le moment.",
+                "devInfo": "Louis Prevosteau | code source : https://github.com/louis-prevosteau/Cocorico",
+                "intellectualProp": "Tous les éléments de Cocorico, qu'ils soient visuels ou sonores, y compris la technologie sous-jacente, sont protégés par le droit d'auteur, des marques ou des brevets. Ils sont la propriété exclusive de CocoriCorp ou de ses partenaires. Toute reproduction, représentation, utilisation ou adaptation, sous quelque forme que ce soit, de tout ou partie de ces éléments, y compris les applications informatiques, sans l'accord préalable écrit de CocoriCorp, est strictement interdite.",
+                "datasCollect": "CocoriCorp collecte et traite les données personnelles conformément à sa politique de confidentialité disponible sur Cocorico. En utilisant Cocorico, vous consentez à la collecte et au traitement de vos données personnelles.",
+                "cookies": "Cocorico utilise des cookies pour améliorer l'expérience utilisateur. Vous pouvez configurer votre navigateur pour refuser les cookies, cependant, cela pourrait limiter certaines fonctionnalités de Cocorico.",
+                "responsability": "CocoriCorp s'efforce de maintenir Cocorico à jour et accessible, mais ne peut garantir l'absence d'erreurs ou d'interruptions. CocoriCorp décline toute responsabilité en cas de dommages directs ou indirects résultant de l'utilisation de Cocorico.",
+                "externalLinks": "Cocorico peut contenir des liens vers des sites externes. CocoriCorp n'a aucun contrôle sur le contenu de ces sites et décline toute responsabilité quant à leur contenu ou à leur utilisation.",
+                "juridiction": "Les présentes Mentions Légales sont régies par les lois en vigueur en France. En cas de litige, les tribunaux compétents de France seront seuls compétents.",
+                "contact": "Pour toute question concernant les Mentions Légales, veuillez nous contacter à l'adresse e-mail suivante : adresse e-mail de contact."
+            },
+            "lastUpdate": "Date de dernière mise à jour des Mentions Légales :"
+        },
         "homepage": {
             "welcome": "Bienvenue sur Cocorico. La première plateforme de vente de articles fabriqués en France.",
             "description": "Découvrez notre sélection de articles de haute qualité à des prix imbattables.",
@@ -67,12 +94,12 @@
             },
             "intro": {
                 "date": "Date d'entrée en vigueur : 26 août 2023",
-                "content": "Les présentes Conditions Générales d'Utilisation (ci-après dénommées \"CGU\") régissent l'accès et l'utilisation de la plateforme e-commerce (ci-après dénommée Cocorico) exploitée par Cocorico (ci-après dénommée \"nous\", \"notre\", \"nos\"). En accédant à Cocorico et en l'utilisant, vous acceptez pleinement et sans réserve ces CGU. Si vous n'êtes pas d'accord avec ces termes, veuillez ne pas utiliser Cocorico."
+                "content": "Les présentes Conditions Générales d'Utilisation (ci-après dénommées \"CGU\") régissent l'accès et l'utilisation de la plateforme e-commerce (ci-après dénommée Cocorico) exploitée par CocoriCorp (ci-après dénommée \"nous\", \"notre\", \"nos\"). En accédant à Cocorico et en l'utilisant, vous acceptez pleinement et sans réserve ces CGU. Si vous n'êtes pas d'accord avec ces termes, veuillez ne pas utiliser Cocorico."
             },
             "bodies": {
                 "account1": "1.1 Pour accéder à certaines fonctionnalités de Cocorico, vous pourriez devoir créer un compte utilisateur. Vous acceptez de fournir des informations exactes, à jour et complètes lors de la création de votre compte, et de maintenir ces informations à jour.",
                 "account2": "1.2 Vous êtes responsable de la confidentialité de votre compte et de votre mot de passe, ainsi que de toute activité qui se produit sous votre compte.",
-                "account3": "1.3 Vous vous engagez à ne pas utiliser le compte d'autrui sans autorisation et à informer immédiatement Cocorico en cas d'utilisation non autorisée de votre compte.",
+                "account3": "1.3 Vous vous engagez à ne pas utiliser le compte d'autrui sans autorisation et à informer immédiatement CocoriCorp en cas d'utilisation non autorisée de votre compte.",
                 "use1": "2.1 Vous acceptez d'utiliser Cocorico conformément aux lois en vigueur et aux présentes CGU. Vous vous engagez à ne pas utiliser Cocorico à des fins illégales, frauduleuses ou nuisibles.",
                 "use2": "2.2 Vous acceptez de ne pas perturber ou endommager Cocorico, ses serveurs ou réseaux associés.",
                 "use3": "2.3 Vous ne devez pas tenter d'accéder à des zones de Cocorico auxquelles vous n'avez pas l'autorisation d'accéder, ni de contourner les mesures de sécurité mises en place.",
@@ -84,12 +111,12 @@
                 "delivery1": "5.1 Les détails concernant les options de livraison sont spécifiés sur Cocorico.",
                 "delivery2": "5.2 Les informations sur notre politique de retour et de remboursement sont disponibles sur Cocorico.",
                 "responsability1": "6.1 Nous ne pouvons garantir que Cocorico sera exempte d'erreurs, de virus ou d'autres éléments nuisibles. Vous utilisez Cocorico à vos propres risques.",
-                "responsability2": "6.2 Dans la mesure permise par la loi applicable, Cocorico décline toute responsabilité pour tout dommage direct, indirect, accessoire, consécutif ou autre résultant de l'utilisation de Cocorico.",
+                "responsability2": "6.2 Dans la mesure permise par la loi applicable, CocoriCorp décline toute responsabilité pour tout dommage direct, indirect, accessoire, consécutif ou autre résultant de l'utilisation de Cocorico.",
                 "policyUpdate1": "7.1 Nous nous réservons le droit de modifier ces CGU à tout moment. Les modifications prendront effet dès leur publication sur Cocorico.",
                 "law1": "8.1 Ces CGU sont régies par les lois en vigueur en France et tout litige relatif à ces CGU sera soumis à la juridiction exclusive des tribunaux compétents."
             },
-            "conclusion": "En utilisant la Plateforme, vous acceptez pleinement ces Conditions Générales d'Utilisation. Si vous avez des questions concernant ces CGU, veuillez nous contacter à support@cocorico.fr.",
-            "company": "Cocorico",
+            "conclusion": "En utilisant Cocorico, vous acceptez pleinement ces Conditions Générales d'Utilisation. Si vous avez des questions concernant ces CGU, veuillez nous contacter à support@cocorico.fr.",
+            "company": "CocoriCorp",
             "address": "56 Boulevard Montebourg 75005 Paris",
             "contact": "support@cocorico.fr",
             "phone": "06 66 66 66 66"
@@ -280,6 +307,7 @@
     "footer": {
         "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/Cocorico",
         "cguLink": "CGU",
+        "confidential": "Politique de Confidentialité",
         "contactEmail": "Support",
         "contactPhone": "Tel",
         "freeShipping": "Livraison gratuite",

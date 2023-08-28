@@ -87,6 +87,15 @@ export const Footer = () => {
                                 >
                                     {t('footer.cguLink')}
                                 </a>{' '}
+                                <a
+                                    href="/confidential"
+                                    style={{
+                                        color: 'white',
+                                        textDecoration: 'underline',
+                                    }}
+                                >
+                                    {t('footer.confidential')}
+                                </a>{' '}
                                 | {t('footer.contactEmail')} :
                                 support@cocorico.fr | {t('footer.contactPhone')}{' '}
                                 : 06 66 66 66 66

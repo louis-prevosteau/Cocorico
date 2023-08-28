@@ -3,6 +3,7 @@ export * from './Authentication';
 export * from './Cart';
 export * from './Categories';
 export * from './CollectPoints';
+export * from './Confidential';
 export * from './Homepage';
 export * from './Inventory';
 export * from './NotFound';

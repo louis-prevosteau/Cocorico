@@ -5,6 +5,7 @@ import {
     Cart,
     Categories,
     CollectPoints,
+    Confidential,
     Homepage,
     Inventory,
     NotFound,
@@ -75,6 +76,10 @@ const App = () => {
                             <Route path="/admin/orders" element={<Orders />} />
                         </Route>
                         <Route path="/policy" element={<Policy />} />
+                        <Route
+                            path="/confidential"
+                            element={<Confidential />}
+                        />
                         <Route path="/*" element={<NotFound />} />
                     </Routes>
                 </Container>
