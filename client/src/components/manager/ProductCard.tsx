@@ -15,24 +15,32 @@ import { useNavigate } from 'react-router-dom';
 export const ProductCard = ({ product }: ProductProps) => {
     const navigate = useNavigate();
     return (
-        <Card sx={{ display: 'flex', m: 2 }}>
+        <Card sx={{ height: 350 }}>
             <CardActionArea
                 onClick={() => navigate(`/products/${product._id}`)}
             >
                 <CardMedia
-                    component={'img'}
+                    component="img"
                     alt={product.name}
-                    src={product.image ? product.image : './images/logo.png'}
-                    sx={{ width: 90 }}
+                    height="140"
+                    image={product.image ? product.image : './images/logo.png'}
                 />
                 <CardContent>
-                    <Typography variant="h5">{product.name}</Typography>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {product.name}
+                    </Typography>
                     <Typography variant="body2">
                         {product.description}
                     </Typography>
-                    <Grid container direction="row" spacing={2}>
+                    <Grid
+                        container
+                        justifyContent="space-between"
+                        alignItems="center"
+                        spacing={1}
+                        mt={2}
+                    >
                         <Grid item>
-                            <Typography variant="h4" fontWeight="bolder">
+                            <Typography variant="h6">
                                 {product.price} €
                             </Typography>
                         </Grid>
@@ -44,7 +52,13 @@ export const ProductCard = ({ product }: ProductProps) => {
                             />
                         </Grid>
                     </Grid>
-                    <Grid container direction="row" spacing={6}>
+                    <Grid
+                        container
+                        justifyContent="space-between"
+                        alignItems="center"
+                        spacing={1}
+                        mt={1}
+                    >
                         <Grid item>
                             <Circle
                                 fontSize="small"

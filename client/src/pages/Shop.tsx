@@ -20,7 +20,10 @@ export const Shop = () => {
     }, [id]);
     return (
         <div>
-            <AppBar position="static" sx={{ backgroundColor: '#DEE5E9' }}>
+            <AppBar
+                position="static"
+                sx={{ backgroundColor: '#DEE5E9', overflowX: 'hidden' }}
+            >
                 <Typography
                     fontWeight="bold"
                     align="center"
@@ -60,13 +63,24 @@ export const Shop = () => {
                     </Grid>
                 </Grid>
             </AppBar>
-            <Box sx={{ maxWidth: 280, flexGrow: 1 }}>
-                <Grid container spacing={1} direction={'row'}>
-                    <Grid item>
-                        {products.map((product) => (
-                            <ProductCard key={product._id} product={product} />
-                        ))}
-                    </Grid>
+            <Box
+                sx={{
+                    maxWidth: 1020,
+                    flexGrow: 1,
+                    border: '5px solid',
+                    borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+                }}
+            >
+                <Grid
+                    container
+                    spacing={{ xs: 2, md: 3 }}
+                    columns={{ xs: 4, sm: 8, md: 12 }}
+                >
+                    {products.map((product) => (
+                        <Grid item xs={2} sm={4} md={4} key={product._id}>
+                            <ProductCard product={product} />
+                        </Grid>
+                    ))}
                 </Grid>
             </Box>
         </div>
