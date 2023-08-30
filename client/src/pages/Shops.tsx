@@ -1,5 +1,5 @@
 import { Grid, Typography } from '@mui/material';
-import { GridList, ShopCard } from 'components';
+import { FilterByCategory, GridList, ShopCard } from 'components';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,22 +17,29 @@ export const Shops = () => {
     }, []);
 
     return (
-        <div>
-            <Typography variant="h4" align="center">
-                {t('pages.shops.title')}
-            </Typography>
-            <GridList>
-                {shops.map((shop) => (
-                    <Grid item key={shop._id} sx={{ marginBottom: 2 }}>
-                        <NavLink
-                            to={`/shops/${shop._id}`}
-                            style={{ textDecoration: 'none' }}
-                        >
-                            <ShopCard shop={shop} />
-                        </NavLink>
-                    </Grid>
-                ))}
-            </GridList>
-        </div>
+        <Grid container spacing={2}>
+            <Grid item xs={12} md={9}>
+                <Typography
+                    variant="h4"
+                    align="center"
+                    sx={{ color: '#001D6E', marginBottom: 3 }}
+                >
+                    {t('pages.shops.title')}
+                </Typography>
+                <FilterByCategory />
+                <Grid container spacing={2}>
+                    {shops.map((shop) => (
+                        <Grid item key={shop._id} xs={12} md={6} lg={6}>
+                            <NavLink
+                                to={`/shops/${shop._id}`}
+                                style={{ textDecoration: 'none' }}
+                            >
+                                <ShopCard shop={shop} />
+                            </NavLink>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Grid>
+        </Grid>
     );
 };

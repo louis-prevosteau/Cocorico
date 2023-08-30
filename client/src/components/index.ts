@@ -21,6 +21,7 @@ export * from './manager/ProductsList';
 export * from './manager/ProfileManager';
 export * from './manager/Register';
 export * from './manager/ShopCard';
+export * from './manager/FilterByCategory';
 export * from './manager/UpdateCategoryDialog';
 export * from './manager/UpdateCollectPointDialog';
 export * from './manager/UpdateProductDialog';

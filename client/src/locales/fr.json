@@ -150,7 +150,12 @@
             "confirmed": "Confirmez votre nouveau mot de passe"
         },
         "shops": {
-            "title": "Toutes les boutiques"
+            "title": "Toutes les boutiques",
+            "shopsFilter": {
+                "allCategories": "Toutes les catégories",
+                "byCategory": "Par catégorie"
+            },
+            "clear": "Réinitialiser"
         },
         "users": {
             "title": "Tous les utilisateurs"
