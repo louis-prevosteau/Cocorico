@@ -105,10 +105,10 @@ export const CreateShopDialog = () => {
                             variant="filled"
                             sx={{ mb: 4 }}
                         />
+                        <InputLabel sx={{ ml: 1 }}>
+                            {t('forms.shop.fields.image')}
+                        </InputLabel>
                         <FormControl fullWidth sx={{ mb: 4 }}>
-                            <InputLabel>
-                                {t('forms.shop.fields.image')}
-                            </InputLabel>
                             <FileBase
                                 type="file"
                                 multiple={false}

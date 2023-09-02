@@ -16,12 +16,13 @@ export const ResetPassword = () => {
     const { t } = useTranslation();
 
     const handleSubmit = () => {
-        dispatch(
-            resetPassword({
-                resetToken: token as string,
-                password: state.password,
-            }),
-        );
+        if (token)
+            dispatch(
+                resetPassword({
+                    resetToken: token,
+                    password: state.password,
+                }),
+            );
     };
 
     return (

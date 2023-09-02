@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-    CartItem,
+    AddCartItem,
     CreateCategory,
     CreateCollectPoint,
     CreateProduct,
@@ -34,10 +34,10 @@ export const resetPassword = (data: ResetPassword) =>
     api.post('auth/reset-password', data);
 export const getCart = () => api.get('carts');
 export const createCart = () => api.post('carts');
-export const addProductToCart = (data: CartItem) =>
-    api.patch('add-product', data);
+export const addProductToCart = (data: AddCartItem) =>
+    api.patch('carts/add-product', data);
 export const deleteProductFromCart = (item: string) =>
-    api.patch(`del-product/${item}`);
+    api.patch(`carts/del-product/${item}`);
 export const clearCart = () => api.patch('clear');
 export const getCategories = () => api.get('categories');
 export const createCategory = (data: CreateCategory) =>

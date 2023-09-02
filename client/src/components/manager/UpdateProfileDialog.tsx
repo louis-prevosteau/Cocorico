@@ -91,10 +91,10 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
                             variant="filled"
                             sx={{ mb: 2 }}
                         />
+                        <InputLabel sx={{ ml: 1 }}>
+                            {t('forms.profile.fields.avatar')}
+                        </InputLabel>
                         <FormControl fullWidth sx={{ mb: 2 }}>
-                            <InputLabel>
-                                {t('forms.profile.fields.avatar')}
-                            </InputLabel>
                             <FileBase
                                 type="file"
                                 multiple={false}

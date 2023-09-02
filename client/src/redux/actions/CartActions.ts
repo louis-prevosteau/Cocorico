@@ -2,7 +2,7 @@ import { Dispatch } from '@reduxjs/toolkit';
 import * as api from 'api';
 import { handleError, handleSuccess } from 'utils/Toasts';
 import { GET_CART } from '../ActionTypes';
-import { CartItem } from 'models';
+import { AddCartItem } from 'models';
 import i18next from 'i18next';
 
 export const getCart = () => async (dispatch: Dispatch) => {
@@ -26,7 +26,7 @@ export const getCart = () => async (dispatch: Dispatch) => {
 };
 
 export const addProductToCart =
-    (cartItem: CartItem) => async (dispatch: Dispatch) => {
+    (cartItem: AddCartItem) => async (dispatch: Dispatch) => {
         try {
             const { data } = await api.addProductToCart(cartItem);
             dispatch({

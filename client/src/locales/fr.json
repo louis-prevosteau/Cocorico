@@ -121,6 +121,10 @@
             "contact": "support@cocorico.fr",
             "phone": "06 66 66 66 66"
         },
+        "product": {
+            "reviews": "{{reviews}} avis",
+            "addReview": "Ajouter un avis"
+        },
         "profile": {
             "infos": {
                 "title": "Mon profil",
@@ -230,6 +234,14 @@
                 "unavailable": "Rupture de stock",
                 "returnable": "Consigné",
                 "unreturnable": "Non-consigné"
+            }
+        },
+        "review": {
+            "create": "Ajouter un avis",
+            "fields": {
+                "title": "Titre",
+                "content": "Message",
+                "note": "Note"
             }
         },
         "shop": {

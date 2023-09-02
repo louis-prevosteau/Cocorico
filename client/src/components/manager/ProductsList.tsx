@@ -8,12 +8,10 @@ import {
     ListItem,
     ButtonGroup,
     Typography,
-    ListItemText,
-    Button,
+    ListItemText
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { Circle, Inventory } from '@mui/icons-material';
-import { NavLink } from 'react-router-dom';
+import { Circle } from '@mui/icons-material';
 import { DeleteProductDialog, UpdateProductDialog } from 'components';
 
 export const ProductsList = ({ shopId }: ProductsListProps) => {

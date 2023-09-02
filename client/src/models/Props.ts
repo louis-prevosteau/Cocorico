@@ -51,3 +51,7 @@ export interface UserProps {
 export interface ProductsListProps {
     shopId: string;
 }
+
+export interface ReviewsProps {
+    productId: string;
+}

@@ -86,10 +86,10 @@ export const UpdateProductDialog = ({ product }: ProductProps) => {
                             variant="filled"
                             sx={{ mb: 4 }}
                         />
+                        <InputLabel sx={{ ml: 1 }}>
+                            {t('forms.product.fields.image')}
+                        </InputLabel>
                         <FormControl fullWidth sx={{ mb: 4 }}>
-                            <InputLabel>
-                                {t('forms.product.fields.image')}
-                            </InputLabel>
                             <FileBase
                                 type="file"
                                 multiple={false}

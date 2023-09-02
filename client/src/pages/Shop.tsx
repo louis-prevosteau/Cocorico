@@ -15,8 +15,10 @@ export const Shop = () => {
     const { t } = useTranslation();
 
     useEffect(() => {
-        dispatch(getShop(id as string));
-        dispatch(getProducts(id as string));
+        if (id) {
+            dispatch(getShop(id));
+            dispatch(getProducts(id));
+        }
     }, [id]);
     return (
         <div>

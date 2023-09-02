@@ -12,3 +12,8 @@ export interface CartItem {
     quantity?: number;
     price?: number;
 }
+
+export interface AddCartItem {
+    product: string;
+    quantity: number;
+}
