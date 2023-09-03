@@ -5,13 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { AppDispatch, RootState } from 'redux/Store';
 import { addProductToCart, getProduct } from 'redux/actions';
-import {
-    Card,
-    Container,
-    Grid,
-    IconButton,
-    Typography,
-} from '@mui/material';
+import { Card, Container, Grid, IconButton, Typography } from '@mui/material';
 import { AddShoppingCart } from '@mui/icons-material';
 
 export const Product = () => {

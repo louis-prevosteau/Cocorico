@@ -48,7 +48,6 @@ export const AddProduct = () => {
     };
     return (
         <Paper
-
             elevation={3}
             sx={{
                 p: 3,

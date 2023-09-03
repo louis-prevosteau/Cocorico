@@ -1,12 +1,5 @@
-import {
-    Button,
-    Dialog,
-    DialogContent,
-    DialogTitle,
-    TextField,
-} from '@mui/material';
-import { Box } from '@mui/system';
-import { DialogGroupButton } from 'components';
+import { Button, TextField } from '@mui/material';
+import { FormDialog } from 'components';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -35,56 +28,35 @@ export const ForgotPasswordDialog = () => {
             <Button onClick={handleOpen} sx={{ color: '#001D6E' }}>
                 {t('forms.forgotPassword.title')}
             </Button>
-            <Dialog open={state.open} onClose={handleOpen}>
-                <DialogTitle
+            <FormDialog
+                title={t('forms.forgotPassword.title')}
+                open={state.open}
+                handleClose={handleOpen}
+                handleClick={handleSubmit}
+                handleCancel={handleOpen}
+                actionText={t('common.validate')}
+                cancelText={t('common.cancel')}
+            >
+                <TextField
+                    type="text"
+                    label={t('forms.forgotPassword.fields.email')}
+                    required
+                    fullWidth
+                    variant="filled"
+                    onChange={(e) =>
+                        setState({
+                            ...state,
+                            data: {
+                                ...state.data,
+                                email: e.target.value,
+                            },
+                        })
+                    }
                     sx={{
-                        backgroundColor: '#001D6E',
-                        color: 'white',
-                        borderBottom: '1px solid #DEE5E9',
+                        borderColor: '#DEE5E9',
                     }}
-                >
-                    {t('forms.forgotPassword.title')}
-                </DialogTitle>
-                <DialogContent
-                    sx={{ backgroundColor: '#DEE5E9', color: '#001D6E' }}
-                >
-                    <Box
-                        sx={{
-                            pt: 2,
-                            pb: 2,
-                            border: '5px solid',
-                            borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
-                            borderRadius: 5,
-                        }}
-                    >
-                        <TextField
-                            type="text"
-                            label={t('forms.forgotPassword.fields.email')}
-                            required
-                            fullWidth
-                            variant="filled"
-                            onChange={(e) =>
-                                setState({
-                                    ...state,
-                                    data: {
-                                        ...state.data,
-                                        email: e.target.value,
-                                    },
-                                })
-                            }
-                            sx={{
-                                borderColor: '#DEE5E9',
-                            }}
-                        />
-                    </Box>
-                </DialogContent>
-                <DialogGroupButton
-                    handleClick={handleSubmit}
-                    handleCancel={handleOpen}
-                    actionText={t('common.validate')}
-                    cancelText={t('common.cancel')}
                 />
-            </Dialog>
+            </FormDialog>
         </div>
     );
 };

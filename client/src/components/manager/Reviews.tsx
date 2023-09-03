@@ -37,7 +37,10 @@ export const Reviews = ({ productId }: ReviewsProps) => {
                 gap: '16px',
             }}
         >
-            <Typography variant="h4" sx={{ color: '#001D6E', marginBottom: '16px' }}>
+            <Typography
+                variant="h4"
+                sx={{ color: '#001D6E', marginBottom: '16px' }}
+            >
                 {t('pages.product.reviews', { reviews: reviews.length })}
             </Typography>
             <List>
@@ -46,7 +49,11 @@ export const Reviews = ({ productId }: ReviewsProps) => {
                         <Paper
                             key={review._id}
                             elevation={2}
-                            sx={{ marginBottom: '16px', padding: '16px', backgroundColor: 'white' }}
+                            sx={{
+                                marginBottom: '16px',
+                                padding: '16px',
+                                backgroundColor: 'white',
+                            }}
                         >
                             <ListItem alignItems="flex-start">
                                 <ListItemText
@@ -70,7 +77,9 @@ export const Reviews = ({ productId }: ReviewsProps) => {
                                                     color: '#E6001F',
                                                 }}
                                             >
-                                                {moment(review.createdAt).format('DD/MM/YYYY HH:mm')}
+                                                {moment(
+                                                    review.createdAt,
+                                                ).format('DD/MM/YYYY HH:mm')}
                                             </Typography>
                                             <Typography
                                                 variant="body2"
@@ -82,7 +91,10 @@ export const Reviews = ({ productId }: ReviewsProps) => {
                                                 readOnly
                                                 precision={0.1}
                                                 value={review.note}
-                                                sx={{ marginTop: '16px', color: '#E6001F' }}
+                                                sx={{
+                                                    marginTop: '16px',
+                                                    color: '#E6001F',
+                                                }}
                                             />
                                         </React.Fragment>
                                     }

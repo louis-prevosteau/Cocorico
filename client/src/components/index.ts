@@ -1,6 +1,7 @@
 export * from './common/CommonTable';
 export * from './common/DialogGroupButton';
 export * from './common/Footer';
+export * from './common/FormDialog';
 export * from './common/GridList';
 export * from './common/HeaderBar';
 export * from './common/SearchInput';

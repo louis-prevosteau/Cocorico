@@ -8,7 +8,7 @@ import {
     ListItem,
     ButtonGroup,
     Typography,
-    ListItemText
+    ListItemText,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Circle } from '@mui/icons-material';

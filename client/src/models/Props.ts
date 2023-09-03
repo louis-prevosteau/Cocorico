@@ -5,7 +5,7 @@ import { CollectPoint } from './CollectPoint';
 import { Shop } from './Shop';
 import { Product } from './Product';
 
-export interface DialogButtonGroupProps {
+export interface DialogGroupButtonProps {
     handleClick: MouseEventHandler;
     handleCancel: MouseEventHandler;
     actionText: string;
@@ -54,4 +54,11 @@ export interface ProductsListProps {
 
 export interface ReviewsProps {
     productId: string;
+}
+
+export interface FormDialogProps extends DialogGroupButtonProps {
+    title: string;
+    open: boolean;
+    handleClose: MouseEventHandler;
+    children: ReactNode;
 }

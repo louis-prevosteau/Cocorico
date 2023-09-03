@@ -1,5 +1,5 @@
 import { Button, DialogActions } from '@mui/material';
-import { DialogButtonGroupProps } from 'models';
+import { DialogGroupButtonProps } from 'models';
 import React from 'react';
 
 export const DialogGroupButton = ({
@@ -7,7 +7,7 @@ export const DialogGroupButton = ({
     handleCancel,
     actionText,
     cancelText,
-}: DialogButtonGroupProps) => {
+}: DialogGroupButtonProps) => {
     return (
         <DialogActions>
             <Button
