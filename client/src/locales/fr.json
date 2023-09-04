@@ -123,7 +123,9 @@
         },
         "product": {
             "reviews": "{{reviews}} avis",
-            "addReview": "Ajouter un avis"
+            "addReview": "Ajouter un avis",
+            "addToCart": "Ajouter au panier",
+            "averageNote": "Note moyenne :"
         },
         "profile": {
             "infos": {

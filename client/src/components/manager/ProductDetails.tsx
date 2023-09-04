@@ -1,4 +1,5 @@
-import { Paper, CardMedia, Typography } from '@mui/material';
+import { Circle, Recycling } from '@mui/icons-material';
+import { Paper, CardMedia, Typography, Grid } from '@mui/material';
 import { ProductProps } from 'models';
 import React from 'react';
 
@@ -7,9 +8,7 @@ export const ProductDetails = ({ product }: ProductProps) => {
         <Paper
             sx={{
                 maxWidth: 300,
-                margin: 'auto',
-                marginTop: 20,
-                padding: 16,
+                padding: 3,
                 backgroundColor: '#DEE5E9',
                 display: 'grid',
                 gridTemplateColumns: '1fr',
@@ -19,14 +18,13 @@ export const ProductDetails = ({ product }: ProductProps) => {
         >
             <CardMedia
                 sx={{
-                    height: 200,
+                    height: 300,
                 }}
                 image={product.image ? product.image : './images/logo.png'}
                 title={product.name}
             />
             <Typography
                 variant="h5"
-                component="div"
                 sx={{
                     color: '#001D6E',
                 }}
@@ -45,6 +43,26 @@ export const ProductDetails = ({ product }: ProductProps) => {
             <Typography variant="body2" color="textSecondary">
                 {product.price} €
             </Typography>
+            <Grid
+                container
+                justifyContent="space-between"
+                alignItems="center"
+                spacing={1}
+                mt={1}
+            >
+                <Grid item>
+                    <Circle
+                        fontSize="small"
+                        color={product.available ? 'success' : 'error'}
+                    />
+                </Grid>
+                <Grid item>
+                    <Recycling
+                        fontSize="small"
+                        color={product.returnable ? 'success' : 'error'}
+                    />
+                </Grid>
+            </Grid>
         </Paper>
     );
 };
