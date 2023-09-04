@@ -70,6 +70,7 @@ export const updateProduct = (id: string, data: CreateProduct) =>
 export const deleteProduct = (id: string) => api.delete(`products/${id}`);
 export const getReviews = (product: string) =>
     api.get(`reviews?product=${product}`);
+export const getMyReviews = () => api.get('reviews/me');
 export const createReview = (data: CreateReview) => api.post('reviews', data);
 export const deleteReview = (id: string) => api.delete(`reviews/${id}`);
 export const getShops = (category = null) =>

@@ -17,6 +17,18 @@ export const getReviews = (product: string) => async (dispatch: Dispatch) => {
     }
 };
 
+export const getMyReviews = () => async (dispatch: Dispatch) => {
+    try {
+        const { data } = await api.getMyReviews();
+        dispatch({
+            type: GET_REVIEWS,
+            payload: data,
+        });
+    } catch (error) {
+        handleError(error);
+    }
+};
+
 export const createReview =
     (review: CreateReview) => async (dispatch: Dispatch) => {
         try {

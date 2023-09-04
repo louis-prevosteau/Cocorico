@@ -18,6 +18,7 @@ export * from './manager/DeleteShopDialog';
 export * from './manager/ForgotPasswordDialog';
 export * from './manager/Login';
 export * from './manager/MyOrders';
+export * from './manager/MyReviews';
 export * from './manager/ProductCard';
 export * from './manager/ProductDetails';
 export * from './manager/ProductsList';

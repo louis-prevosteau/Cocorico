@@ -105,12 +105,14 @@ export const Product = () => {
                                 </Grid>
                                 <Grid item>
                                     <Typography
-                                        variant='h4'
-                                        fontWeight='bold'
+                                        variant="h4"
+                                        fontWeight="bold"
                                         sx={{
-                                            color: '#001D6E'
+                                            color: '#001D6E',
                                         }}
-                                    >{state.quantity}</Typography>
+                                    >
+                                        {state.quantity}
+                                    </Typography>
                                 </Grid>
                                 <Grid item>
                                     <IconButton
@@ -166,7 +168,9 @@ export const Product = () => {
                             marginTop: '20px',
                         }}
                     >
-                        <Typography variant='inherit'>{t('pages.product.averageNote')}</Typography>
+                        <Typography variant="inherit">
+                            {t('pages.product.averageNote')}
+                        </Typography>
                         <Rating
                             readOnly
                             precision={0.5}

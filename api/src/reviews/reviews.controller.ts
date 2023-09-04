@@ -3,8 +3,6 @@ import {
     Controller,
     Delete,
     Get,
-    HttpException,
-    HttpStatus,
     Param,
     Post,
     Query,
@@ -52,14 +50,30 @@ export class ReviewsController {
     }
 
     @UseGuards(JwtAuthGuard)
+    @Get('me')
+    getMyReviews(@User() user) {
+        return this.reviewsService.findAll({ user: user._id });
+    }
+
+    @UseGuards(JwtAuthGuard)
     @Delete(':id')
-    async remove(@Param('id') id: string, @User() user) {
-        const review = await this.reviewsService.findOne({ _id: id });
-        if (review.user !== user._id)
-            throw new HttpException(
-                'Vous ne pouvez pas supprimer cet avis.',
-                HttpStatus.FORBIDDEN,
-            );
-        return this.reviewsService.remove({ _id: id });
+    async remove(@Param('id') id: string) {
+        const review = await this.reviewsService.remove({ _id: id });
+        const reviews = await this.reviewsService.findAll({
+            product: review.product,
+        });
+        let note = 0;
+        for (const review of reviews) note += review.note;
+        let averageNote = 0;
+        if (reviews.length > 0) {
+            averageNote = parseFloat((note / reviews.length).toFixed(1));
+        }
+        await this.productsService.update(
+            { _id: review.product },
+            {
+                averageNote: averageNote,
+            },
+        );
+        return review;
     }
 }

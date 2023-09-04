@@ -142,6 +142,9 @@
                 "title": "Mes commandes",
                 "noOrders": "Il n'y a pas de commandes"
             },
+            "myReviews": {
+                "title": "Mes avis"
+            },
             "actions": {
                 "categories": "Gérer les catégories",
                 "collectPoints": "Gérer les points de collectes",

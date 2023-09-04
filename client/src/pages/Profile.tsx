@@ -1,5 +1,5 @@
 import { Container, Grid } from '@mui/material';
-import { MyOrders, ProfileManager } from 'components';
+import { MyOrders, MyReviews, ProfileManager } from 'components';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/Store';
@@ -26,6 +26,9 @@ export const Profile = () => {
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <MyOrders />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <MyReviews />
                 </Grid>
             </Grid>
         </Container>
