@@ -6,6 +6,7 @@ export * from './common/GridList';
 export * from './common/HeaderBar';
 export * from './common/SearchInput';
 export * from './manager/AddReviewDialog';
+export * from './manager/CartList';
 export * from './manager/CollectPointsTable';
 export * from './manager/CreateCategoryDialog';
 export * from './manager/CreateCollectPointDialog';

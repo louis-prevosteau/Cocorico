@@ -24,6 +24,10 @@
                 "title": "Se connecter"
             }
         },
+        "cart": {
+            "title": "Mon panier",
+            "empty": "Votre panier est vide."
+        },
         "categories": {
             "title": "Catégories"
         },

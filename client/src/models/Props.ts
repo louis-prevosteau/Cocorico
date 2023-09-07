@@ -4,6 +4,7 @@ import { User } from './User';
 import { CollectPoint } from './CollectPoint';
 import { Shop } from './Shop';
 import { Product } from './Product';
+import { Cart } from './Cart';
 
 export interface DialogGroupButtonProps {
     handleClick: MouseEventHandler;
@@ -26,6 +27,10 @@ export interface CommonTableProps {
     columns: string[];
     actions?: ReactNode;
     children: ReactNode;
+}
+
+export interface CartProps {
+    cart: Cart;
 }
 
 export interface CategoryProps {

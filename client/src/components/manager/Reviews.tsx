@@ -43,7 +43,7 @@ export const Reviews = ({ productId }: ReviewsProps) => {
             >
                 {t('pages.product.reviews', { reviews: reviews.length })}
             </Typography>
-            <List>
+            <List sx={{ maxHeight: 300 }}>
                 {reviews.length !== 0 &&
                     reviews.map((review) => (
                         <Paper

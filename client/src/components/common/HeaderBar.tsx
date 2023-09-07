@@ -1,4 +1,9 @@
-import { AccountCircle, Login, Menu as MenuIcon } from '@mui/icons-material';
+import {
+    AccountCircle,
+    Login,
+    Menu as MenuIcon,
+    ShoppingCart,
+} from '@mui/icons-material';
 import {
     AppBar,
     Container,
@@ -157,6 +162,12 @@ export const HeaderBar = () => {
                     <Box sx={{ flexGrow: 0 }}>
                         {isAuth || token ? (
                             <div>
+                                <IconButton
+                                    onClick={() => navigate('/cart')}
+                                    color="inherit"
+                                >
+                                    <ShoppingCart />
+                                </IconButton>
                                 <IconButton
                                     onClick={handleOpenUserMenu}
                                     aria-controls="user-menu"

@@ -28,13 +28,16 @@ import { Footer, HeaderBar } from 'components';
 import { AllowedRoutes, ProtectedRoutes } from 'utils/routes';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
-import { getProfile } from 'redux/actions';
+import { getCart, getProfile } from 'redux/actions';
 
 const App = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        if (localStorage.getItem('token')) dispatch(getProfile());
+        if (localStorage.getItem('token')) {
+            dispatch(getProfile());
+            dispatch(getCart());
+        }
     }, []);
     return (
         <div>

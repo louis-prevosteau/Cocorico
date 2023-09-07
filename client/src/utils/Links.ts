@@ -14,10 +14,6 @@ export const USER_MENU_ITEMS = [
         path: '/profile',
         name: 'menu.profile',
     },
-    {
-        path: '/cart',
-        name: 'menu.cart',
-    },
 ];
 
 export const ADMIN_ACTIONS = [
