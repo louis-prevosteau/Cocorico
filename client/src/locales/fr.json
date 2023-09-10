@@ -26,7 +26,8 @@
         },
         "cart": {
             "title": "Mon panier",
-            "empty": "Votre panier est vide."
+            "empty": "Votre panier est vide.",
+            "quantity": "Quantité :"
         },
         "categories": {
             "title": "Catégories"

@@ -1,6 +1,7 @@
 import { Delete } from '@mui/icons-material';
 import {
     Box,
+    Divider,
     IconButton,
     List,
     ListItem,
@@ -23,77 +24,116 @@ export const CartList = ({ cart }: CartProps) => {
     };
 
     return (
-        <List sx={{ maxHeight: 300 }}>
-            <Paper
-                elevation={3}
-                sx={{
-                    p: 3,
-                    mt: 4,
-                    mb: 4,
-                    border: '10px solid',
-                    borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
-                    borderRadius: 5,
-                }}
-            >
-                {cart.products?.length !== 0 ? (
-                    cart.products?.map((item) => (
+        <Paper
+            elevation={3}
+            sx={{
+                p: 2,
+                border: '5px solid',
+                borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+            }}
+        >
+            {cart.products?.length !== 0 ? (
+                <List>
+                    {cart.products?.map((item) => (
                         <Paper
                             key={item._id}
                             elevation={2}
                             sx={{
                                 marginBottom: '16px',
                                 padding: '16px',
-                                backgroundColor: 'white',
+                                backgroundColor: '#DEE5E9',
+                                border: '1px solid #001D6E',
                             }}
                         >
-                            <ListItem>
-                                <Box
-                                    sx={{
-                                        display: 'flex',
-                                        justifyContent: 'space-between',
-                                    }}
-                                >
-                                    <Typography variant="subtitle1">
-                                        {item.product?.name}
-                                    </Typography>
-                                </Box>
-                                <Box
-                                    sx={{
-                                        display: 'flex',
-                                        justifyContent: 'space-between',
-                                    }}
-                                >
-                                    <Typography variant="body2">
-                                        Quantity: {item.quantity}
-                                    </Typography>
-                                    <Typography variant="body2">
-                                        Price: ${item.price}
-                                    </Typography>
+                            <ListItem
+                                alignItems="flex-start"
+                                secondaryAction={
                                     <IconButton
                                         onClick={() =>
                                             handleDeleteFromCart(item._id)
                                         }
-                                        aria-label="Delete"
-                                        color="primary"
                                     >
-                                        <Delete />
+                                        <Delete
+                                            sx={{
+                                                color: '#E6001F',
+                                            }}
+                                        />
                                     </IconButton>
+                                }
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'space-around',
+                                    alignItems: 'center',
+                                    width: '100%',
+                                    flexDirection: { xs: 'column', md: 'row' },
+                                }}
+                            >
+                                <Typography
+                                    variant="subtitle2"
+                                    sx={{
+                                        color: '#001D6E',
+                                        mb: { xs: '8px', md: '0' },
+                                        textAlign: {
+                                            xs: 'center',
+                                            md: 'initial',
+                                        },
+                                    }}
+                                >
+                                    {item.product?.name}
+                                </Typography>
+                                <Divider
+                                    orientation="vertical"
+                                    flexItem
+                                    sx={{
+                                        backgroundColor: '#001D6E',
+                                        margin: { xs: '8px', md: '0 8px' },
+                                        display: { xs: 'none', md: 'block' },
+                                    }}
+                                />
+                                <Typography
+                                    variant="subtitle1"
+                                    sx={{
+                                        color: '#001D6E',
+                                        textAlign: {
+                                            xs: 'center',
+                                            md: 'initial',
+                                        },
+                                    }}
+                                >
+                                    {t('pages.cart.quantity')} {item.quantity}
+                                </Typography>
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                    }}
+                                >
+                                    <Typography
+                                        variant="body2"
+                                        sx={{
+                                            color: '#001D6E',
+                                            fontWeight: 'bold',
+                                        }}
+                                    >
+                                        {item.price} €
+                                    </Typography>
                                 </Box>
                             </ListItem>
                         </Paper>
-                    ))
-                ) : (
-                    <Typography
-                        variant="h1"
-                        style={{
-                            fontSize: '3rem',
-                            color: '#001D6E',
-                        }}
-                    >
-                        {t('pages.cart.empty')}
-                    </Typography>
-                )}
-            </Paper>
-        </List>
+                    ))}
+                </List>
+            ) : (
+                <Typography
+                    variant="h4"
+                    sx={{
+                        textAlign: 'center',
+                        color: '#001D6E',
+                        fontWeight: 'bolder',
+                    }}
+                >
+                    {t('pages.cart.empty')}
+                </Typography>
+            )}
+        </Paper>
     );
 };

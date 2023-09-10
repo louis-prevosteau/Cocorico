@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { AppDispatch, RootState } from 'redux/Store';
-import { addProductToCart, getCart, getProduct } from 'redux/actions';
+import { addProductToCart, getProduct } from 'redux/actions';
 import {
     Box,
     Card,
@@ -34,7 +34,6 @@ export const Product = () => {
     }, [id]);
 
     const handleAddProductToCart = () => {
-        dispatch(getCart());
         dispatch(
             addProductToCart({
                 product: product._id,

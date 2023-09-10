@@ -1,6 +1,8 @@
 export const AUTH = 'AUTH';
 export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const GET_CART = 'GET_CART';
+export const ADD_CART_ITEM = 'ADD_CART_ITEM';
+export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
 export const GET_CATEGORIES = 'GET_CATEGORIES';
 export const CREATE_CATEGORY = 'CREATE_CATEGORY';
 export const UPDATE_CATEGORY = 'UPDATE_CATEGORY';

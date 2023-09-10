@@ -16,6 +16,7 @@ import {
     Button,
     Avatar,
 } from '@mui/material';
+import { Badge } from '@mui/material-next';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -30,7 +31,7 @@ export const HeaderBar = () => {
         anchorElUser: null,
     });
     const navigate = useNavigate();
-    const { isAuth, profile } = useSelector((state: RootState) => state);
+    const { isAuth, profile, cart } = useSelector((state: RootState) => state);
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
     const token = localStorage.getItem('token');
@@ -162,12 +163,22 @@ export const HeaderBar = () => {
                     <Box sx={{ flexGrow: 0 }}>
                         {isAuth || token ? (
                             <div>
-                                <IconButton
-                                    onClick={() => navigate('/cart')}
-                                    color="inherit"
+                                <Badge
+                                    badgeContent={cart.products?.length}
+                                    sx={{
+                                        '& .MuiBadge-badge': {
+                                            backgroundColor: '#DEE5E9',
+                                            color: '#001D6E',
+                                        },
+                                    }}
                                 >
-                                    <ShoppingCart />
-                                </IconButton>
+                                    <IconButton
+                                        onClick={() => navigate('/cart')}
+                                        color="inherit"
+                                    >
+                                        <ShoppingCart />
+                                    </IconButton>
+                                </Badge>
                                 <IconButton
                                     onClick={handleOpenUserMenu}
                                     aria-controls="user-menu"

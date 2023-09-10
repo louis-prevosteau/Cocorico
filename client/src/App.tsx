@@ -20,7 +20,7 @@ import {
     Users,
 } from 'pages';
 import './i18n';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -31,9 +31,14 @@ import { AppDispatch } from 'redux/Store';
 import { getCart, getProfile } from 'redux/actions';
 
 const App = () => {
+    const isInitialRender = useRef(true);
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
+        if (isInitialRender.current) {
+            isInitialRender.current = false;
+            return;
+        }
         if (localStorage.getItem('token')) {
             dispatch(getProfile());
             dispatch(getCart());

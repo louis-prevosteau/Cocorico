@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
-import { register } from 'redux/actions';
+import { createCart, register } from 'redux/actions';
 
 export const Register = () => {
     const [state, setState] = useState({
@@ -14,8 +14,9 @@ export const Register = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
 
-    const handleSubmit = () => {
-        dispatch(register(state));
+    const handleSubmit = async () => {
+        await dispatch(register(state));
+        await dispatch(createCart());
     };
 
     return (

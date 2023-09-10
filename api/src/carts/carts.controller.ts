@@ -47,17 +47,20 @@ export class CartsController {
         const item = (
             await this.cartItemsService.create({
                 ...createCartItemDto,
-                price: product.price * createCartItemDto.quantity,
+                price: parseFloat(
+                    (product.price * createCartItemDto.quantity).toFixed(2),
+                ),
             })
         ).populate('product');
         const cart = await this.cartsService.findOne({ user: user._id });
-        return this.cartsService.update(
+        await this.cartsService.update(
             { user: user._id },
             {
                 $push: { products: (await item)._id },
                 price: (cart.price += (await item).price),
             },
         );
+        return item;
     }
 
     @UseGuards(JwtAuthGuard)
@@ -65,15 +68,18 @@ export class CartsController {
     async deleteProduct(@User() user, @Param('item') itemId) {
         this.cartItemsService.remove({ _id: itemId });
         const cart = await this.cartsService.findOne({ user: user._id });
-        const item = await this.cartItemsService.findOne({ _id: itemId });
+        const item = await this.cartItemsService
+            .findOne({ _id: itemId })
+            .populate('product');
         await this.cartItemsService.remove({ _id: itemId });
-        return this.cartsService.update(
+        await this.cartsService.update(
             { user: user._id },
             {
                 $pull: { products: itemId },
                 price: (cart.price -= item.price),
             },
         );
+        return item;
     }
 
     @UseGuards(JwtAuthGuard)
