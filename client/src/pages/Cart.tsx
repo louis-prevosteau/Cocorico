@@ -1,5 +1,5 @@
-import { Typography } from '@mui/material';
-import { CartList } from 'components';
+import { Container, Typography } from '@mui/material';
+import { CartList, CartSummary } from 'components';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,11 +20,25 @@ export const Cart = () => {
             <Typography
                 variant="h4"
                 align="center"
-                style={{ color: '#001D6E', marginBottom: '1rem' }}
+                sx={{ color: '#001D6E', marginBottom: '1rem' }}
             >
                 {t('pages.cart.title')}
             </Typography>
-            <CartList cart={cart} />
+            <Container
+                sx={{
+                    display: 'flex',
+                    flexDirection: {
+                        md: 'row',
+                        xs: 'column'
+                    },
+                    justifyContent: 'space-around',
+                    height: '40vh',
+                    maxHeight: '100vh',
+                }}
+            >
+                <CartList cart={cart} />
+                <CartSummary cart={cart} />
+            </Container>
         </div>
     );
 };

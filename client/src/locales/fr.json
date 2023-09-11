@@ -27,7 +27,10 @@
         "cart": {
             "title": "Mon panier",
             "empty": "Votre panier est vide.",
-            "quantity": "Quantité :"
+            "quantity": "Quantité :",
+            "summary": "Résumé",
+            "cartTotal": "Total du panier : {{price}} €",
+            "freeShipping": "Livraison : Gratuite"
         },
         "categories": {
             "title": "Catégories"

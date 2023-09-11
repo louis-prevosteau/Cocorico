@@ -102,6 +102,15 @@ export const CartList = ({ cart }: CartProps) => {
                                 >
                                     {t('pages.cart.quantity')} {item.quantity}
                                 </Typography>
+                                <Divider
+                                    orientation="vertical"
+                                    flexItem
+                                    sx={{
+                                        backgroundColor: '#001D6E',
+                                        margin: { xs: '8px', md: '0 8px' },
+                                        display: { xs: 'none', md: 'block' },
+                                    }}
+                                />
                                 <Box
                                     sx={{
                                         display: 'flex',
