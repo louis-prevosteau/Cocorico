@@ -26,14 +26,19 @@ export const Cart = () => {
             </Typography>
             <Container
                 sx={{
+                    mt: 15,
+                    mb: 21,
                     display: 'flex',
                     flexDirection: {
                         md: 'row',
-                        xs: 'column'
+                        xs: 'column',
                     },
                     justifyContent: 'space-around',
-                    height: '40vh',
-                    maxHeight: '100vh',
+                    minHeight: '39.4vh',
+                    backgroundColor: '#DEE5E9',
+                    padding: '20px',
+                    border: '20px solid',
+                    borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
                 }}
             >
                 <CartList cart={cart} />

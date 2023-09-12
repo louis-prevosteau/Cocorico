@@ -57,7 +57,7 @@ export class CartsController {
             { user: user._id },
             {
                 $push: { products: (await item)._id },
-                price: (cart.price += (await item).price),
+                price: (cart.price += (await item).price).toFixed(2),
             },
         );
         return item;
@@ -76,7 +76,7 @@ export class CartsController {
             { user: user._id },
             {
                 $pull: { products: itemId },
-                price: (cart.price -= item.price),
+                price: (cart.price -= (await item).price).toFixed(2),
             },
         );
         return item;

@@ -30,7 +30,9 @@
             "quantity": "Quantité :",
             "summary": "Résumé",
             "cartTotal": "Total du panier : {{price}} €",
-            "freeShipping": "Livraison : Gratuite"
+            "freeShipping": "Livraison : Gratuite",
+            "continueShopping": "Continuer mes achats",
+            "goToOrder": "Passer à la commande"
         },
         "categories": {
             "title": "Catégories"
