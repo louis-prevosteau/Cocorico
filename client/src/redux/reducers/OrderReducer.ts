@@ -24,7 +24,10 @@ export const OrdersReducer = (
     }
 };
 
-export const OrderReducer = (state: Order = {}, action: AnyAction): Order => {
+export const OrderReducer = (
+    state: Order = {} as Order,
+    action: AnyAction,
+): Order => {
     switch (action.type) {
         case GET_ORDER:
         case UPDATE_STATUS:

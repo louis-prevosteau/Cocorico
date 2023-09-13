@@ -1,7 +1,7 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import * as api from 'api';
 import i18next from 'i18next';
-import { Order } from 'models';
+import { CreateOrder, Order } from 'models';
 import {
     CREATE_ORDER,
     DELETE_ORDER,
@@ -49,18 +49,19 @@ export const getOrder = (id: string) => async (dispatch: Dispatch) => {
     }
 };
 
-export const createOrder = (order: Order) => async (dispatch: Dispatch) => {
-    try {
-        const { data } = await api.createOrder(order);
-        dispatch({
-            type: CREATE_ORDER,
-            payload: data,
-        });
-        handleSuccess(i18next.t('toasts.order.passed'));
-    } catch (error) {
-        handleError(error);
-    }
-};
+export const createOrder =
+    (order: CreateOrder) => async (dispatch: Dispatch) => {
+        try {
+            const { data } = await api.createOrder(order);
+            dispatch({
+                type: CREATE_ORDER,
+                payload: data,
+            });
+            handleSuccess(i18next.t('toasts.order.passed'));
+        } catch (error) {
+            handleError(error);
+        }
+    };
 
 export const updateStatus =
     (id: string, order: Order) => async (dispatch: Dispatch) => {

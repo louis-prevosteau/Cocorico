@@ -3,6 +3,7 @@ import {
     AddCartItem,
     CreateCategory,
     CreateCollectPoint,
+    CreateOrder,
     CreateProduct,
     CreateReview,
     CreateShop,
@@ -38,7 +39,7 @@ export const addProductToCart = (data: AddCartItem) =>
     api.patch('carts/add-product', data);
 export const deleteProductFromCart = (item: string) =>
     api.patch(`carts/del-product/${item}`);
-export const clearCart = () => api.patch('clear');
+export const clearCart = () => api.patch('carts/clear');
 export const getCategories = () => api.get('categories');
 export const createCategory = (data: CreateCategory) =>
     api.post('categories', data);
@@ -57,7 +58,7 @@ export const getOrders = (search = null) =>
     api.get(search ? `orders?search=${search}` : 'orders');
 export const getOrder = (id: string) => api.get(`orders/${id}`);
 export const getMyOrders = () => api.get('orders/me');
-export const createOrder = (data: Order) => api.post('orders', data);
+export const createOrder = (data: CreateOrder) => api.post('orders', data);
 export const updateStatus = (id: string, data: Order) =>
     api.put(`orders/${id}`, data);
 export const deleteOrder = (id: string) => api.delete(`orders/${id}`);

@@ -44,7 +44,7 @@ export const MyReviews = () => {
             >
                 {t('pages.profile.myReviews.title')}
             </Typography>
-            <List>
+            <List sx={{ maxHeight: 482, overflow: 'auto' }}>
                 {reviews.length !== 0 &&
                     reviews.map((review) => (
                         <Paper

@@ -25,10 +25,10 @@ export const Profile = () => {
                     <ProfileManager user={profile} />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <MyOrders />
-                </Grid>
-                <Grid item xs={12} md={6}>
                     <MyReviews />
+                </Grid>
+                <Grid item xs={12} md={12}>
+                    <MyOrders />
                 </Grid>
             </Grid>
         </Container>
