@@ -79,7 +79,7 @@ export const Reviews = ({ productId }: ReviewsProps) => {
                                             >
                                                 {moment(
                                                     review.createdAt,
-                                                ).format('DD/MM/YYYY HH:mm')}
+                                                ).fromNow()}
                                             </Typography>
                                             <Typography
                                                 variant="body2"

@@ -9,6 +9,7 @@ import {
     Tooltip,
     Typography,
 } from '@mui/material';
+import moment from 'moment';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -86,9 +87,7 @@ export const MyOrders = () => {
                                         </Tooltip>
                                     </TableCell>
                                     <TableCell sx={{ color: '#001D6E' }}>
-                                        {new Date(
-                                            order.createdAt as string,
-                                        ).toLocaleDateString('fr-FR')}
+                                        {moment(order.createdAt).format('LLLL')}
                                     </TableCell>
                                 </TableRow>
                             ))

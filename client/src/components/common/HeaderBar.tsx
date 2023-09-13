@@ -15,8 +15,8 @@ import {
     Typography,
     Button,
     Avatar,
+    Badge
 } from '@mui/material';
-import { Badge } from '@mui/material-next';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';

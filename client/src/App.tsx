@@ -29,6 +29,10 @@ import { AllowedRoutes, ProtectedRoutes } from 'utils/routes';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from 'redux/Store';
 import { getCart, getProfile } from 'redux/actions';
+import moment from 'moment';
+import 'moment/locale/fr';
+
+moment.locale('fr');
 
 const App = () => {
     const isInitialRender = useRef(true);

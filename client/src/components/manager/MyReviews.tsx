@@ -95,7 +95,7 @@ export const MyReviews = () => {
                                             >
                                                 {moment(
                                                     review.createdAt,
-                                                ).format('DD/MM/YYYY HH:mm')}
+                                                ).fromNow()}
                                             </Typography>
                                             <Typography
                                                 variant="body2"
