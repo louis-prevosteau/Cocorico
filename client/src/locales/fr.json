@@ -86,6 +86,11 @@
                 "deleteProduct": "Supprimer un article"
             }
         },
+        "makeOrder": {
+            "title": "Récapitulatif de ma commande",
+            "deliveryInfos": "Informations de livraison",
+            "validate": "Confirmer ma commande"
+        },
         "notFound": {
             "title": "Page inexistante",
             "message": "Cette page n'existe pas. Faites demi-tour."
@@ -143,6 +148,7 @@
                 "notSpecified": "Non renseigné",
                 "username": "Pseudo :",
                 "email": "Email :",
+                "phone": "Téléphone :",
                 "address": "Adresse :",
                 "city": "Ville :",
                 "zipcode": "Code Postal :",
@@ -224,6 +230,7 @@
             "fields": {
                 "username": "Pseudo",
                 "email": "Email",
+                "phone": "Téléphone",
                 "avatar": "Avatar",
                 "address": "Adresse",
                 "city": "Ville",

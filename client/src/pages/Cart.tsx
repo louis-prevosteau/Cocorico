@@ -37,8 +37,9 @@ export const Cart = () => {
                     minHeight: '39.4vh',
                     backgroundColor: '#DEE5E9',
                     padding: '20px',
-                    border: '20px solid',
+                    border: '10px solid',
                     borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+                    borderRadius: 5,
                 }}
             >
                 <CartList cart={cart} />

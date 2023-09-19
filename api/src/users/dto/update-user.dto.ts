@@ -5,6 +5,7 @@ export class UpdateUserDto {
     readonly password: string;
     readonly role: string;
     readonly address: string;
+    readonly phone: string;
     readonly city: string;
     readonly zipcode: string;
     readonly country: string;

@@ -52,6 +52,7 @@ export const CartList = ({ cart }: CartProps) => {
                                         onClick={() =>
                                             handleDeleteFromCart(item._id)
                                         }
+                                        size="small"
                                     >
                                         <Delete
                                             sx={{

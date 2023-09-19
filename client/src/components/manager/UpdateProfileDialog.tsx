@@ -74,6 +74,23 @@ export const UpdateProfileDialog = ({ user }: UserProps) => {
                     variant="filled"
                     sx={{ mb: 2 }}
                 />
+                <TextField
+                    type="phone"
+                    label={t('forms.profile.fields.phone')}
+                    value={state.profile.phone}
+                    fullWidth
+                    onChange={(e) =>
+                        setState({
+                            ...state,
+                            profile: {
+                                ...state.profile,
+                                phone: e.target.value,
+                            },
+                        })
+                    }
+                    variant="filled"
+                    sx={{ mb: 2 }}
+                />
                 <InputLabel sx={{ ml: 1 }}>
                     {t('forms.profile.fields.avatar')}
                 </InputLabel>

@@ -25,6 +25,9 @@ export class User {
     address: string;
 
     @Prop()
+    phone: string;
+
+    @Prop()
     city: string;
 
     @Prop()

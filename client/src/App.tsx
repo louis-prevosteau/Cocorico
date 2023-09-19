@@ -8,6 +8,7 @@ import {
     Confidential,
     Homepage,
     Inventory,
+    MakeOrder,
     NotFound,
     Order,
     Orders,
@@ -69,6 +70,10 @@ const App = () => {
                         />
                         <Route element={<ProtectedRoutes />}>
                             <Route path="/cart" element={<Cart />} />
+                            <Route
+                                path="/make-order/:cart"
+                                element={<MakeOrder />}
+                            />
                             <Route path="/profile" element={<Profile />} />
                         </Route>
                         <Route path="/orders/:id" element={<Order />} />

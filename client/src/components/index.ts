@@ -9,6 +9,7 @@ export * from './manager/AddReviewDialog';
 export * from './manager/CartList';
 export * from './manager/CartSummary';
 export * from './manager/CollectPointsTable';
+export * from './manager/CompleteOrderForm';
 export * from './manager/CreateCategoryDialog';
 export * from './manager/CreateCollectPointDialog';
 export * from './manager/CreateShopDialog';

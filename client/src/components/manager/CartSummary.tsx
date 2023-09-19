@@ -2,19 +2,10 @@ import { Typography, Paper, Button, Grid } from '@mui/material';
 import { CartProps } from 'models';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { AppDispatch } from 'redux/Store';
-import { clearCart, createOrder } from 'redux/actions';
 
 export const CartSummary = ({ cart }: CartProps) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch<AppDispatch>();
-
-    const handleOrder = () => {
-        dispatch(createOrder({ cart: cart._id }));
-        dispatch(clearCart());
-    };
     return (
         <Paper
             elevation={3}
@@ -63,22 +54,24 @@ export const CartSummary = ({ cart }: CartProps) => {
                         </Button>
                     </NavLink>
                 </Grid>
-                <Grid item>
-                    <Button
-                        sx={{
-                            backgroundColor: '#001D6E',
-                            color: '#DEE5E9',
-                            '&:disabled': {
-                                backgroundColor: '#001D6E',
-                                color: '#DEE5E9',
-                            },
-                        }}
-                        onClick={handleOrder}
-                        disabled={cart.products?.length === 0}
-                    >
-                        {t('pages.cart.goToOrder')}
-                    </Button>
-                </Grid>
+                {cart.products?.length !== 0 && (
+                    <Grid item>
+                        <NavLink to={`/make-order/${cart._id}`}>
+                            <Button
+                                sx={{
+                                    backgroundColor: '#001D6E',
+                                    color: '#DEE5E9',
+                                    '&:disabled': {
+                                        backgroundColor: '#001D6E',
+                                        color: '#DEE5E9',
+                                    },
+                                }}
+                            >
+                                {t('pages.cart.goToOrder')}
+                            </Button>
+                        </NavLink>
+                    </Grid>
+                )}
             </Grid>
         </Paper>
     );

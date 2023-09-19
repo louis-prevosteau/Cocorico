@@ -6,6 +6,7 @@ export * from './CollectPoints';
 export * from './Confidential';
 export * from './Homepage';
 export * from './Inventory';
+export * from './MakeOrder';
 export * from './NotFound';
 export * from './Order';
 export * from './Orders';

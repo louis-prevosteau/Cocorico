@@ -36,6 +36,12 @@ export const ProfileManager = ({ user }: UserProps) => {
                     {t('pages.profile.infos.email')} {user.email}
                 </Typography>
                 <Typography variant="subtitle1" sx={{ color: '#001D6E' }}>
+                    {t('pages.profile.infos.phone')}{' '}
+                    {user.phone
+                        ? user.phone
+                        : t('pages.profile.infos.notSpecified')}
+                </Typography>
+                <Typography variant="subtitle1" sx={{ color: '#001D6E' }}>
                     {t('pages.profile.infos.address')}{' '}
                     {user.address
                         ? user.address
