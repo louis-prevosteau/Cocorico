@@ -28,4 +28,16 @@ export class EmailService {
             },
         });
     }
+
+    async orderConfirmation(user: any, order: any, cart: any) {
+        await this.mailerService.sendMail({
+            to: user.email,
+            subject: `Votre commande #${order._id}`,
+            template: `./orderConfirmation`,
+            context: {
+                order,
+                cart,
+            },
+        });
+    }
 }

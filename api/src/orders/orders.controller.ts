@@ -16,15 +16,29 @@ import { User } from 'src/users/users.decorator';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
 import { OrdersService } from './orders.service';
+import { EmailService } from 'src/email/email.service';
+import { CartsService } from 'src/carts/carts.service';
 
 @Controller('orders')
 export class OrdersController {
-    constructor(private readonly ordersService: OrdersService) {}
+    constructor(
+        private readonly ordersService: OrdersService,
+        private readonly emailService: EmailService,
+        private readonly cartsService: CartsService,
+    ) {}
 
     @UseGuards(JwtAuthGuard)
     @Post()
-    create(@Body() createOrderDto: CreateOrderDto, @User() user) {
-        return this.ordersService.create({ ...createOrderDto, user });
+    async create(@Body() createOrderDto: CreateOrderDto, @User() user) {
+        const order = await this.ordersService.create({
+            ...createOrderDto,
+            user,
+        });
+        const cart = await this.cartsService.findOne({
+            _id: createOrderDto.cart,
+        });
+        await this.emailService.orderConfirmation(user, order, cart);
+        return order;
     }
 
     @UseGuards(JwtAuthGuard, RolesGuard)

@@ -1,0 +1,20 @@
+html
+    body
+        h1 Merci pour votre commande
+        h3 Votre commande :
+        table
+            thead
+                tr 
+                    th Article
+                    th Quantité
+                    th Prix
+            tbody
+                each item in cart.products
+                    tr
+                        td= item.product.name
+                        td= item.quantity
+                        td #{item.price} €
+        h3 Total : #{cart.price} €
+        p Votre commande sera livrée prochainement à l'adresse indiquée.
+        p Cordialement,
+        p L'équipe E-Commerce Cocorico
