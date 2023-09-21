@@ -60,7 +60,7 @@ export const getOrder = (id: string) => api.get(`orders/${id}`);
 export const getMyOrders = () => api.get('orders/me');
 export const createOrder = (data: CreateOrder) => api.post('orders', data);
 export const updateStatus = (id: string, data: Order) =>
-    api.put(`orders/${id}`, data);
+    api.patch(`orders/${id}`, data);
 export const deleteOrder = (id: string) => api.delete(`orders/${id}`);
 export const getProducts = (shop: string) => api.get(`products?shop=${shop}`);
 export const getProduct = (id: string) => api.get(`products/${id}`);

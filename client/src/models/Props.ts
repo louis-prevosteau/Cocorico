@@ -5,6 +5,7 @@ import { CollectPoint } from './CollectPoint';
 import { Shop } from './Shop';
 import { Product } from './Product';
 import { Cart } from './Cart';
+import { Order } from './Order';
 
 export interface DialogGroupButtonProps {
     handleClick: MouseEventHandler;
@@ -51,6 +52,10 @@ export interface ShopProps {
 
 export interface UserProps {
     user: User;
+}
+
+export interface OrderProps {
+    order: Order;
 }
 
 export interface ProductsListProps {
