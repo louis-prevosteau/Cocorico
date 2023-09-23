@@ -24,7 +24,7 @@ export const OrderStatusSelect = ({ order }: OrderProps) => {
     };
 
     return (
-        <Select value={order.status} onChange={handleStatusChange}>
+        <Select value={state.order.status} onChange={handleStatusChange}>
             {Object.keys(ORDERS_STATUSES_COLORS).map((status) => (
                 <MenuItem key={status} value={status}>
                     <Tooltip title={t(`orderStatuses.${status}`)}>

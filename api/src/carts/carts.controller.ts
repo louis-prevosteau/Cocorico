@@ -85,9 +85,6 @@ export class CartsController {
     @UseGuards(JwtAuthGuard)
     @Patch('clear')
     async clearCart(@User() user) {
-        const cart = await this.cartsService.findOne({ user: user._id });
-        for (const product of cart.products)
-            await this.cartItemsService.remove({ _id: product });
         await this.cartsService.update(
             { user: user._id },
             { products: [], price: 0 },

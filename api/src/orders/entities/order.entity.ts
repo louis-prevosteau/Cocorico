@@ -1,8 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
-import { Cart } from 'src/carts/entities/cart.entity';
 import { User } from 'src/users/entities/user.entity';
 import { OrderStatuses } from '../constants';
+import { CartItem } from 'src/cart-items/entities/cart-item.entity';
 
 export type OrderDocument = HydratedDocument<Order>;
 
@@ -11,8 +11,10 @@ export class Order {
     @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'User' })
     user: User;
 
-    @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'Cart' })
-    cart: Cart;
+    @Prop({
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CartItem' }],
+    })
+    products: CartItem[];
 
     @Prop({ default: OrderStatuses.Waiting, enum: OrderStatuses })
     status: string;

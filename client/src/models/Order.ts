@@ -1,9 +1,9 @@
-import { Cart, User } from '.';
+import { CartItem, User } from '.';
 
 export interface Order {
     _id: string;
     user: User;
-    cart: Cart;
+    products: CartItem[];
     status: string;
     createdAt: string;
 }

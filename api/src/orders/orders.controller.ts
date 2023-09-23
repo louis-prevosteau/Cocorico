@@ -30,12 +30,14 @@ export class OrdersController {
     @UseGuards(JwtAuthGuard)
     @Post()
     async create(@Body() createOrderDto: CreateOrderDto, @User() user) {
-        const order = await this.ordersService.create({
-            ...createOrderDto,
-            user,
-        });
         const cart = await this.cartsService.findOne({
             _id: createOrderDto.cart,
+        });
+        const order = await this.ordersService.create({
+            cart,
+            ...createOrderDto,
+            products: cart.products,
+            user,
         });
         await this.emailService.orderConfirmation(user, order, cart);
         return order;

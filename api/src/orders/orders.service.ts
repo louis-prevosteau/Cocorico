@@ -18,10 +18,10 @@ export class OrdersService {
     findAll(filter = {}) {
         return this.orderModel
             .find(filter)
-            .populate('user')
+            .populate('user', '-password')
             .populate({
-                path: 'cart',
-                populate: { path: 'products', populate: { path: 'product' } },
+                path: 'products',
+                populate: 'product',
             })
             .sort('-createdAt');
     }
@@ -29,10 +29,10 @@ export class OrdersService {
     findOne(filter) {
         return this.orderModel
             .findOne(filter)
-            .populate('user')
+            .populate('user', '-password')
             .populate({
-                path: 'cart',
-                populate: { path: 'products', populate: { path: 'product' } },
+                path: 'products',
+                populate: 'product',
             });
     }
 
