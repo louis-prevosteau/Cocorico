@@ -9,6 +9,9 @@ services:
       - "8080:8080"
     depends_on:
       - db
+      - maildev
+    networks:
+      - cocorico-network
   client:
     build:
       context: ./client
@@ -16,17 +19,27 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - db
+      - api
+    networks:
+      - cocorico-network
   db:
+    image: mongo:latest
     volumes:
       - cocorico_db:/data/db
-    image: mongo:latest
     ports:
       - "27017:27017"
+    networks:
+      - cocorico-network
   maildev:
-    image: djfarrelly/maildev
+    image: maildev/maildev
     ports:
       - "1080:80"
       - "1025:25"
+    networks:
+      - cocorico-network
+
 volumes:
-   cocorico_db:
+  cocorico_db:
+
+networks:
+  cocorico-network:
