@@ -16,6 +16,9 @@ export class Order {
     })
     products: CartItem[];
 
+    @Prop()
+    total: number;
+
     @Prop({ default: OrderStatuses.Waiting, enum: OrderStatuses })
     status: string;
 }

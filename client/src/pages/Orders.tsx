@@ -4,6 +4,7 @@ import { t } from 'i18next';
 import moment from 'moment';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { AppDispatch, RootState } from 'redux/Store';
 import { getOrders } from 'redux/actions';
 import { ORDERS_COLUMNS } from 'utils/Columns';
@@ -32,7 +33,9 @@ export const Orders = () => {
                     {orders.map((order) => (
                         <TableRow key={order._id}>
                             <TableCell sx={{ color: '#001D6E' }}>
-                                {order._id}
+                                <Link to={`/orders/${order._id}`} style={{ textDecoration: 'none', color: '#001D6E' }}>
+                                    {order._id}
+                                </Link>
                             </TableCell>
                             <TableCell sx={{ color: '#001D6E' }}>
                                 {order.user.username}
@@ -41,7 +44,7 @@ export const Orders = () => {
                                 {order.user.email}
                             </TableCell>
                             <TableCell sx={{ color: '#001D6E' }}>
-                                {order._id}
+                                {order.user.address} {order.user.zipcode} {order.user.city} {order.user.country}
                             </TableCell>
                             <TableCell sx={{ color: '#001D6E' }}>
                                 <OrderStatusSelect order={order} />

@@ -5,6 +5,7 @@ export interface Order {
     user: User;
     products: CartItem[];
     status: string;
+    total: number;
     createdAt: string;
 }
 

@@ -95,6 +95,11 @@
             "title": "Page inexistante",
             "message": "Cette page n'existe pas. Faites demi-tour."
         },
+        "order": {
+            "title": "Commande #{{order}}",
+            "deliveryAddress": "Adresse de livraison",
+            "total": "Total : {{price}} €"
+        },
         "policy": {
             "titles": {
                 "main": "Conditions Générales d'Utilisation de Cocorico",

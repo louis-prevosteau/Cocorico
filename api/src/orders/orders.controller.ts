@@ -37,6 +37,7 @@ export class OrdersController {
             cart,
             ...createOrderDto,
             products: cart.products,
+            total: cart.price,
             user,
         });
         await this.emailService.orderConfirmation(user, order, cart);
