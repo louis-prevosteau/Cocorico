@@ -33,7 +33,13 @@ export const Orders = () => {
                     {orders.map((order) => (
                         <TableRow key={order._id}>
                             <TableCell sx={{ color: '#001D6E' }}>
-                                <Link to={`/orders/${order._id}`} style={{ textDecoration: 'none', color: '#001D6E' }}>
+                                <Link
+                                    to={`/orders/${order._id}`}
+                                    style={{
+                                        textDecoration: 'none',
+                                        color: '#001D6E',
+                                    }}
+                                >
                                     {order._id}
                                 </Link>
                             </TableCell>
@@ -44,7 +50,8 @@ export const Orders = () => {
                                 {order.user.email}
                             </TableCell>
                             <TableCell sx={{ color: '#001D6E' }}>
-                                {order.user.address} {order.user.zipcode} {order.user.city} {order.user.country}
+                                {order.user.address} {order.user.zipcode}{' '}
+                                {order.user.city} {order.user.country}
                             </TableCell>
                             <TableCell sx={{ color: '#001D6E' }}>
                                 <OrderStatusSelect order={order} />

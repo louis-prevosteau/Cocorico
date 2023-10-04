@@ -1,4 +1,15 @@
-import { Avatar, Box, Chip, Container, List, ListItem, ListItemAvatar, ListItemText, Paper, Typography } from '@mui/material';
+import {
+    Avatar,
+    Box,
+    Chip,
+    Container,
+    List,
+    ListItem,
+    ListItemAvatar,
+    ListItemText,
+    Paper,
+    Typography,
+} from '@mui/material';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +20,7 @@ import { ORDERS_STATUSES_COLORS, OrdersStatuses } from 'utils/Columns';
 
 export const Order = () => {
     const { id } = useParams();
-    const { order } = useSelector((state: RootState) => state)
+    const { order } = useSelector((state: RootState) => state);
     const dispatch = useDispatch<AppDispatch>();
     const { t } = useTranslation();
 
@@ -22,7 +33,7 @@ export const Order = () => {
                 backgroundColor: '#DEE5E9',
                 padding: '16px',
                 minHeight: '100vh',
-              }}
+            }}
         >
             <Paper
                 elevation={3}
@@ -38,30 +49,46 @@ export const Order = () => {
                         display: 'flex',
                         alignItems: 'center',
                         marginBottom: '16px',
-                      }}
+                    }}
                 >
                     <Chip
                         label={t(`orderStatuses.${order.status}`)}
                         sx={{
-                            backgroundColor: ORDERS_STATUSES_COLORS[
-                                order.status as OrdersStatuses
-                            ],
+                            backgroundColor:
+                                ORDERS_STATUSES_COLORS[
+                                    order.status as OrdersStatuses
+                                ],
                         }}
                     />
-                    <Typography variant='h4'>{t('pages.order.title', { order: order._id })}</Typography>
+                    <Typography variant="h4">
+                        {t('pages.order.title', { order: order._id })}
+                    </Typography>
                 </Box>
-                <Typography variant="h6">{t('pages.order.deliveryAddress')}</Typography>
-                <Typography>{order.user?.address} {order.user?.zipcode} {order.user?.city} {order.user?.country}</Typography>
-                <Typography variant="h6" sx={{ marginTop: '16px', }}></Typography>
+                <Typography variant="h6">
+                    {t('pages.order.deliveryAddress')}
+                </Typography>
+                <Typography>
+                    {order.user?.address} {order.user?.zipcode}{' '}
+                    {order.user?.city} {order.user?.country}
+                </Typography>
+                <Typography
+                    variant="h6"
+                    sx={{ marginTop: '16px' }}
+                ></Typography>
                 <List>
                     {order.products?.map((item) => (
                         <ListItem key={item._id} alignItems="flex-start">
                             <ListItemAvatar>
-                                <Avatar src={item.product?.image ? item.product?.image : './images/logo.png'} alt={item.product?.name} />
+                                <Avatar
+                                    src={
+                                        item.product?.image
+                                            ? item.product?.image
+                                            : './images/logo.png'
+                                    }
+                                    alt={item.product?.name}
+                                />
                             </ListItemAvatar>
-                            <ListItemText
-                                primary={item.product?.name}
-                            />
+                            <ListItemText primary={item.product?.name} />
                         </ListItem>
                     ))}
                 </List>
