@@ -98,7 +98,9 @@
         "order": {
             "title": "Commande #{{order}}",
             "deliveryAddress": "Adresse de livraison",
-            "total": "Total : {{price}} €"
+            "total": "Total : {{price}} €",
+            "quantity": "Quantité : {{quantity}}",
+            "itemPrice": "{{price}} €"
         },
         "policy": {
             "titles": {

@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { CollectPointsTable, CreateCollectPointDialog } from 'components';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -77,7 +77,17 @@ export const Order = () => {
                 ></Typography>
                 <List>
                     {order.products?.map((item) => (
-                        <ListItem key={item._id} alignItems="flex-start">
+                        <ListItem
+                            key={item._id}
+                            alignItems="flex-start"
+                            secondaryAction={
+                                <Typography variant="h4" fontWeight="bold">
+                                    {t('pages.order.itemPrice', {
+                                        price: item.price,
+                                    })}
+                                </Typography>
+                            }
+                        >
                             <ListItemAvatar>
                                 <Avatar
                                     src={
@@ -88,7 +98,12 @@ export const Order = () => {
                                     alt={item.product?.name}
                                 />
                             </ListItemAvatar>
-                            <ListItemText primary={item.product?.name} />
+                            <ListItemText
+                                primary={item.product?.name}
+                                secondary={t('pages.order.quantity', {
+                                    quantity: item.quantity,
+                                })}
+                            />
                         </ListItem>
                     ))}
                 </List>
