@@ -27,12 +27,17 @@ export const Order = () => {
     useEffect(() => {
         if (id) dispatch(getOrder(id));
     }, [id]);
+
     return (
         <Container
             sx={{
                 backgroundColor: '#DEE5E9',
                 padding: '16px',
                 minHeight: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
             }}
         >
             <Paper
@@ -41,6 +46,10 @@ export const Order = () => {
                     p: 2,
                     border: '5px solid',
                     borderColor: '#DEE5E9 #E6001F #DEE5E9 #001D6E',
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
                 }}
             >
                 <Box
@@ -51,19 +60,19 @@ export const Order = () => {
                         marginBottom: '16px',
                     }}
                 >
-                    <Chip
-                        label={t(`orderStatuses.${order.status}`)}
-                        sx={{
-                            backgroundColor:
-                                ORDERS_STATUSES_COLORS[
-                                    order.status as OrdersStatuses
-                                ],
-                        }}
-                    />
-                    <Typography variant="h4">
+                    <Typography variant="subtitle1">
                         {t('pages.order.title', { order: order._id })}
                     </Typography>
                 </Box>
+                <Chip
+                    label={t(`orderStatuses.${order.status}`)}
+                    sx={{
+                        backgroundColor:
+                            ORDERS_STATUSES_COLORS[
+                                order.status as OrdersStatuses
+                            ],
+                    }}
+                />
                 <Typography variant="h6">
                     {t('pages.order.deliveryAddress')}
                 </Typography>
@@ -75,13 +84,16 @@ export const Order = () => {
                     variant="h6"
                     sx={{ marginTop: '16px' }}
                 ></Typography>
-                <List>
+                <List sx={{ width: '100%' }}>
                     {order.products?.map((item) => (
                         <ListItem
                             key={item._id}
                             alignItems="flex-start"
                             secondaryAction={
-                                <Typography variant="h4" fontWeight="bold">
+                                <Typography
+                                    variant="subtitle1"
+                                    fontWeight="bold"
+                                >
                                     {t('pages.order.itemPrice', {
                                         price: item.price,
                                     })}
