@@ -18,11 +18,18 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install Dependencies
+      - name: Install Dependencies for API
+        working-directory: ./api
+        run: npm install
+
+      - name: Install Dependencies for Client
+        working-directory: ./client
         run: npm install
 
       - name: Run Prettier on API
-        run: npx prettier --check ./api
+        working-directory: ./api
+        run: npx prettier --check .
 
       - name: Run Prettier on Client
-        run: npx prettier --check ./client
+        working-directory: ./client
+        run: npx prettier --check .
