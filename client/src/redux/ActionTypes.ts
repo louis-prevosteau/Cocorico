@@ -34,3 +34,7 @@ export const GET_CITIES = 'GET_CITIES';
 export const GET_REVIEWS = 'GET_REVIEWS';
 export const CREATE_REVIEW = 'CREATE_REVIEW';
 export const DELETE_REVIEW = 'DELETE_REVIEW';
+export const GET_PROMO_CODES = 'GET_PROMO_CODES';
+export const GET_PROMO_CODE = 'GET_PROMO_CODE';
+export const CREATE_PROMO_CODE = 'CREATE_PROMO_CODE';
+export const APPLY_PROMO_CODE = 'APPLY_PROMO_CODE';

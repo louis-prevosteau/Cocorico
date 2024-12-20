@@ -18,6 +18,7 @@ import { ProductsModule } from './products/products.module';
 import { ReviewsModule } from './reviews/reviews.module';
 import { ShopsModule } from './shops/shops.module';
 import { UsersModule } from './users/users.module';
+import { PromoCodesModule } from './promo-codes/promo-codes.module';
 
 @Module({
     imports: [
@@ -59,6 +60,7 @@ import { UsersModule } from './users/users.module';
         OrdersModule,
         ReviewsModule,
         EmailModule,
+        PromoCodesModule,
     ],
     controllers: [AppController],
     providers: [AppService, EmailService],

@@ -1,6 +1,11 @@
 import { AnyAction } from '@reduxjs/toolkit';
 import { Cart } from 'models';
-import { ADD_CART_ITEM, GET_CART, REMOVE_CART_ITEM } from 'redux/ActionTypes';
+import {
+    ADD_CART_ITEM,
+    APPLY_PROMO_CODE,
+    GET_CART,
+    REMOVE_CART_ITEM,
+} from 'redux/ActionTypes';
 
 export const CartReducer = (
     state: Cart = {} as Cart,
@@ -22,6 +27,11 @@ export const CartReducer = (
                     (item) => item._id !== action.payload._id,
                 ),
                 price: (state.price -= action.payload.price),
+            };
+        case APPLY_PROMO_CODE:
+            return {
+                ...state,
+                price: action.payload,
             };
         default:
             return state;

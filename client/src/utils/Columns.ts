@@ -9,6 +9,13 @@ export const ORDERS_COLUMNS = [
     'status',
     'created_at',
 ];
+export const PROMO_CODES_COLUMNS = [
+    'code',
+    'discountType',
+    'discountValue',
+    'expirationDate',
+    'createdAt',
+];
 
 export type OrdersStatuses =
     | 'waiting'

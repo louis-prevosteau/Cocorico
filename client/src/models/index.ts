@@ -5,6 +5,7 @@ export * from './City';
 export * from './Department';
 export * from './Order';
 export * from './Product';
+export * from './PromoCode';
 export * from './Props';
 export * from './Review';
 export * from './Shop';

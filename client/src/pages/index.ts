@@ -13,6 +13,7 @@ export * from './Orders';
 export * from './Policy';
 export * from './Product';
 export * from './Profile';
+export * from './PromoCodes';
 export * from './ResetPassword';
 export * from './Shop';
 export * from './Shops';

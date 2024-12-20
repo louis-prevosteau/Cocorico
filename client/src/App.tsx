@@ -15,6 +15,7 @@ import {
     Policy,
     Product,
     Profile,
+    PromoCodes,
     ResetPassword,
     Shop,
     Shops,
@@ -84,13 +85,17 @@ const App = () => {
                                 element={<AddProduct />}
                             />
                         </Route>
-                        <Route element={<AllowedRoutes role="admin" />}>
+                        <Route
+                            path="/admin"
+                            element={<AllowedRoutes role="admin" />}
+                        >
+                            <Route path="categories" element={<Categories />} />
+                            <Route path="users" element={<Users />} />
+                            <Route path="orders" element={<Orders />} />
                             <Route
-                                path="/admin/categories"
-                                element={<Categories />}
+                                path="promo-codes"
+                                element={<PromoCodes />}
                             />
-                            <Route path="/admin/users" element={<Users />} />
-                            <Route path="/admin/orders" element={<Orders />} />
                         </Route>
                         <Route path="/policy" element={<Policy />} />
                         <Route

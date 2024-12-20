@@ -33,6 +33,10 @@ export const ADMIN_ACTIONS = [
         path: '/admin/users',
         name: 'users',
     },
+    {
+        path: '/admin/promo-codes',
+        name: 'promoCodes',
+    },
 ];
 
 export const SELLER_ACTIONS = [

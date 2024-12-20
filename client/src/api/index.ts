@@ -1,10 +1,12 @@
 import axios from 'axios';
 import {
     AddCartItem,
+    ApplyPromoCode,
     CreateCategory,
     CreateCollectPoint,
     CreateOrder,
     CreateProduct,
+    CreatePromoCode,
     CreateReview,
     CreateShop,
     ForgotPassword,
@@ -85,6 +87,12 @@ export const deleteShop = (id: string) => api.delete(`shops/${id}`);
 export const getUsers = () => api.get('users');
 export const getProfile = () => api.get('users/profile');
 export const updateProfile = (data: User) => api.patch('users/profile', data);
+export const getPromoCodes = () => api.get('promo-codes');
+export const getPromoCode = (id: string) => api.get(`promo-codes/${id}`);
+export const createPromoCode = (data: CreatePromoCode) =>
+    api.post('promo-codes', data);
+export const applyPromoCode = (data: ApplyPromoCode) =>
+    api.post('promo-codes/apply', data);
 
 const apiGeo = axios.create({
     baseURL: process.env.REACT_APP_API_GEO_URL,

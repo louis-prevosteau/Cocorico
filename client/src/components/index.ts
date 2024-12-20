@@ -27,6 +27,7 @@ export * from './manager/ProductCard';
 export * from './manager/ProductDetails';
 export * from './manager/ProductsList';
 export * from './manager/ProfileManager';
+export * from './manager/PromoCodesTable';
 export * from './manager/Register';
 export * from './manager/Reviews';
 export * from './manager/ShopCard';
