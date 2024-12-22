@@ -78,7 +78,7 @@ const App = () => {
                             <Route path="/profile" element={<Profile />} />
                         </Route>
                         <Route path="/orders/:id" element={<Order />} />
-                        <Route element={<AllowedRoutes roles={["seller"]} />}>
+                        <Route element={<AllowedRoutes roles={['seller']} />}>
                             <Route path="/inventory" element={<Inventory />} />
                             <Route
                                 path="/shops/add-product"
@@ -87,7 +87,7 @@ const App = () => {
                         </Route>
                         <Route
                             path="/admin"
-                            element={<AllowedRoutes roles={["admin"]} />}
+                            element={<AllowedRoutes roles={['admin']} />}
                         >
                             <Route path="categories" element={<Categories />} />
                             <Route path="users" element={<Users />} />
