@@ -30,4 +30,8 @@ export class PromoCodesService implements OnModuleInit {
     findOne(filter) {
         return this.promoCodeModel.findOne(filter);
     }
+
+    deleteOne(filter) {
+        return this.promoCodeModel.deleteOne(filter);
+    }
 }

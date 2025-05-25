@@ -12,13 +12,14 @@ import { CreatePromoCodeDto } from './dto/create-promo-code.dto';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { Roles, Role } from 'src/roles/roles.decorator';
 import { RolesGuard } from 'src/roles/roles.guard';
+import { User } from 'src/users/users.decorator';
 
 @Controller('promo-codes')
 export class PromoCodesController {
     constructor(private readonly promoCodesService: PromoCodesService) {}
 
     @UseGuards(JwtAuthGuard, RolesGuard)
-    @Roles(Role.Admin)
+    @Roles(Role.Seller)
     @Post()
     create(@Body() createPromoCodeDto: CreatePromoCodeDto) {
         const promoCode = this.promoCodesService.findOne({
@@ -33,10 +34,12 @@ export class PromoCodesController {
     }
 
     @UseGuards(JwtAuthGuard, RolesGuard)
-    @Roles(Role.Admin)
+    @Roles(Role.Admin, Role.Seller)
     @Get()
-    findAll() {
-        return this.promoCodesService.findAll();
+    findAll(@User() user) {
+        return user.roles.includes(Role.Seller)
+            ? this.promoCodesService.findAll({ creator: user._id })
+            : this.promoCodesService.findAll();
     }
 
     @UseGuards(JwtAuthGuard, RolesGuard)

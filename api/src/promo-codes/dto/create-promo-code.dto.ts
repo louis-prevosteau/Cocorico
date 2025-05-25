@@ -4,4 +4,5 @@ export class CreatePromoCodeDto {
     readonly discountValue: number;
     readonly minOrderAmount: number;
     readonly expirationDate: Date;
+    readonly shop: string;
 }
